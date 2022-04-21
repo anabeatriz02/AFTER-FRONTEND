@@ -1,0 +1,124 @@
+:root {
+	--gapPrimary: 2%;
+	--borderPrimary: 1.5px solid var(--purpleSecondary);
+	--borderSecondary: 1.5px solid var(--backgroundTertiary);
+}
+
+* {
+	user-select: none;
+	outline: none;
+	color: var(--white);
+}
+
+body {
+	width: 100vw;
+	padding: 2% 6%;
+	display: flex;
+	flex-direction: column;
+	gap: var(--gapPrimary);
+	align-items: center;
+}
+
+.form-area {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--gapPrimary);
+	padding: 0 6%;
+}
+
+.form-area h1 {
+	font-size: 2rem;
+	letter-spacing: 2px;
+}
+
+.form-area form {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.form-area .address-box {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.form-area form .address-one {
+	display: grid;
+	gap: var(--gapPrimary);
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.form-area form .address-two {
+	display: grid;
+	gap: var(--gapPrimary);
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.form-area form .date-box{
+	display: grid;
+	gap: var(--gapPrimary);
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.form-area form label {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	transition: 0.5s;
+	font-weight: 400;
+	font-size: .90rem;
+	letter-spacing: 1px;
+}
+
+.form-area form label:focus-within {
+	color: var(--purpleSecondary);
+}
+
+h3 {
+	font-size: 1.10rem;
+	letter-spacing: 1px;
+}
+
+input,
+select {
+	width: 100%;
+	height: 55px;
+	/* max-height: 50px; */
+	border: var(--borderSecondary);
+	border-radius: 5px;
+	padding: 0 15px;
+	background-color: var(--backgroundTertiary);
+}
+
+input:focus,
+select:focus {
+	border: var(--borderPrimary);
+	color: var(--purpleSecondary);
+}
+
+select {
+	cursor: pointer;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+
+button {
+	height: 55px;
+	width: 30%;
+	cursor: pointer;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	font-size: 1rem;
+	border-radius: 10px;
+	background-color: transparent;
+
+	color: var(--purpleSecondary);
+	border: var(--borderPrimary);
+}

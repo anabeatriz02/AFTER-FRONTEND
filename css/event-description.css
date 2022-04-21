@@ -1,0 +1,432 @@
+:root {
+	--gapPrimary: 100px;
+	--borderPrimary: 2px solid var(--purpleSecondary);
+}
+
+* {
+	user-select: none;
+}
+
+body {
+	padding: 2% 6%;
+	display: flex;
+	flex-direction: column;
+	gap: var(--gapPrimary);
+}
+
+.slider-container {
+	width: 100%;
+	height: 375px;
+}
+
+.slider-container .owl-slider {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	border-radius: 10px;
+	-webkit-mask-image: linear-gradient(rgba(4, 9, 30, 0.6), rgba(4, 9, 30, 0.7));
+	border: var(--borderPrimary);
+}
+
+.slider-container .owl-slider .item-photo {
+}
+
+.slider-container .owl-slider .item-photo img {
+	width: 100%;
+}
+
+.owl-dots {
+	position: absolute;
+	bottom: 10px;
+	outline: none;
+	width: 100%;
+}
+
+.owl-dots {
+	outline: none;
+}
+
+.owl-dots span {
+	background: var(--purpleSecondary) !important;
+}
+
+.owl-dots .active span {
+	background: var(--purpleTertiary) !important;
+}
+
+/* ------------------------------------------------------------ */
+
+.information-container {
+	padding: 2% 6%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+
+.information-container > h1 {
+	text-transform: uppercase;
+	font-size: 2.75rem;
+	color: var(--white);
+}
+
+.information-container h1 > span {
+	font-size: 0.9rem;
+	margin-left: 10px;
+}
+
+.information-container h1 > a {
+	position: relative;
+	transition: 0.5s;
+	font-size: 0.9rem;
+	text-decoration: none;
+	color: var(--white);
+	margin-left: 8px;
+}
+
+.information-container h1 > a:hover {
+	color: var(--purpleSecondary);
+}
+
+.information-container h1 > a img {
+	position: absolute;
+	top: -3px;
+	right: -15px;
+	width: 10px;
+	height: 10px;
+}
+
+.information-container .mark-box {
+	display: flex;
+	gap: 15px;
+	height: 80px;
+}
+
+.information-container .mark-box div > button {
+	height: 40px;
+	width: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	border-radius: 5px;
+	border: 1px solid var(--backgroundTertiary);
+	background-color: var(--backgroundTertiary);
+	transition: 0.5s;
+}
+
+.information-container .mark-box div > button:hover {
+	border: var(--borderPrimary);
+}
+
+.information-container .mark-box p {
+	color: var(--white);
+	font-weight: 200;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 1rem;
+}
+
+.information-container .mark-box p:first-child {
+	height: 50%;
+}
+
+.information-container .mark-box p:last-child {
+	height: 50%;
+}
+
+.information-container .location-box {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	color: var(--white);
+	font-weight: 200;
+	font-size: 1rem;
+}
+
+.information-container .location-box > button {
+	height: 40px;
+	width: 40px;
+	border: 1px solid var(--backgroundTertiary);
+	background-color: var(--backgroundTertiary);
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* ------------------------------------------------------------ */
+
+.divider {
+	width: 100%;
+	height: 2px;
+	background-color: var(--purpleSecondary);
+	position: relative;
+}
+
+.divider > .buy-box {
+	position: absolute;
+	right: 0;
+	bottom: -65px;
+
+	width: 350px;
+	height: 125px;
+	border-radius: 10px;
+	padding: 15px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	background-color: var(--backgroundTertiary);
+}
+
+.divider .buy-box div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	height: 50%;
+	width: 100%;
+}
+
+.divider .buy-box div > img {
+	height: 100%;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+.divider .buy-box div > p {
+	font-size: 0.9rem;
+	color: var(--white);
+	font-weight: 200;
+}
+
+.divider .buy-box button {
+	width: 100%;
+	height: 50%;
+	background-image: var(--purpleLinear);
+	border-radius: 5px;
+	border: none;
+	font-weight: 800;
+	font-size: 1.1rem;
+	color: var(--white);
+	cursor: pointer;
+}
+
+/* ---------------------------------------------------------- */
+
+.description-container {
+	width: 100%;
+	padding: 2% 6%;
+	display: flex;
+	flex-direction: column;
+	gap: var(--gapPrimary);
+}
+
+.description-container h2 {
+	text-transform: uppercase;
+	font-size: 1.5rem;
+	color: var(--white);
+}
+
+.description-container h2 > span {
+	font-size: 0.9rem;
+	margin-left: 10px;
+}
+
+.description-container h2 > a {
+	position: relative;
+	transition: 0.5s;
+	font-size: 0.9rem;
+	text-decoration: none;
+	color: var(--white);
+	margin-left: 8px;
+}
+
+.description-container h2 > a:hover {
+	color: var(--purpleSecondary);
+}
+
+.description-container h2 > a img {
+	position: absolute;
+	top: -3px;
+	right: -15px;
+	width: 10px;
+	height: 10px;
+}
+
+.description-container > p {
+	width: 100%;
+	font-weight: 200;
+	color: var(--white);
+	line-height: 30px;
+	text-align: justify;
+}
+
+/* ---------------------------------------------------------- */
+
+/* .divider-2 {
+	width: 100%;
+	height: 3px;
+	background-color: var(--purpleSecondary);
+} */
+
+.comment-box {
+	width: 100%;
+	padding: 0% 6%;
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+
+.comment-box h2 {
+	font-size: 1.5rem;
+	color: var(--white);
+}
+
+.comment-box form {
+	width: 100%;
+	height: 50px;
+	overflow: hidden;
+	display: flex;
+	border-radius: 10px;
+	border: solid 1px var(--backgroundTertiary);
+}
+
+.comment-box form input {
+	width: 95%;
+	height: 100%;
+	padding: 0% 2%;
+	color: var(--white);
+	border: none;
+	background-color: var(--backgroundTertiary);
+}
+
+.comment-box form button {
+	width: 5%;
+	height: 100%;
+	border: none;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--backgroundTertiary);
+}
+
+.comment-box form button img {
+	width: 30px;
+	height: 30px;
+}
+
+.comment-box .view-comment-area {
+	display: grid;
+	gap: 15px 3em;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.comment-box .view-comment-area div {
+	width: 100%;
+	height: 80px;
+	/* background-color: tomato; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	overflow: hidden;
+	color: var(--white);
+}
+
+.comment-box .view-comment-area .view-comment-box .image-user {
+	width: 75px;
+	height: 100%;
+	border-radius: 10px;
+	border: 2px solid var(--purpleSecondary);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+.comment-box .view-comment-area .view-comment-box .information-user {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.comment-box .view-comment-area .view-comment-box .information-user div {
+	width: 100%;
+	justify-content: space-between;
+	font-size: 0.5rem;
+}
+
+.comment-box .view-comment-area .view-comment-box .information-user div p {
+	font-size: 0.5rem;
+	color: var(--white);
+}
+
+.comment-box .view-comment-area .view-comment-box .information-user p {
+	font-weight: 200;
+	font-size: 0.75rem;
+	align-items: flex-start;
+}
+
+.comment-box .view-comment-area .view-comment-box .information-user .comment {
+	padding: 8px;
+	border-radius: 5px;
+	width: 100%;
+	font-size: 0.9rem;
+	color: var(--white);
+	font-weight: 500;
+	background-color: var(--backgroundTertiary);
+}
+
+/* ------------------------------------------------------------------------------- */
+
+.payment-box {
+	padding: 2% 6%;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	justify-content: center;
+	align-items: center;
+	gap: 25px;
+	height: 275px;
+}
+
+.payment-box .payment-card, .payment-security  {
+	width: 50%;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+	color: var(--white);
+	line-height: 30px;
+}
+
+.payment-box .payment-card .payment-icon {
+	gap: 15px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.payment-box .payment-card .payment-icon img {
+	width: 50px;
+	height: 50px;
+}
+
+.payment-box .payment-card .payment-security h4  {
+	font-weight: 500;
+}
+
+.payment-box .payment-security p  {
+	font-weight: 200;
+}
+
+.payment-box .middle-divider {
+	height: 100%;
+	width: 2px;
+	background-color: var(--purpleSecondary);
+}

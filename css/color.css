@@ -1,0 +1,21 @@
+:root {
+	--backgroundPrimary: #1f2427;
+	--backgroundSecondary: #262b2e;
+	--backgroundTertiary: #32363a;
+
+	--purplePrimary: #6123f6;
+	--purpleSecondary: #7f37ff;
+	--purpleTertiary: #cdaffc;
+
+	--red: #f04242;
+	--orange: #f99a42;
+	--green: #00b890;
+
+	--white: #ffffff;
+
+	--purpleLinear: linear-gradient(90deg, var(--purpleSecondary), var(--purpleTertiary));
+	/* --purpleLinear: linear-gradient(90deg, rgba(127, 55, 255, 1) 0%, rgba(156, 108, 249, 1) 100%); */
+	--darkLinear: linear-gradient(90deg, rgba(38, 43, 46, 1) 0%, rgba(50, 54, 58, 1) 100%);
+
+	/* --my-gradient: linear-gradient(90deg, var(--purpleSecondary), var(--purpleTertiary)); */
+}

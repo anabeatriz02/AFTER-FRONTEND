@@ -1,0 +1,68 @@
+:root {
+	--gapPrimary: 2%;
+	--borderPrimary: 1.5px solid var(--purpleSecondary);
+	--borderSecondary: 1.5px solid var(--backgroundTertiary);
+}
+
+* {
+	user-select: none;
+	outline: none;
+	color: var(--white);
+	letter-spacing: 1px;
+}
+
+body {
+	width: 100vw;
+	/* min-height: 100vh; */
+	display: flex;
+	flex-direction: column;
+	gap: var(--gapPrimary);
+	text-align: left;
+}
+
+.switch {
+	display: flex;
+	gap: 25px;
+}
+
+.switch .new {
+	cursor: pointer;
+	color: var(--purpleSecondary);
+	padding-bottom: 10px;
+	border-bottom: 3px solid var(--purpleSecondary);
+}
+
+.switch .old {
+	cursor: pointer;
+	padding-bottom: 10px;
+}
+
+.form {
+	display: flex;
+	flex-direction: row;
+	height: 500px;
+	overflow: hidden;
+}
+
+.page-new {
+	background-color: lightcoral;
+	width: 100%;
+	min-width: 100%;
+	max-width: 100%;
+}
+
+.page-new .new-box {
+	height: 150px ;
+	display: flex;
+	align-items: center;
+	padding: 50px 75px;
+	background-color: lightgreen;
+}
+
+
+.page-old {
+	background-color: lightblue;
+	width: 100%;
+	min-width: 100%;
+	max-width: 100%;
+}

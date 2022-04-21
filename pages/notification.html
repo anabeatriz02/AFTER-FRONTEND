@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="../css/notification.css" />
+		<link rel="stylesheet" href="../css/scrollbar.css" />
+		<link rel="stylesheet" href="../css/header-company.css" />
+		<link rel="stylesheet" href="../css/reset.css" />
+
+		<title>Notificações</title>
+	</head>
+	<body>
+		<header class="header" id="header">
+			<script>
+				$(function () {
+					$("#header").load("../common/header-company.html  ");
+				});
+			</script>
+		</header>
+
+		<h1>Notificações</h1>
+
+		<section class="switch">
+			<div class="new" onclick="tab1();">Novas</div>
+			<div class="old" onclick="tab2();">Antigas</div>
+
+		</section>
+
+		<!-- <section class="form" id="form">
+			<div class="page-new">
+				<div class="new-box">
+					<img src="../img/icon-heart-fill.svg" alt="">
+					<p>Outras 23 pessoas deram like em um evento que você tem interesse</p>
+				</div>
+			</div>
+			<div class="page-old">OLD</div>
+		</section> -->
+
+		<script src="../javascript/notification/toggle-notification.js"></script>
+	</body>
+</html>

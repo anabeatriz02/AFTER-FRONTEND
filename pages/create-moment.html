@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+		<link rel="stylesheet" href="../css/create-moment.css" />
+		<link rel="stylesheet" href="../css/scrollbar.css" />
+		<link rel="stylesheet" href="../css/header-secondary.css" />
+		<link rel="stylesheet" href="../css/reset.css" />
+
+		<title>Criar moment</title>
+	</head>
+	<body>
+		<header class="header" id="header">
+			<script>
+				$(function () {
+					$("#header").load("../common/header-secondary.html  ");
+				});
+			</script>
+		</header>
+
+		<h1>CRIAR MOMENT</h1>
+
+		<section class="moment-area">
+			<form action="">
+				<div class="input-moment">
+					<input id="input-moment-file" type="file" accept="image/*" onchange="loadBackground(event)" />
+					<label for="input-moment-file"></label>
+					<img src="../img/background-plus.jpg" id="image-moment-preview" />
+				</div>
+
+				<div class="button-send">
+					<button id="publish">Publicar</button>
+					<button id="cancel">Cancelar</button>
+				</div>
+			</form>
+		</section>
+
+		<script src="../javascript/image-preview.js"></script>
+	</body>
+</html>

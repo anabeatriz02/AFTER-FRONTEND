@@ -1,0 +1,105 @@
+:root {
+	--gapPrimary: 2%;
+	--borderPrimary: 2px solid var(--purpleSecondary);
+	--borderSecondary: 2px solid var(--backgroundTertiary);
+}
+
+* {
+	user-select: none;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	padding: 2% 6%;
+	display: flex;
+	flex-direction: column;
+	gap: var(--gapPrimary);
+    overflow: hidden;
+}
+
+h1 {
+	text-align: center;
+	color: var(--white);
+	font-size: 1.5rem;
+	letter-spacing: 2px;
+}
+
+.moment-area {
+	width: 100%;
+	height: 100%;
+}
+
+form {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2%;
+}
+
+form .input-moment {
+	width: 350px;
+	height: 90%;
+	overflow: hidden;
+	border-radius: 10px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 2px solid var(--backgroundTertiary);
+	transition: 0.5s;
+}
+
+form .input-moment:hover {
+	border: 2px solid var(--purpleSecondary);
+}
+
+form .input-moment img {
+	height: 100%;
+	/* z-index: 1; */
+}
+
+form .input-moment input[type="file"] {
+	display: none;
+}
+
+form .input-moment label {
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	z-index: 3;
+}
+
+form #image-moment-preview {
+	position: absolute;
+	min-width: 100%;
+}
+
+form .button-send {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+
+form .button-send button {
+	width: 200px;
+	height: 75px;
+	cursor: pointer;
+	border-radius: 10px;
+	border: none;
+    outline: none;
+    color: var(--white);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+form .button-send #publish {
+	background-image: var(--purpleLinear) ;
+}
+
+form .button-send #cancel  {
+    background-color: var(--red);
+} 

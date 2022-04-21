@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+		<link rel="stylesheet" href="../css/create-event.css" />
+		<link rel="stylesheet" href="../css/scrollbar.css" />
+		<link rel="stylesheet" href="../css/header-company.css" />
+		<link rel="stylesheet" href="../css/reset.css" />
+
+		<title>Criar evento</title>
+	</head>
+	<body>
+		<header class="header" id="header">
+			<script>
+				$(function () {
+					$("#header").load("../common/header-company.html  ");
+				});
+			</script>
+		</header>
+
+		<h1>Criar evento</h1>
+
+		<section class="form-area">
+			<form action="">
+				<label>
+					Nome
+					<input id="nome" type="text" autofocus />
+				</label>
+				<label>
+					Categoria
+					<select id="category" name="category">
+						<option selected value="">Selecione uma categoria..</option>
+						<option value="">Festa</option>
+						<option value="">dsadsa</option>
+						<option value="">dasdad</option>
+						<option value="">dsada</option>
+					</select>
+				</label>
+				<label>
+					Descrição
+					<input type="text" />
+				</label>
+				<h3>Endereço</h3>
+				<div class="address-box">
+					<div class="address-one">
+						<label>
+							CEP
+							<input type="text	" />
+						</label>
+						<label>
+							Bairro
+							<input type="text" />
+						</label>
+						<label>
+							Estado
+							<select id="States" name="States">
+								<option value="" selected>Acre</option>
+								<option value="">Alagoas</option>
+								<option value="">Amapá</option>
+								<option value="">Amazonas</option>
+								<option value="">Bahia</option>
+								<option value="">Ceará</option>
+								<option value="">Distrito Federal</option>
+								<option value="">Espírito Santo</option>
+								<option value="">Goiás</option>
+								<option value="">Maranhão</option>
+								<option value="">Mato Grosso</option>
+								<option value="">Mato Grosso do Sul</option>
+								<option value="">Minas Gerais</option>
+								<option value="">Pará</option>
+								<option value="">Paraíba</option>
+								<option value="">Paraná</option>
+								<option value="">Pernambuco</option>
+								<option value="">Piauí</option>
+								<option value="">Rio de Janeiro</option>
+								<option value="">Rio Grande do Norte</option>
+								<option value="">Rio Grande do Sul</option>
+								<option value="">Rondônia</option>
+								<option value="">Roraima</option>
+								<option value="">Santa Catarina</option>
+								<option value="">São Paulo</option>
+								<option value="">Sergipe</option>
+								<option value="">Tocantins</option>
+							</select>
+						</label>
+					</div>
+					<div class="address-two">
+						<label>
+							Rua
+							<input type="text" />
+						</label>
+						<label>
+							Cidade
+							<input type="text" />
+						</label>
+					</div>
+				</div>
+				<h3>Data</h3>
+				<div class="date-box">
+					<label>
+						Dia
+						<input type="date" />
+					</label>
+					<label>
+						Horário de início
+						<input type="time" />
+					</label>
+					<label>
+						Horário de término
+						<input type="time" />
+					</label>
+				</div>
+
+				<!-- <button type="submit">Avançar</button> -->
+			</form>
+		</section>
+	</body>
+</html>
