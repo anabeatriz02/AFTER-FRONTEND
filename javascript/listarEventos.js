@@ -51,8 +51,8 @@ function mostrarEventosProprios(eventos) {
             </div>
 
             <div class="box-title">
-                <label class="upper" for="">teste</label>
-                <label for="">teste</label>
+                <label class="upper" for="">${evento.tblIntermEventoCelebridades[0].tblCelebridade.tblVerificacaoUsuario.nickname}</label>
+                <label for="">atrações principais</label>
             </div>
 
             <div class="box-like">
