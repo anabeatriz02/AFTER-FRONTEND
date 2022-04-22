@@ -4,7 +4,75 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="stylesheet" href="../css/edit-profile.css" />
+		<link rel="stylesheet" href="../css/reset.css" />
+		<link rel="stylesheet" href="../css/scrollbar.css" />
+		<link rel="stylesheet" href="../css/header-secondary.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 		<title>Editar Perfil</title>
 	</head>
-	<body></body>
+	<body>
+		<header class="header" id="header">
+			<script>
+				$(function () {
+					$("#header").load("../common/header-secondary.html  ");
+				});
+			</script>
+		</header>
+
+		<h1>Editar dados</h1>
+
+		<form>
+			<div class="photo-box">
+				<div class="cover">
+					<input id="input-background-file" type="file" accept="image/*" onchange="loadBackground(event)" />
+					<label for="input-background-file"></label>
+					<img src="../img/back-plus.jpg" id="image-background-preview" />
+				</div>
+				<div class="profile">
+					<input id="input-profile-file" type="file" accept="image/*" onchange="loadProfile(event)" />
+					<label for="input-profile-file"></label>
+					<img src="../img/back-plus.jpg" id="image-profile-preview" />
+				</div>
+			</div>
+
+			<div class="information-box">
+				<label>
+					Nome
+					<input type="text" />
+				</label>
+				<label>
+					Nome de usuário
+					<input type="text" />
+				</label>
+				<label>
+					Biografia
+					<input type="text" />
+				</label>
+				<label>
+					E-mail
+					<input type="text" />
+				</label>
+				<label>
+					Senha
+					<input type="text" />
+				</label>
+				<div class="time-cep">
+					<label>
+						Data de nascimento
+						<input type="date" />
+					</label>
+					<label>
+						CEP
+						<input type="text" />
+					</label>
+				</div>
+			</div>
+			<button>EDITAR</button>
+		</form>
+
+		<script src="../javascript/edit-profile/image-preview.js"></script>
+	</body>
 </html>

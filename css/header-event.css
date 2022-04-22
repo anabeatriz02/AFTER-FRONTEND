@@ -1,0 +1,84 @@
+:root {
+	--gapPrimary: 50px;
+}
+
+@import url(./color.css);
+
+header {
+	width: 100%;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	justify-content: space-between;
+}
+
+header a {
+	width: 50px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+header .icon-bag,
+.icon-user {
+	background-color: var(--backgroundTertiary);
+	border-radius: 10px;
+	border: 1px solid var(--backgroundTertiary);
+	transition: 0.5s;
+}
+
+header .icon-bag:hover,
+.icon-user:hover {
+	background-color: var(--backgroundPrimary);
+	border: 1px solid var(--purpleSecondary);
+}
+
+header .logo {
+	width: 45px;
+	height: 45px;
+}
+
+form {
+	height: 100%;
+	width: 60%;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	border-radius: 10px;
+	transition: 0.5s;
+}
+
+form:focus-within {
+	
+	border: 1px solid var(--purpleSecondary);
+}
+
+form input,
+button {
+	background-color: var(--backgroundTertiary);
+}
+
+form input {
+	width: 90%;
+	height: 100%;
+	border: none;
+	padding: 0px 25px;
+	color: white;
+}
+
+form button {
+	width: 10%;
+	height: 100%;
+	border: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+form button img {
+	width: 24px;
+	height: 24px;
+	
+}

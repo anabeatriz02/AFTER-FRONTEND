@@ -1,0 +1,5 @@
+:root {
+	--gapPrimary: 2%;
+	--borderPrimary: 1.5px solid var(--purpleSecondary);
+	--borderSecondary: 1.5px solid var(--backgroundTertiary);
+}

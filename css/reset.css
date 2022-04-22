@@ -10,6 +10,14 @@
 }
 
 body {
+	width: 100vw;
 	background-color: var(--backgroundPrimary);
 	padding: 3% 6%;
+	
+	/* overflow-x: hidden; */
+}
+
+input {
+	outline: none;
+
 }

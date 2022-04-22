@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+		<link rel="stylesheet" href="../css/create-ticket.css" />
+		<link rel="stylesheet" href="../css/scrollbar.css" />
+		<link rel="stylesheet" href="../css/reset.css" />
+		<link rel="stylesheet" href="../css/header-company.css" />
+		<title>Criar ingresso</title>
+	</head>
+	<body>
+		<header class="header" id="header">
+			<script>
+				$(function () {
+					$("#header").load("../common/header-company.html  ");
+				});
+			</script>
+		</header>
+
+		<h1>Criar evento</h1>
+
+		<h2>Ingresso</h2>
+
+		<form action="">
+			<label class="checkbox">
+				<input type="checkbox" />
+				<span class="checkmark"></span>
+				Criar meia-entrada para este ingresso
+			</label>
+
+			<div class="info-container">
+				<label>
+					Título
+					<input type="text" />
+				</label>
+				<label>
+					Categoria
+					<select id="category" name="category">
+						<option selected value="">Selecione uma categoria..</option>
+						<option value="">Festa</option>
+						<option value="">dsadsa</option>
+						<option value="">dasdad</option>
+						<option value="">dsada</option>
+					</select>
+				</label>
+				<label>
+					Descrição
+					<input type="text" />
+				</label>
+
+				<div class="amount">
+					<label>
+						Quantidade
+						<input type="text" />
+					</label>
+					<label>
+						Preço
+						<input type="text" />
+					</label>
+				</div>
+
+				<h3>Data</h3>
+
+				<div class="date">
+					<label>
+						Dia
+						<input type="date" />
+					</label>
+					<label>
+						Horário de início
+						<input type="time" />
+					</label>
+					<label>
+						Horário de término
+						<input type="time" />
+					</label>
+				</div>
+
+				<h3>Quantidade permitida por compra</h3>
+				<div class="amount-ticket">
+					<label>
+						Mínima
+						<input type="text" />
+					</label>
+					<label>
+						Máxima
+						<input type="text" />
+					</label>
+				</div>
+			</div>
+
+			<div class="btn">
+				<button class="back">Voltar</button>
+				<button class="next">Avançar</button>
+			</div>
+		</form>
+	</body>
+</html>

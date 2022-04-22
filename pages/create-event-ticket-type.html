@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+		<link rel="stylesheet" href="../css/create-event-ticket-type.css" />
+		<link rel="stylesheet" href="../css/scrollbar.css" />
+		<link rel="stylesheet" href="../css/reset.css" />
+		<link rel="stylesheet" href="../css/header-company.css" />
+
+		<title>Tipo de ingresso</title>
+	</head>
+	<body>
+		<header class="header" id="header">
+			<script>
+				$(function () {
+					$("#header").load("../common/header-company.html  ");
+				});
+			</script>
+		</header>
+
+		<h1>Criar evento</h1>
+
+		<p>Qual tipo de ingresso você deseja criar?</p>
+
+		<form action="">
+			<div class="ticket-type">
+				<button>+ Ingresso pago</button>
+				<button>+ Ingresso gratuito</button>
+			</div>
+
+			<div class="back-next">
+				<button class="back">Voltar</button>
+				<button class="next">Avançar</button>
+			</div>
+		</form>
+	</body>
+</html>

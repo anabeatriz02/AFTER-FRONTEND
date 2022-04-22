@@ -1,0 +1,164 @@
+body {
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 50px;
+	overflow-x: hidden;
+}
+
+h1 {
+	color: var(--white);
+	user-select: none;
+}
+
+form {
+	width: 100%;
+	padding: 0 6%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 25px;
+}
+
+form .photo-box {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+form button {
+    width: 25%;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 1px;
+    cursor: pointer;
+    background-image: var(--purpleLinear);
+}
+
+/* ------------------------------------------------- */
+
+.information-box {
+	width: 100%;
+	padding: 0 6%;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.information-box label {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	color: var(--white);
+	letter-spacing: 1px;
+	font-weight: 500;
+}
+
+.information-box label:focus-within {
+	color: var(--purpleSecondary);
+}
+
+.information-box input {
+	display: flex;
+	height: 50px;
+	border-radius: 10px;
+	flex-direction: column;
+	border: 1.5px solid var(--backgroundTertiary);
+	background-color: var(--backgroundSecondary);
+	padding: 0px 25px;
+	transition: 0.5s;
+	color: var(--white);
+}
+
+.information-box input:focus {
+	border: 1.5px solid var(--purpleSecondary);
+}
+
+.information-box .time-cep {
+	display: flex;
+	gap: 30px;
+}
+
+.information-box .time-cep label:last-child{
+    flex-grow: 1;
+}
+
+/* ------------------------------------------------- */
+
+.cover {
+	width: 100%;
+	display: block;
+	position: relative;
+	height: 300px;
+	border-radius: 10px;
+	overflow: hidden;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: solid 7.5px var(--backgroundSecondary);
+}
+
+.cover img {
+	width: 100%;
+	z-index: 1;
+}
+
+.cover input[type="file"] {
+	display: none;
+}
+
+.cover label {
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	z-index: 2;
+}
+
+#image-background-preview {
+	position: absolute;
+	width: 100%;
+}
+
+.profile {
+	display: block;
+	position: relative;
+	border: solid 7.5px var(--backgroundSecondary);
+	border-radius: 50%;
+	width: 200px;
+	height: 200px;
+	margin: -100px 0 10px;
+	z-index: 1;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.profile img {
+	width: 100%;
+	z-index: 1;
+}
+
+.profile input[type="file"] {
+	display: none;
+}
+
+.profile label {
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	z-index: 2;
+}
+
+#image-profile-preview {
+	position: absolute;
+	height: 100%;
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -8,10 +8,10 @@
 
 		<link rel="stylesheet" href="../css/create-event.css" />
 		<link rel="stylesheet" href="../css/scrollbar.css" />
-		<link rel="stylesheet" href="../css/header-company.css" />
 		<link rel="stylesheet" href="../css/reset.css" />
+		<link rel="stylesheet" href="../css/header-company.css" />
 
-		<title>Criar evento</title>
+		<title>Criar Evento</title>
 	</head>
 	<body>
 		<header class="header" id="header">
@@ -24,99 +24,91 @@
 
 		<h1>Criar evento</h1>
 
-		<section class="form-area">
-			<form action="">
+		<form action="">
+			<label>
+				Nome
+				<input type="text" value="" />
+			</label>
+
+			<label>
+				Categoria
+				<select id="category" name="category">
+					<option selected value="">Selecione uma categoria..</option>
+					<option value="">Festa</option>
+					<option value="">dsadsa</option>
+					<option value="">dasdad</option>
+					<option value="">dsada</option>
+				</select>
+			</label>
+
+			<label>
+				Descrição
+				<input type="text" value="" />
+			</label>
+			<h3>Endereço</h3>
+			<div class="address-box-one">
 				<label>
-					Nome
-					<input id="nome" type="text" autofocus />
+					CEP
+					<input type="text" value="" />
 				</label>
 				<label>
-					Categoria
-					<select id="category" name="category">
-						<option selected value="">Selecione uma categoria..</option>
-						<option value="">Festa</option>
-						<option value="">dsadsa</option>
-						<option value="">dasdad</option>
-						<option value="">dsada</option>
-					</select>
+					Bairro
+					<input type="text" value="" />
 				</label>
 				<label>
-					Descrição
+					Estado
+					<input type="text" value="" />
+				</label>
+			</div>
+			<div class="address-box-two">
+				<label>
+					Rua
 					<input type="text" />
 				</label>
-				<h3>Endereço</h3>
-				<div class="address-box">
-					<div class="address-one">
-						<label>
-							CEP
-							<input type="text	" />
-						</label>
-						<label>
-							Bairro
-							<input type="text" />
-						</label>
-						<label>
-							Estado
-							<select id="States" name="States">
-								<option value="" selected>Acre</option>
-								<option value="">Alagoas</option>
-								<option value="">Amapá</option>
-								<option value="">Amazonas</option>
-								<option value="">Bahia</option>
-								<option value="">Ceará</option>
-								<option value="">Distrito Federal</option>
-								<option value="">Espírito Santo</option>
-								<option value="">Goiás</option>
-								<option value="">Maranhão</option>
-								<option value="">Mato Grosso</option>
-								<option value="">Mato Grosso do Sul</option>
-								<option value="">Minas Gerais</option>
-								<option value="">Pará</option>
-								<option value="">Paraíba</option>
-								<option value="">Paraná</option>
-								<option value="">Pernambuco</option>
-								<option value="">Piauí</option>
-								<option value="">Rio de Janeiro</option>
-								<option value="">Rio Grande do Norte</option>
-								<option value="">Rio Grande do Sul</option>
-								<option value="">Rondônia</option>
-								<option value="">Roraima</option>
-								<option value="">Santa Catarina</option>
-								<option value="">São Paulo</option>
-								<option value="">Sergipe</option>
-								<option value="">Tocantins</option>
-							</select>
-						</label>
-					</div>
-					<div class="address-two">
-						<label>
-							Rua
-							<input type="text" />
-						</label>
-						<label>
-							Cidade
-							<input type="text" />
-						</label>
-					</div>
-				</div>
-				<h3>Data</h3>
-				<div class="date-box">
-					<label>
-						Dia
-						<input type="date" />
-					</label>
-					<label>
-						Horário de início
-						<input type="time" />
-					</label>
-					<label>
-						Horário de término
-						<input type="time" />
-					</label>
-				</div>
+				<label>
+					Cidade
+					<input type="text" />
+				</label>
+			</div>
+			<h3>Data</h3>
+			<div class="date-box">
+				<label>
+					dia
+					<input type="text" />
+				</label>
+				<label>
+					Horário de início
+					<input type="text" />
+				</label>
+				<label>
+					Horário de término
+					<input type="text" />
+				</label>
+			</div>
 
-				<!-- <button type="submit">Avançar</button> -->
-			</form>
-		</section>
+			<label>
+				Foto de capa
+				<div class="cover">
+					<input id="input-photo-file" type="file" accept="image/*" onchange="loadBackground(event)" />
+					<label for="input-photo-file" class="photo-label"></label>
+					<img src="../img/back-plus.jpg" id="image-photo-preview" />
+				</div>
+			</label>
+
+			<label>
+				Fotos complementares
+				<div class="cover-complement">
+					<input id="input-photo-file" type="file" accept="image/*" onchange="loadComplement(event)" />
+					<label for="input-photo-file" class="photo-label"></label>
+					<img src="../img/back-plus.jpg" id="image-photo-complement-preview" />
+				</div>
+			</label>
+
+			<div class="btn">
+				<button>Avançar</button>
+			</div>
+		</form>
+
+		<script src="../javascript/create-event/create-event.js"></script>
 	</body>
 </html>

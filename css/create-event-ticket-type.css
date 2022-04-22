@@ -1,0 +1,88 @@
+body {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 50px;
+	overflow-x: hidden;
+}
+
+h1,
+p {
+	color: var(--white);
+	user-select: none;
+	letter-spacing: 1px;
+}
+
+button {
+	outline: none;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 100px;
+	width: 100%;
+	height: 100%;
+	/* height: 100%; */
+}
+
+.ticket-type {
+	display: flex;
+	gap: 50px;
+}
+
+.ticket-type button {
+	font-size: 1.1rem;
+	font-weight: 600;
+	letter-spacing: 1px;
+	color: var(--white);
+	background-color: var(--backgroundTertiary);
+	border: 2px solid var(--purpleSecondary);
+	cursor: pointer;
+	border-radius: 10px;
+	width: 250px;
+	height: 100px;
+	transition: linear 0.5s;
+}
+
+.ticket-type button:hover {
+	background-color: var(--purpleSecondary);
+}
+
+.back-next {
+	display: flex;
+	align-items: flex-end;
+	gap: 50px;
+}
+
+.back-next button {
+	width: 250px;
+	height: 50px;
+	cursor: pointer;
+	border-radius: 10px;
+	background-color: var(--backgroundPrimary);
+	color: var(--white);
+	letter-spacing: 1px;
+}
+
+.back-next .back {
+	border: 2px solid var(--red);
+	transition: linear 0.5s;
+}
+
+.back-next .back:hover {
+	background-color: var(--red);
+}
+
+.back-next .next {
+	border: 2px solid var(--purpleSecondary);
+    transition: linear 0.5s;
+}
+
+.back-next .next:hover {
+    background-color: var(--purpleSecondary);
+}

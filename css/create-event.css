@@ -1,124 +1,187 @@
-:root {
-	--gapPrimary: 2%;
-	--borderPrimary: 1.5px solid var(--purpleSecondary);
-	--borderSecondary: 1.5px solid var(--backgroundTertiary);
-}
-
-* {
-	user-select: none;
-	outline: none;
-	color: var(--white);
-}
-
 body {
 	width: 100vw;
-	padding: 2% 6%;
 	display: flex;
 	flex-direction: column;
-	gap: var(--gapPrimary);
+	justify-content: center;
 	align-items: center;
+	gap: 50px;
+	overflow-x: hidden;
 }
 
-.form-area {
+h1,
+h3 {
+	color: var(--white);
+	user-select: none;
+	letter-spacing: 1px;
+}
+
+form {
 	width: 100%;
+	padding: 0 12%;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	gap: var(--gapPrimary);
-	padding: 0 6%;
+	/* align-items: center; */
+	gap: 25px;
 }
 
-.form-area h1 {
-	font-size: 2rem;
-	letter-spacing: 2px;
-}
-
-.form-area form {
+form label {
 	width: 100%;
-	display: flex;
-	flex-direction: column;
-	gap: 30px;
-}
-
-.form-area .address-box {
-	display: flex;
-	flex-direction: column;
-	gap: 30px;
-}
-
-.form-area form .address-one {
-	display: grid;
-	gap: var(--gapPrimary);
-	grid-template-columns: repeat(3, 1fr);
-}
-
-.form-area form .address-two {
-	display: grid;
-	gap: var(--gapPrimary);
-	grid-template-columns: repeat(2, 1fr);
-}
-
-.form-area form .date-box{
-	display: grid;
-	gap: var(--gapPrimary);
-	grid-template-columns: repeat(3, 1fr);
-}
-
-.form-area form label {
 	display: flex;
 	flex-direction: column;
 	gap: 15px;
-	transition: 0.5s;
-	font-weight: 400;
-	font-size: .90rem;
+	color: var(--white);
 	letter-spacing: 1px;
+	font-weight: 500;
+	font-size: 0.9rem;
 }
 
-.form-area form label:focus-within {
+form label:focus-within {
 	color: var(--purpleSecondary);
 }
 
-h3 {
-	font-size: 1.10rem;
-	letter-spacing: 1px;
-}
-
-input,
+form input,
 select {
-	width: 100%;
-	height: 55px;
-	/* max-height: 50px; */
-	border: var(--borderSecondary);
-	border-radius: 5px;
-	padding: 0 15px;
-	background-color: var(--backgroundTertiary);
+	display: flex;
+	height: 50px;
+	border-radius: 10px;
+	flex-direction: column;
+	border: 1.5px solid var(--backgroundTertiary);
+	background-color: var(--backgroundSecondary);
+	padding: 0px 25px;
+	transition: 0.5s;
+	color: var(--white);
 }
 
-input:focus,
+/* option {
+	height: 1100px;
+} */
+
+form input:focus,
 select:focus {
-	border: var(--borderPrimary);
-	color: var(--purpleSecondary);
+	border: 1.5px solid var(--purpleSecondary);
 }
 
 select {
 	cursor: pointer;
+
 	appearance: none;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 }
 
+form .address-box-one {
+	display: flex;
+	gap: 25px;
+}
 
-button {
-	height: 55px;
-	width: 30%;
-	cursor: pointer;
+form .address-box-two {
+	display: flex;
+	gap: 25px;
+}
+
+form .date-box {
+	display: flex;
+	gap: 25px;
+}
+
+form button {
+    width: 25%;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: .5s;
+    background-color: var(--backgroundPrimary);
+    border: 2px solid var(--purpleSecondary);
+}
+
+form button:hover {
+    background-color: var(--purpleSecondary);
+
+}
+
+
+form .btn {
+	width: 100%;
+	display: flex;
+	align-items: cente;
+	justify-content: center;
+}
+
+/* ------------------------------------- */
+
+.cover {
+	width: 100%;
+	display: block;
+	position: relative;
+	height: 300px;
+	border-radius: 10px;
+	overflow: hidden;
+	z-index: 1;
+	display: flex;
 	justify-content: center;
 	align-items: center;
-	display: flex;
-	font-size: 1rem;
-	border-radius: 10px;
-	background-color: transparent;
+	border: solid 7.5px var(--backgroundSecondary);
+}
 
-	color: var(--purpleSecondary);
-	border: var(--borderPrimary);
+.cover img {
+	width: 100%;
+	z-index: 1;
+}
+
+.cover input[type="file"] {
+	display: none;
+}
+
+.cover .photo-label {
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	z-index: 2;
+}
+
+#image-photo-preview,
+#image-photo-complement-preview {
+	position: absolute;
+	width: 100%;
+}
+
+/* --------------------------- */
+
+.cover-complement {
+	width: 100%;
+	display: block;
+	position: relative;
+	height: 300px;
+	border-radius: 10px;
+	overflow: hidden;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: solid 7.5px var(--backgroundSecondary);
+}
+
+.cover-complement img {
+	width: 100%;
+	z-index: 1;
+}
+
+.cover-complement input[type="file"] {
+	display: none;
+}
+
+.cover-complement .photo-label {
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	z-index: 2;
+}
+
+#image-photo-complement-preview {
+	position: absolute;
+	width: 100%;
 }
