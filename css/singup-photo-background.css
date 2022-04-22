@@ -1,0 +1,119 @@
+body {
+	width: 100vw;
+	/* height: 100vh; */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 50px;
+	overflow-x: hidden;
+}
+
+form {
+	width: 100%;
+	height: 100%;
+	padding: 0 12%;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	gap: 50px;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+form .photo-container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+
+form label {
+	color: var(--white);
+}
+
+form .photo-box {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+form .btn {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+	justify-content: center;
+	align-items: center;
+}
+
+form .btn button {
+	width: 250px;
+	height: 50px;
+	border-radius: 10px;
+	color: var(--white);
+	letter-spacing: 1px;
+	cursor: pointer;
+	border: none;
+	font-weight: 700;
+}
+
+form .btn .next {
+	background-image: var(--purpleLinear);
+}
+form .btn .skip {
+	background-color: transparent;
+	color: var(--purpleSecondary);
+}
+
+/* ---------------------------------- */
+
+.cover {
+	width: 100%;
+	height: 15em;
+	display: block;
+	position: relative;
+	border-radius: 10px;
+	overflow: hidden;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: solid 7.5px var(--backgroundSecondary);
+}
+
+.cover img {
+	width: 100%;
+	z-index: 1;
+}
+
+.cover input[type="file"] {
+	display: none;
+}
+
+.cover label {
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	z-index: 2;
+}
+
+#image-background-preview {
+	position: absolute;
+	width: 100%;
+}
+
+.profile {
+	display: block;
+	position: relative;
+	border: solid 7.5px var(--backgroundSecondary);
+	border-radius: 50%;
+	width: 200px;
+	height: 200px;
+	margin: -100px 0 10px;
+	z-index: 1;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

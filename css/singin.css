@@ -1,169 +1,149 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500;700&display=swap');
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    user-select: none;
-    outline: none;
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 0.75px;
-
-}
-
-:root {
-
-    --backgroundPrimary: #1F2427;
-    --backgroundSecondary: #262B2E;
-    --backgroundTertiary: #32363A;
-
-    --purplePrimary: #6123F6;
-    --purpleSecondary: #7F37FF;
-    --purpleTertiary: #CDAFFC;
-
-    --red: #F04242;
-    --orange: #F99A42;
-    --green: #00B890;
-
-    --white: #FFFFFF;
-
-    --purpleLinear: linear-gradient(90deg, rgba(127, 55, 255, 1) 0%, rgba(156, 108, 249, 1) 100%);
-    --darkLinear: linear-gradient(90deg, rgba(38, 43, 46, 1) 0%, rgba(50, 54, 58, 1) 100%);
-
-}
-
 body {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    position: relative;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: row;
+	padding: 0;
+	position: relative;
 }
 
-body section {
-    width: 50%;
-    height: 100%;
-    position: relative;
+section {
+	width: 50%;
+	height: 100%;
+	position: relative;
 }
 
-body .logo-container,
+h1 {
+	color: var(--white);
+	user-select: none;
+	letter-spacing: 1px;
+}
+
+.logo-container,
 .form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-body .logo-container {
-    background-color: var(--purpleSecondary);
-    display: flex;
-    justify-content: center;
+.logo-container {
+	background-color: var(--purpleSecondary);
+	display: flex;
+	justify-content: center;
 }
 
-body .logo-container button {
-    width: 3em;
-    height: 3em;
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-top: 3em;
-    margin-left: 3em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: solid .3em var(--backgroundPrimary);
-    border-radius: .75em;
-    background-color: var(--backgroundPrimary);
-    cursor: pointer;
-    transition: 0.15s linear;
+.logo-container img {
+	width: 40%;
+	height: 40%;
 }
 
-body .logo-container button:hover {
-    background-color: var(--purpleSecondary);
-    border: solid .3 currentColor;
+.logo-container button {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 3% 6%;
+	cursor: pointer;
+	width: 45px;
+	height: 45px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	border: 1.5px solid var(--backgroundPrimary);
+	background-color: var(--backgroundPrimary);
+	transition: 0.15s linear;
 }
 
-body .logo-container button:hover path {
-    stroke: var(--backgroundPrimary);
+.logo-container button:hover {
+	background-color: transparent;
+	border: 1.5px solid var(--backgroundPrimary);
 }
 
-body .logo-container img {
-    width: 40%;
+.logo-container button:hover path {
+	stroke: var(--backgroundPrimary);
 }
 
-body .form-container {
-    background-color: var(--backgroundPrimary);
+.logo-container button img {
+	width: 24px;
+	height: 24px;
 }
 
-body .form-container div {
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
+.form-container {
+	flex-direction: column;
+	padding: 3% 6%;
+	gap: 50px;
 }
 
-body .form-container div h1 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 1em;
-    color: var(--white);
+.form-container form {
+	width: 100%;
+	padding: 0 6%;
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
 }
 
-body .form-container div p {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
-    transition: 0.15s linear;
-    color: var(--white);
+.form-container label {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	color: var(--white);
+	letter-spacing: 1px;
+	font-weight: 500;
+	font-size: 0.9rem;
 }
 
-body .form-container div p:focus-within {
-    color: var(--purpleSecondary);
+.form-container label:focus-within {
+	color: var(--purpleSecondary);
 }
 
-body .form-container div p input {
-    width: 100%;
-    height: 5vh;
-    border-radius: 10px;
-    padding: 10px;
-    border: none;
-    background-color: var(--backgroundTertiary);
+.form-container input {
+	display: flex;
+	height: 50px;
+	border-radius: 10px;
+	flex-direction: column;
+	border: 1.5px solid var(--backgroundTertiary);
+	background-color: var(--backgroundSecondary);
+	padding: 0px 25px;
+	transition: 0.5s;
+	color: var(--white);
 }
 
-body .form-container div p input:focus {
-    outline: none;
-    color: var(--purpleSecondary);
-    border-color: var(--purpleSecondary);
-    border: solid 3px;
+.form-container input:focus {
+	border: 1.5px solid var(--purpleSecondary);
 }
 
-body .form-container div p a {
-    color: var(--purpleSecondary);
-    text-decoration: none;
-    font-size: 0.75rem;
+.form-container a {
+	text-decoration: none;
+	color: var(--purpleSecondary);
+	font-size: 0.7rem;
 }
 
-body .form-container div button {
-    width: 100%;
-    height: 5vh;
-    border-radius: 10px;
-    border: solid 3px var(--purpleSecondary);
-    background-color: transparent;
-    font-size: 1.25rem;
-    color: var(--purpleSecondary);
-    cursor: pointer;
-    transition: 0.20s linear;
+.form-container button {
+	height: 50px;
+	border-radius: 10px;
+	border: 1.5px solid var(--purpleSecondary);
+	background-color: transparent;
+	transition: 0.5s;
+	color: var(--white);
+	cursor: pointer;
+	letter-spacing: 1px;
+	font-weight: 700;
 }
 
-body .form-container div button:hover {
-    background-color: var(--purpleSecondary);
-    color: var(--backgroundPrimary);
+.form-container button:hover {
+	background-color: var(--purpleSecondary);
 }
 
-body .form-container div p:last-child {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    font-size: 0.75rem;
-    gap: 0.25vw;
+.form-container .register {
+	display: flex;
+	flex-direction: row;
+	font-size: 0.7rem;
+	gap: 5px;
+	justify-content: center;
+    transition: .5s;
+}
+
+.form-container .register:focus-within {
+	color: var(--white);
 }
