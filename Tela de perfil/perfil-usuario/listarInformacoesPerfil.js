@@ -1,7 +1,7 @@
-async function getContent(){
+async function getContent() {
     try {
 
-        const response = await fetch('http://localhost:4000/perfil/acharPerfil/1')
+        const response = await fetch('http://localhost:4000/perfil/acharPerfil/2')
 
         console.log(response)
 
@@ -18,12 +18,12 @@ async function getContent(){
         console.error(error)
 
     }
-   
+
 }
 
 getContent()
 
-function mostrarNickname(perfis){
+function mostrarNickname(perfis) {
 
     output = `${perfis.nickname}`
 
@@ -31,8 +31,18 @@ function mostrarNickname(perfis){
 
 }
 
-function mostrarBiografia(perfis){
-    output = `${perfis.biografia}`
+function mostrarBiografia(perfis) {
+
+    if (perfis.biografia != null) {
+
+        output = `${perfis.biografia}`
+
+    } else {
+
+        output = "Olá! Estou usando o After!"
+
+    }
 
     document.querySelector('#biografia').innerHTML = output
+    
 }
