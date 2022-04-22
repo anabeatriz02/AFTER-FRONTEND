@@ -1,7 +1,7 @@
 async function getContent(){
     try {
 
-        const response = await fetch('http://localhost:4000/perfil/acharPerfil/7')
+        const response = await fetch('http://localhost:4000/perfil/acharPerfil/1')
 
         console.log(response)
 
@@ -11,7 +11,6 @@ async function getContent(){
 
         mostrarNickname(data)
         mostrarBiografia(data)
-        // document.getElementById('perfil').innerHTML = data
 
     } catch (error) {
 
@@ -32,7 +31,17 @@ function mostrarNickname(empresa){
 }
 
 function mostrarBiografia(empresa){
-    output = `${empresa.email}`
+
+    if (empresa.biografia != null) {
+
+        output = `${empresa.biografia}`
+
+    } else {
+
+        output = "Olá! Estou usando o After!"
+
+    }
 
     document.querySelector('#biografia').innerHTML = output
+    
 }
