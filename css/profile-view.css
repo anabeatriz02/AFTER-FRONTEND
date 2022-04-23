@@ -70,7 +70,7 @@ body {
 	gap: 10px;
 }
 
-.information-box h1 img {
+.information-box h1 img, #verificado {
 	width: 15px;
 	height: 15px;
 	align-items: flex-start;
