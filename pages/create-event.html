@@ -27,62 +27,60 @@
 		<form action="">
 			<label>
 				Nome
-				<input type="text" value="" />
+				<input type="text" value="" id="titulo" />
 			</label>
 
 			<label>
 				Categoria
 				<select id="category" name="category">
 					<option selected value="">Selecione uma categoria..</option>
-					<option value="">Festa</option>
-					<option value="">dsadsa</option>
-					<option value="">dasdad</option>
-					<option value="">dsada</option>
+					<optgroup id="categoryOption">
+					</optgroup>
 				</select>
 			</label>
 
 			<label>
 				Descrição
-				<input type="text" value="" />
+				<input type="text" value="" id="descricao"/>
 			</label>
 			<h3>Endereço</h3>
 			<div class="address-box-one">
 				<label>
 					CEP
-					<input type="text" value="" />
+					<input type="text" value="" id="cep"/>
 				</label>
 				<label>
 					Bairro
-					<input type="text" value="" />
+					<input type="text" value="" id="bairro"/>
 				</label>
 				<label>
 					Estado
-					<input type="text" value="" />
+					<input type="text" value="" id="estado"/>
 				</label>
 			</div>
 			<div class="address-box-two">
 				<label>
-					Rua
-					<input type="text" />
+					Logradouro
+					<input type="text" id="logradouro"/>
 				</label>
 				<label>
 					Cidade
-					<input type="text" />
+					<input type="text" id="cidade"/>
 				</label>
 			</div>
 			<h3>Data</h3>
 			<div class="date-box">
 				<label>
 					dia
-					<input type="text" />
+					<input type="text" id="dataInicio"/>
 				</label>
 				<label>
 					Horário de início
-					<input type="text" />
+					<input type="text" id="horaInicio"/>
 				</label>
 				<label>
 					Horário de término
-					<input type="text" />
+					<input type="text" id="horaFim"/>
 				</label>
 			</div>
 
@@ -104,11 +102,14 @@
 				</div>
 			</label>
 
-			<div class="btn">
-				<button>Avançar</button>
-			</div>
+			
 		</form>
 
+		<div class="btn">
+			<button id="salvar">Avançar</button>
+		</div>
+
 		<script src="../javascript/create-event/create-event.js"></script>
+		<script src="../javascript/criarEvento.js"></script>
 	</body>
 </html>
