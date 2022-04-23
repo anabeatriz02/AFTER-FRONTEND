@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+		<link rel="stylesheet" href="../css/reset.css" />
+		<link rel="stylesheet" href="../css/singup-photo-profile.css" />
+		<link rel="stylesheet" href="../css/header-logo.css" />
+		<title>Escolha uma foto</title>
+	</head>
+	<body>
+		<header class="header" id="header">
+			<script>
+				$(function () {
+					$("#header").load("../common/header-logo.html  ");
+				});
+			</script>
+		</header>
+
+		<form action="">
+			<div class="add-photo">
+				<div class="cover">
+					<input id="input-background-file" type="file" accept="image/*" onchange="loadBackground(event)" />
+					<label for="input-background-file"></label>
+					<img src="../img/background-camera.jpg" id="image-background-preview" />
+				</div>
+
+				<label for="">Selecione uma foto para o seu perfil</label>
+			</div>
+
+			<div class="btn">
+				<button class="next">Avançar</button>
+				<button class="skip">Pular etapa</button>
+			</div>
+		</form>
+	</body>
+</html>
