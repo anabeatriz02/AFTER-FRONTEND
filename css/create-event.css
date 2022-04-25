@@ -80,6 +80,11 @@ form .address-box-two {
 	gap: 25px;
 }
 
+form .address-box-two input {
+	display: flex;
+	width: 100%;
+}
+
 form .date-box  {
 	display: flex;
 	width: 100%;
@@ -89,6 +94,11 @@ form .date-box  {
 form .date-box input {
 	display: flex;
 	width: 100%;
+}
+
+form .account-age {
+	display: flex;
+	gap: 25px;
 }
 
 button {

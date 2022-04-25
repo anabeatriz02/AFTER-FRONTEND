@@ -24,7 +24,7 @@
 
 		<h1>Criar evento</h1>
 
-		<form action="">
+		<form action="get	">
 			<label>
 				Título
 				<input type="text" value="" id="titulo" />
@@ -75,7 +75,7 @@
 			<div class="address-box-one">
 				<label>
 					CEP
-					<input type="text" value="" id="cep" />
+					<input type="text" value="" id="cep" value="" size="10" maxlength="9" onblur="pesquisacep(this.value);" />
 				</label>
 				<label>
 					Bairro
@@ -89,7 +89,7 @@
 			<div class="address-box-two">
 				<label>
 					Logradouro
-					<input type="text" id="logradouro" />
+					<input type="text" id="logradouro" id="uf" name="rua" id="rua" />
 				</label>
 				<label>
 					Cidade
@@ -147,10 +147,18 @@
 				<input type="text" id="" />
 			</label>
 
-			<label>
-				Conta
-				<input type="text" id="" />
-			</label>
+			<div class="account-age">
+				<label>
+					Conta
+					<input type="text" id="" />
+				</label>
+				<label>
+					Faixa etária
+					<select id="" name="">
+						<option selected value="">Selecione uma categoria..</option>
+					</select>
+				</label>
+			</div>
 		</form>
 
 		<div class="term">
@@ -167,7 +175,7 @@
 		</div>
 
 		<script src="../javascript/create-event/create-event.js"></script>
-
+		<script src="../javascript/create-event/search-cep.js"></script>
 		<script src="../javascript/criarEvento.js"></script>
 	</body>
 </html>
