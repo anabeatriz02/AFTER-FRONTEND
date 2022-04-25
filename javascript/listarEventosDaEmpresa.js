@@ -24,6 +24,15 @@ getContent()
 function mostrarEventosProprios(eventos) {
     let output = ''
     for (let evento of eventos) {
+
+        if(evento.tblIntermEventoCelebridades[0] == undefined){ 
+            celebridade = `<label class="upper" for=""></label>`
+        } else {
+            celebridade = `
+            <label class="upper" for="">${evento.tblIntermEventoCelebridades[0].tblCelebridade.tblVerificacaoUsuario.nickname}</label>
+            <label for="">atrações principais</label>`
+        }
+
         output += `
        
         <div class="event-box">
@@ -51,8 +60,7 @@ function mostrarEventosProprios(eventos) {
             </div>
 
             <div class="box-title">
-                <label class="upper" for="">${evento.tblIntermEventoCelebridades[0].tblCelebridade.tblVerificacaoUsuario.nickname}</label>
-                <label for="">atrações principais</label>
+                ${celebridade}
             </div>
 
             <div class="box-like">
