@@ -1,7 +1,7 @@
 async function getContent() {
     try {
 
-        const response = await fetch('http://localhost:4000/evento/listarEvento')
+        const response = await fetch('http://localhost:4000/evento/acharEventoPorId/2')
 
         console.log(response)
 
@@ -9,7 +9,7 @@ async function getContent() {
 
         console.log(data)
 
-        mostrarEventos(data)
+        mostrarEventosProprios(data)
 
     } catch (error) {
 
@@ -21,7 +21,7 @@ async function getContent() {
 
 getContent()
 
-function mostrarEventos(eventos) {
+function mostrarEventosProprios(eventos) {
     let output = ''
     for (let evento of eventos) {
 
@@ -73,5 +73,5 @@ function mostrarEventos(eventos) {
     `
     }
 
-    document.querySelector('#eventosFeed').innerHTML = output
+    document.querySelector('.event-area').innerHTML = output
 }
