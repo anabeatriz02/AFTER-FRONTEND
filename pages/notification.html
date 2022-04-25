@@ -24,21 +24,29 @@
 
 		<h1>Notificações</h1>
 
-		<section class="switch">
-			<div class="new" onclick="tab1();">Novas</div>
-			<div class="old" onclick="tab2();">Antigas</div>
+		<ul class="tabs">
+			<li data-tab-target="#new" class="active tab">Novas</li>
+			<li data-tab-target="#old" class="tab">Antigas</li>
+		</ul>
 
-		</section>
-
-		<!-- <section class="form" id="form">
-			<div class="page-new">
+		<section class="tab-content">
+			<div id="new" data-tab-content class="active">
 				<div class="new-box">
-					<img src="../img/icon-heart-fill.svg" alt="">
-					<p>Outras 23 pessoas deram like em um evento que você tem interesse</p>
+					<div class="image-box">
+						<img src="../img/icon-heart-fill-white.svg" alt="" />
+					</div>
+					<label>Outras 23 pessoas deram like em um evento que você tem interesse</label>
 				</div>
 			</div>
-			<div class="page-old">OLD</div>
-		</section> -->
+			<div id="old" data-tab-content>
+				<div class="old-box">
+					<div class="image-box">
+						<img src="../img/icon-calendar-fill-white.svg" alt="" />
+					</div>
+					<label>Faltam 5 dias para Festa Laser!</label>
+				</div>
+			</div>
+		</section>
 
 		<script src="../javascript/notification/toggle-notification.js"></script>
 	</body>

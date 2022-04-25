@@ -13,56 +13,119 @@
 
 body {
 	width: 100vw;
-	/* min-height: 100vh; */
+	height: 100vh;
+	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	gap: var(--gapPrimary);
 	text-align: left;
 }
 
-.switch {
-	display: flex;
-	gap: 25px;
+[data-tab-content] {
+	display: none;
 }
 
-.switch .new {
+.active[data-tab-content] {
+	display: block;
+}
+
+.tabs {
+	display: flex;
+	gap: 25px;
+	list-style: none;
+	letter-spacing: 1px;
+	font-size: 1.15rem;
+}
+
+.tab {
+	cursor: pointer;
+}
+
+.tab.active {
 	cursor: pointer;
 	color: var(--purpleSecondary);
-	padding-bottom: 10px;
+	padding-bottom: 15px;
 	border-bottom: 3px solid var(--purpleSecondary);
 }
 
-.switch .old {
+.tab:hover {
 	cursor: pointer;
-	padding-bottom: 10px;
+	color: var(--purpleSecondary);
+	padding-bottom: 15px;
 }
 
-.form {
-	display: flex;
-	flex-direction: row;
-	height: 500px;
-	overflow: hidden;
-}
-
-.page-new {
-	background-color: lightcoral;
+.tab-content {
 	width: 100%;
-	min-width: 100%;
-	max-width: 100%;
+	height: 100%;
+	/* background-color: tomato; */
 }
 
-.page-new .new-box {
-	height: 150px ;
+
+.new-box {
+	width: 100%;
+	height: 125px;
+	border-radius: 10px;
+	/* background-color: lightblue; */
+	border: 1.5px solid var(--purpleSecondary);
+	background-color: var(--backgroundTertiary);
 	display: flex;
 	align-items: center;
-	padding: 50px 75px;
-	background-color: lightgreen;
+	padding: 0 4%;
+	gap: 25px;
 }
 
+.new-box .image-box {
+	width: 50px;
+	height: 50px;
+	background-color: var(--purpleSecondary);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
+}
 
-.page-old {
-	background-color: lightblue;
+.new-box .image-box img {
+	width: 28px;
+	height: 28px;
+	border-radius: 10px;
+}
+
+.new-box label {
+	font-size: 1.10rem;
+	font-weight: 200;
+}
+
+.old-box {
 	width: 100%;
-	min-width: 100%;
-	max-width: 100%;
+	height: 125px;
+	border-radius: 10px;
+	/* background-color: lightblue; */
+	border: 1.5px solid var(--purpleSecondary);
+	background-color: var(--backgroundTertiary);
+	display: flex;
+	align-items: center;
+	padding: 0 4%;
+	gap: 25px;
 }
+
+.old-box .image-box {
+	width: 50px;
+	height: 50px;
+	background-color: var(--purpleSecondary);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
+}
+
+.old-box .image-box img {
+	width: 28px;
+	height: 28px;
+	border-radius: 10px;
+}
+
+.old-box label {
+	font-size: 1.10rem;
+	font-weight: 200;
+}
+
