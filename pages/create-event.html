@@ -26,7 +26,7 @@
 
 		<form action="">
 			<label>
-				Nome
+				Título
 				<input type="text" value="" id="titulo" />
 			</label>
 
@@ -39,53 +39,84 @@
 					<option selected value="">Selecione uma categoria..</option>
 					<option selected value="">Selecione uma categoria..</option>
 					<option selected value="">Selecione uma categoria..</option>
-					<optgroup id="categoryOption">
-					</optgroup>
+					<optgroup id="categoryOption"></optgroup>
+				</select>
+			</label>
+
+			<label>
+				Assunto
+				<select id="topic" name="topic">
+					<option selected value="">Selecione uma categoria..</option>
+					<option selected value="">Selecione uma categoria..</option>
+					<option selected value="">Selecione uma categoria..</option>
+					<option selected value="">Selecione uma categoria..</option>
+					<option selected value="">Selecione uma categoria..</option>
+					<option selected value="">Selecione uma categoria..</option>
+				</select>
+			</label>
+
+			<label>
+				Tipo do evento
+				<select id="topic" name="topic">
+					<option selected value="">Selecione uma categoria..</option>
+					<option selected value="">Selecione uma categoria..</option>
+					<option selected value="">Selecione uma categoria..</option>
+					<option selected value="">Selecione uma categoria..</option>
+					<option selected value="">Selecione uma categoria..</option>
+					<option selected value="">Selecione uma categoria..</option>
 				</select>
 			</label>
 
 			<label>
 				Descrição
-				<input type="text" value="" id="descricao"/>
+				<input type="text" value="" id="descricao" />
 			</label>
 			<h3>Endereço</h3>
 			<div class="address-box-one">
 				<label>
 					CEP
-					<input type="text" value="" id="cep"/>
+					<input type="text" value="" id="cep" />
 				</label>
 				<label>
 					Bairro
-					<input type="text" value="" id="bairro"/>
+					<input type="text" value="" id="bairro" />
 				</label>
 				<label>
 					Estado
-					<input type="text" value="" id="estado"/>
+					<input type="text" value="" id="estado" />
 				</label>
 			</div>
 			<div class="address-box-two">
 				<label>
 					Logradouro
-					<input type="text" id="logradouro"/>
+					<input type="text" id="logradouro" />
 				</label>
 				<label>
 					Cidade
-					<input type="text" id="cidade"/>
+					<input type="text" id="cidade" />
+				</label>
+				<label>
+					Número
+					<input type="text" id="numero" />
 				</label>
 			</div>
+			<label>
+				Complemento
+				<input type="text" value="" id="descricao" />
+			</label>
 			<h3>Data</h3>
 			<div class="date-box">
 				<label>
 					Dia
-					<input type="text" id="dataInicio"/>
+					<input type="text" id="dataInicio" />
 				</label>
 				<label>
 					Horário de início
-					<input type="text" id="horaInicio"/>
+					<input type="text" id="horaInicio" />
 				</label>
 				<label>
 					Horário de término
-					<input type="text" id="horaFim"/>
+					<input type="text" id="horaFim" />
 				</label>
 			</div>
 
@@ -102,19 +133,37 @@
 				Fotos complementares
 				<div class="cover-complement">
 					<input id="input-photo-file" type="file" accept="image/*" onchange="loadComplement(event)" />
-					<label for="input-photo-file" class="photo-label"></label>
+					<label for="input-photo-file" class="photo-complement-label"></label>
 					<img src="../img/back-plus.jpg" id="image-photo-complement-preview" />
 				</div>
 			</label>
 
-			
+			<label>
+				Convidados
+				<input type="text" id="" />
+			</label>
+
+			<label>
+				Conta
+				<input type="text" id="" />
+			</label>
 		</form>
+
+		<div class="term">
+			<p>Para saiber mais sobre os termos, <a href="">clique aqui!</a></p>
+			<label class="checkbox">
+				<input type="checkbox" />
+				<span class="checkmark"></span>
+				Li e concordo com os termos
+			</label>
+		</div>
 
 		<div class="btn">
 			<button id="salvar">Avançar</button>
 		</div>
 
 		<script src="../javascript/create-event/create-event.js"></script>
+		
 		<script src="../javascript/criarEvento.js"></script>
 	</body>
 </html>

@@ -6,6 +6,7 @@ body {
 	align-items: center;
 	gap: 50px;
 	overflow-x: hidden;
+	letter-spacing: 1px;
 }
 
 h1,
@@ -84,30 +85,73 @@ form .date-box {
 	gap: 25px;
 }
 
-form button, button {
-    width: 25%;
-    height: 50px;
-    border-radius: 10px;
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: var(--white);
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: .5s;
-    background-color: var(--backgroundPrimary);
-    border: 2px solid var(--purpleSecondary);
+form button,
+button {
+	width: 25%;
+	height: 50px;
+	border-radius: 10px;
+	font-size: 1.15rem;
+	font-weight: 700;
+	color: var(--white);
+	letter-spacing: 1px;
+	cursor: pointer;
+	transition: 0.5s;
+	background-color: var(--backgroundPrimary);
+	border: 2px solid var(--purpleSecondary);
 }
 
-form button:hover, button:hover {
-    background-color: var(--purpleSecondary);
+form button:hover,
+button:hover {
+	background-color: var(--purpleSecondary);
 }
 
-
-form .btn, .btn {
+form .btn,
+.btn {
 	width: 100%;
 	display: flex;
 	align-items: cente;
 	justify-content: center;
+}
+
+.term {
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+	color: var(--white);
+}
+
+.term a {
+	text-decoration: none;
+	color: var(--purpleSecondary);
+}
+
+.checkbox {
+	display: flex;
+	gap: 5px;
+	font-weight: 300;
+	justify-content: center;
+	align-items: center;
+	color: var(--white);
+}
+
+.checkbox input {
+	width: 25px;
+	height: 25px;
+	background-color: var(--backgroundPrimary);
+	border-radius: 5px;
+	/* vertical-align: middle; */
+	border: 2px solid var(--purpleSecondary);
+	appearance: none;
+	-webkit-appearance: none;
+	outline: none;
+	cursor: pointer;
+}
+
+.checkbox input:checked {
+	background-color: var(--purpleSecondary);
 }
 
 /* ------------------------------------- */
@@ -116,14 +160,14 @@ form .btn, .btn {
 	width: 100%;
 	display: block;
 	position: relative;
-	height: 300px;
+	height: 250px;
 	border-radius: 10px;
 	overflow: hidden;
 	z-index: 1;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border: solid 7.5px var(--backgroundSecondary);
+	border: solid 5px var(--backgroundSecondary);
 }
 
 .cover img {
@@ -142,8 +186,7 @@ form .btn, .btn {
 	z-index: 2;
 }
 
-#image-photo-preview,
-#image-photo-complement-preview {
+#image-photo-preview {
 	position: absolute;
 	width: 100%;
 }
@@ -154,14 +197,14 @@ form .btn, .btn {
 	width: 100%;
 	display: block;
 	position: relative;
-	height: 300px;
+	height: 250px;
 	border-radius: 10px;
 	overflow: hidden;
 	z-index: 1;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border: solid 7.5px var(--backgroundSecondary);
+	border: solid 5px var(--backgroundSecondary);
 }
 
 .cover-complement img {
@@ -173,11 +216,10 @@ form .btn, .btn {
 	display: none;
 }
 
-.cover-complement .photo-label {
+.cover-complement .photo-complement-label {
 	width: 100%;
 	height: 100%;
 	cursor: pointer;
-	z-index: 2;
 }
 
 #image-photo-complement-preview {
