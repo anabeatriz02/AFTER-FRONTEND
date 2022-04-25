@@ -113,7 +113,7 @@ select:focus {
 }
 
 .btn {
-	width: 100%;
+	width: 76%;
 	display: flex;
 	justify-content: center;
 	align-items: center;

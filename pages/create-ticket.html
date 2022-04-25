@@ -35,9 +35,9 @@
 			<div class="info-container">
 				<label>
 					Título
-					<input type="text" />
+					<input type="text" id="tituloIngresso"/>
 				</label>
-				<label>
+				<!-- <label>
 					Categoria
 					<select id="category" name="category">
 						<option selected value="">Selecione uma categoria..</option>
@@ -46,20 +46,20 @@
 						<option value="">dasdad</option>
 						<option value="">dsada</option>
 					</select>
-				</label>
+				</label> -->
 				<label>
 					Descrição
-					<input type="text" />
+					<input type="text" id="descricao"/>
 				</label>
 
 				<div class="amount">
 					<label>
 						Quantidade
-						<input type="text" />
+						<input type="text" id="quantidade"/>
 					</label>
 					<label>
 						Preço
-						<input type="text" />
+						<input type="text" id="valor"/>
 					</label>
 				</div>
 
@@ -93,10 +93,17 @@
 				</div>
 			</div>
 
-			<div class="btn">
+			<!-- <div class="btn">
 				<button class="back">Voltar</button>
 				<button class="next">Avançar</button>
-			</div>
+			</div> -->
 		</form>
+
+		<div class="btn">
+			<button class="back">Voltar</button>
+			<button class="next" id="avancar">Avançar</button>
+		</div>
 	</body>
+
+	<script src="../javascript/criarIngresso.js"></script>
 </html>
