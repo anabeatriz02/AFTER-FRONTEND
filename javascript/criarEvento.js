@@ -26,16 +26,24 @@ function getDadosEvento() {
     const inputCidade = document.querySelector('#cidade')
 
     const inputDataInicio = document.querySelector('#dataInicio')
+    const inputDataFim = document.querySelector('#dataFim')
     const inputHoraInicio = document.querySelector('#horaInicio')
     const inputHoraFim = document.querySelector('#horaFim')
 
     const inputCapa = document.querySelector('#input-photo-file')
+
+    if(inputDataFim.value == null || inputDataFim.value == "") {
+        dataTermino = inputDataInicio.value
+    } else {
+        dataTermino = inputDataFim.value
+    }
 
     const evento = {
         titulo: inputTitulo.value,
         descricao: inputDescricao.value,
         tblCategoriumIdCategoria: categoriaSelecionada,
         dataInicio: inputDataInicio.value,
+        dataFim: dataTermino,
         horaInicio: inputHoraInicio.value,
         horaFim: inputHoraFim.value,
         capa: inputCapa.value,
