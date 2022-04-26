@@ -53,6 +53,7 @@ btn.addEventListener('click', () => {
     const perfil = pegarValores()
 
     editarPerfil(perfil)
+    editarPerfilEndereco(perfil)
 
 })
 
@@ -94,3 +95,21 @@ async function editarPerfil(perfil){
         console.error(erro)
     }
 }
+
+async function editarPerfilEndereco(perfil, idEndereco){
+    try {
+        const resposta = await fetch(`http://localhost:4000/endereco/editarEndereco/2`, {
+            method: 'PUT',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(perfil)
+        })
+
+    } catch (erro) {
+        console.error(erro)
+    }
+}
+
+
