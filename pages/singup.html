@@ -4,12 +4,87 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Cadastro de usuário</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="../css/reset.css" />
+		<link rel="stylesheet" href="../css/singup.css" />
+		<link rel="stylesheet" href="../css/header-logo.css" />
+		<title>Cadastro</title>
 	</head>
 	<body>
+		<header id="header">
+			<script>
+				$(function () {
+					$("#header").load("../common/header-logo.html  ");
+				});
+			</script>
+		</header>
 
-        
+		<ul class="tabs">
+			<li data-tab-target="#user" class="active tab">Usuário</li>
+			<li data-tab-target="#company" class="tab">Empresa</li>
+		</ul>
+
+		<section class="tab-content">
+			<div id="user" data-tab-content class="active">
+				<div class="user-box">
+					<div class="user-form" action="">
+						<h2>CRIE SUA CONTA</h2>
+						<form action="">
+
+							<div class="item">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M4 22a8 8 0 1 1 16 0h-2a6 6 0 1 0-12 0H4zm8-9c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z" fill="#32363a"/></svg>
+								<input type="text" placeholder="Nome completo"> 
+							</div>
+							<div class="item">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M4 22a8 8 0 1 1 16 0h-2a6 6 0 1 0-12 0H4zm8-9c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z" fill="#32363a"/></svg>
+								<input type="text" placeholder="Nome de usuário"> 
+							</div>
+							<div class="item">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm17 4.238l-7.928 7.1L4 7.216V19h16V7.238zM4.511 5l7.55 6.662L19.502 5H4.511z" fill="#32363a"/></svg>								
+								<input type="text" placeholder="E-mail"> 
+							</div>
+							<div class="item">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M19 10h1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V11a1 1 0 0 1 1-1h1V9a7 7 0 1 1 14 0v1zM5 12v8h14v-8H5zm6 2h2v4h-2v-4zm6-4V9A5 5 0 0 0 7 9v1h10z" fill="#32363a"/></svg>
+								<input type="text" placeholder="Senha"> 
+							</div>
+
+							<div class="item-di">
+								<div class="item">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M19 10h1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V11a1 1 0 0 1 1-1h1V9a7 7 0 1 1 14 0v1zM5 12v8h14v-8H5zm6 2h2v4h-2v-4zm6-4V9A5 5 0 0 0 7 9v1h10z" fill="#32363a"/></svg>
+									<input type="text" placeholder="Senha"> 
+								</div>
+								<div class="item">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M19 10h1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V11a1 1 0 0 1 1-1h1V9a7 7 0 1 1 14 0v1zM5 12v8h14v-8H5zm6 2h2v4h-2v-4zm6-4V9A5 5 0 0 0 7 9v1h10z" fill="#32363a"/></svg>
+									<input type="text" placeholder="Senha"> 
+								</div>
+							</div>
+							
 
 
-    </body>
+						</form>
+						<button>CADASTRAR</button>
+					</div>
+					<div class="user-text">
+						<h1>Cadastro para<br />usuários</h1>
+						<p>Junte-se a milhares de pessoas e divirta-se</p>
+						<a href=""><img src="../img/icon-arrow-left.svg" />Voltar para login</a>
+					</div>
+				</div>
+			</div>
+			<div id="company" data-tab-content>
+				<div class="company-box">
+					<div class="company-form" action="">
+						<h2>Crie sua conta</h2>
+					</div>
+					<div class="company-text">
+						<h1>Cadastro para<br />empresas</h1>
+						<p>Após informar seu interesse seu pedido será analisado por nossa equipe!</p>
+						<a href=""><img src="../img/icon-arrow-left.svg" />Voltar para login</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<script src="../javascript/singup/tab-area.js"></script>
+	</body>
 </html>
