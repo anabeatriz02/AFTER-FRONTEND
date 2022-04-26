@@ -29,7 +29,7 @@ form .photo-box {
 	align-items: center;
 }
 
-form button {
+form button, #editar {
     width: 25%;
     height: 50px;
     border-radius: 10px;
