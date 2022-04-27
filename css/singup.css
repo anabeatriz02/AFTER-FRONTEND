@@ -9,7 +9,14 @@ body {
 	padding: 3% 6%;
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	user-select: none;
 	gap: 50px;
+}
+
+h1 {
+	text-align: center;
+	color: var(--white);
 }
 
 [data-tab-content] {
@@ -21,14 +28,14 @@ body {
 }
 
 .tabs {
-	/* background-color: lightcoral; */
 	display: flex;
-	gap: 25px;
+	gap: 50px;
 	list-style: none;
 	letter-spacing: 1px;
 	font-size: 1.15rem;
 	color: var(--white);
-	font-size: 1.15rem;
+	font-size: 1.25rem;
+	justify-content: center;
 }
 
 .tab {
@@ -58,292 +65,163 @@ body {
 #user {
 	width: 100%;
 	height: 100%;
-	/* background-color: tomato; */
+	/* background-color: lightsalmon;	 */
 }
 
 #user .user-box {
 	width: 100%;
 	height: 100%;
-	display: flex;
-	flex-direction: row;
-	gap: 2%;
-}
-
-.user-box .user-form {
-	width: 50%;
-	height: 100%;
+	padding: 0 12%;
 	display: flex;
 	flex-direction: column;
-	/* justify-content: center; */
 	align-items: center;
-	background-color: var(--backgroundTertiary);
-	border-radius: 25px;
-	justify-content: space-between;
-	padding: 50px;
+	gap: 50px;
 }
 
-.user-box .user-form h2 {
-	color: var(--white);
-	font-size: 1.75rem;
-}
-
-.user-box .user-form form {
+#user .user-box form {
 	width: 100%;
-	display: flex;
-	flex-direction: column;
-	gap: 15px;
 	/* height: 100%; */
-}
-
-
-.user-box .user-form form .item {
-	/* width: 100%; */
-	height: 55px;
-	padding: 0 20px;
-	overflow: hidden;
 	display: flex;
-	flex-grow: 1;
-	align-items: center;
-	justify-items: center;
-	gap: 15px;
-	border-radius: 10px;
-	transition: 0.25s linear;
-	border: 1.5px solid var(--backgroundPrimary);
-	background-color: var(--backgroundPrimary);
+	flex-direction: column;
+	gap: 25px;
 }
 
-.user-box .user-form form .item:focus-within {
-	border: 1.5px solid var(--purpleSecondary);
-}
-
-.user-box .user-form form .item:focus-within path:last-child {
-	fill: var(--purpleSecondary) ;
-}
-
-
-.user-box .user-form form .item-div {
+#user .user-box form .password {
+	width: 100%;
+	height: 80%;
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
+	gap: 25px;
+}
+
+#user .user-box form label {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
 	gap: 15px;
-}
-
-.user-box .user-form form input {
-	width: 100%;
-	height: 100%;
-	border: none;
 	color: var(--white);
-	padding: 0 15px;
-	background-color: var(--backgroundPrimary);
-}
-
-.user-box .user-form form input::placeholder {
-	color: #4C5257	;
-	font-size: 1rem;
 	font-weight: 500;
-}
-/* 
-.user-box .user-form form input {
-	width: 100%;
-	height: 60px;
-	padding: 0 20px;
-	border-radius: 10px;
-	transition: 0.5s;
-	border: 1.5px solid var(--backgroundPrimary);
-	background-color: var(--backgroundPrimary);
-	color: var(--white);
+	font-size: 0.9rem;
 }
 
-.user-box .user-form form input:focus {
-	border: 1.5px solid var(--purpleSecondary);
+#user .user-box form label:focus-within {
+	color: var(--purpleSecondary);
 }
 
-.user-box .user-form form input::placeholder {
-	color: #363F44;
-} */
-
-.user-box .user-form button {
-	width: 50%;
+#user .user-box form input {
 	height: 50px;
 	border-radius: 10px;
-	font-size: 1rem;
-	background-color: var(--backgroundTertiary);
-	cursor: pointer;
-	font-weight: 700;
+	border: 1.5px solid var(--backgroundTertiary);
+	background-color: var(--backgroundSecondary);
+	padding: 0px 25px;
 	transition: 0.5s;
-	color: var(--purpleSecondary);
+	color: var(--white);
+}
+
+#user .user-box form input:focus {
 	border: 1.5px solid var(--purpleSecondary);
 }
 
-.user-box .user-form button:hover {
-	color: var(--white);
-	background-color: var(--purpleSecondary);
-}
-
-/* -------------------------------------------------------- */
-
-.user-box .user-text {
-	width: 50%;
-	height: 100%;
-	/* background-color: lightpink; */
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 75px;
-}
-
-.user-box .user-text h1 {
-	color: var(--white);
-	font-size: 2.75rem;
-	text-align: center;
-}
-
-.user-box .user-text p {
-	color: var(--white);
-	font-size: 1rem;
-	font-weight: 200;
-}
-
-.user-box .user-text a {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 15px;
-	text-decoration: none;
+#user .user-box button {
+	width: 25%;
+	height: 50px;
+	border-radius: 10px;
+	border: 1.5px solid var(--purpleSecondary);
 	font-weight: 700;
+	font-size: 1rem;
 	color: var(--purpleSecondary);
+	background-color: transparent;
+	cursor: pointer;
+	transition: .25s linear;
 }
+
+#user .user-box button:hover {
+	background-color: var(--purpleSecondary);
+	color: var(--white);
+}
+
+#user .address{
+	display: flex;
+	gap: 25px	;
+	
+}
+
+/* ----------------------------------------------- */
 
 #company {
 	width: 100%;
 	height: 100%;
+	/* background-color: lightsalmon;	 */
 }
 
 #company .company-box {
 	width: 100%;
 	height: 100%;
+	padding: 0 12%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 50px;
+}
+
+#company .company-box form {
+	width: 100%;
+	/* height: 100%; */
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+
+#company .company-box form .password {
+	width: 100%;
+	height: 80%;
 	display: flex;
 	flex-direction: row;
-	gap: 2%;
+	gap: 25px;
 }
 
-.company-box .company-form {
-	width: 50%;
-	height: 100%;
+#company .company-box form label {
+	width: 100%;
 	display: flex;
 	flex-direction: column;
-	background-color: lightseagreen;
-}
-
-.company-box .company-text {
-	width: 50%;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 75px;
-}
-
-.company-box .company-text h1 {
-	color: var(--white);
-	font-size: 2.75rem;
-	text-align: center;
-}
-
-.company-box .company-text p {
-	width: 80%;
-	color: var(--white);
-	font-size: 1rem;
-	font-weight: 200;
-	text-align: center;
-	line-height: 25px;
-}
-
-.company-box .company-text a {
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	gap: 15px;
-	text-decoration: none;
-	font-weight: 700;
+	color: var(--white);
+	font-weight: 500;
+	font-size: 0.9rem;
+}
+
+#company .company-box form label:focus-within {
 	color: var(--purpleSecondary);
 }
 
-/* #user form {
-	width: 50%;
-	height: 100%;
-	background-color: var(--backgroundTertiary);
-	border-radius: 25px;
-	padding: 50px;
-	display: flex;
-	flex-direction: column;
-	gap: 25px;
-}
-
-#user form h2 {
-	text-align: center;
-    color: var(--white);
-    font-size: 1.75rem;
-}
-
-#user form div {
-    width: 100%;
-    height: 60px;
-	display: flex;
-	gap: 25px;
-    overflow: hidden;
-    align-items: center;
-    padding: 0 25px;
-    border-radius: 10px;
-    background-color: var(--backgroundSecondary);
-    border: 1.5px solid var(--backgroundSecondary);
-    transition: 0.5s;
-}
-
-#user form div:focus-within {
-    border: 1.5px solid var(--purpleSecondary);
-}
-
-#user form div:focus-within path:last-child {
-    fill: var(--purpleSecondary);
-}
-
-#user form div img {
-	width: 24px;
-    height: 24px;
-}
-
-#user form div input {
-	width: 100%;
-    height: 100%;
-    height: 50px;
-
-	flex-direction: column;
-    border: none;
+#company .company-box form input {
+	height: 50px;
+	border-radius: 10px;
+	border: 1.5px solid var(--backgroundTertiary);
 	background-color: var(--backgroundSecondary);
 	padding: 0px 25px;
 	transition: 0.5s;
 	color: var(--white);
 }
 
-#user form .date-cep input {
-	width: 100%;
-    height: 100%;
-    height: 50px;
-
-	flex-direction: column;
-    border: none;
-	
-	background-color: var(--backgroundSecondary);
-	padding: 0px 25px;
-	transition: 0.5s;
-	color: var(--white);
+#company .company-box form input:focus {
+	border: 1.5px solid var(--purpleSecondary);
 }
 
-#user form div input::placeholder {
-    color: #4C5257 ;
-    font-size: 1.15rem;
-	
-} */
+#company .company-box button {
+	width: 25%;
+	height: 50px;
+	border-radius: 10px;
+	border: 1.5px solid var(--purpleSecondary);
+	font-weight: 700;
+	font-size: 1rem;
+	color: var(--purpleSecondary);
+	background-color: transparent;
+	cursor: pointer;
+	transition: .25s linear;
+}
+
+#company .company-box button:hover {
+	background-color: var(--purpleSecondary);
+	color: var(--white);
+}

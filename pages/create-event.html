@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -24,7 +24,7 @@
 
 		<h1>Criar evento</h1>
 
-		<form action="get	">
+		<form method="get" action=".">
 			<label>
 				Título
 				<input type="text" value="" id="titulo" />
@@ -70,21 +70,21 @@
 			<div class="address-box-one">
 				<label>
 					CEP
-					<input type="text" value="" id="cep" value="" size="10" maxlength="9" onblur="pesquisacep(this.value);" />
+					<input type="text" id="cep" pattern="[0-9]{5}-?[0-9]{3}" maxlength="9" onblur="pesquisacep(this.value);" />
 				</label>
 				<label>
 					Bairro
-					<input type="text" value="" id="bairro" />
+					<input type="text" id="bairro" />
 				</label>
 				<label>
 					Estado
-					<input type="text" value="" id="estado" />
+					<input type="text" id="estado" />
 				</label>
 			</div>
 			<div class="address-box-two">
 				<label>
 					Logradouro
-					<input type="text" id="logradouro" name="rua" id="rua" />
+					<input type="text" id="logradouro" />
 				</label>
 				<label>
 					Cidade
@@ -97,7 +97,7 @@
 			</div>
 			<label>
 				Complemento
-				<input type="text" value="" id="complemento" />
+				<input type="text" id="complemento" />
 			</label>
 			<h3>Data</h3>
 			<div class="date-box">
