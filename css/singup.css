@@ -71,7 +71,7 @@ h1 {
 #user .user-box {
 	width: 100%;
 	height: 100%;
-	padding: 0 12%;
+	padding: 0 18%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -132,7 +132,7 @@ h1 {
 	color: var(--purpleSecondary);
 	background-color: transparent;
 	cursor: pointer;
-	transition: .25s linear;
+	transition: 0.25s linear;
 }
 
 #user .user-box button:hover {
@@ -140,10 +140,14 @@ h1 {
 	color: var(--white);
 }
 
-#user .address{
+#user .address {
 	display: flex;
-	gap: 25px	;
-	
+	gap: 25px;
+}
+
+#user .date-user {
+	display: flex;
+	gap: 25px;
 }
 
 /* ----------------------------------------------- */
@@ -157,7 +161,7 @@ h1 {
 #company .company-box {
 	width: 100%;
 	height: 100%;
-	padding: 0 12%;
+	padding: 0 18%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -218,7 +222,7 @@ h1 {
 	color: var(--purpleSecondary);
 	background-color: transparent;
 	cursor: pointer;
-	transition: .25s linear;
+	transition: 0.25s linear;
 }
 
 #company .company-box button:hover {

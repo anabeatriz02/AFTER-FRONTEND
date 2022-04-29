@@ -22,7 +22,7 @@ form {
 	display: flex;
 	flex-direction: column;
 	/* align-items: center; */
-	gap: 25px;
+	gap: 40px;
 }
 
 form label {
@@ -43,7 +43,7 @@ form label:focus-within {
 form input,
 select {
 	display: flex;
-	height: 50px;
+	height: 60px;
 	border-radius: 10px;
 	flex-direction: column;
 	border: 1.5px solid var(--backgroundTertiary);
@@ -72,12 +72,12 @@ select {
 
 form .address-box-one {
 	display: flex;
-	gap: 25px;
+	gap: 40px;
 }
 
 form .address-box-two {
 	display: flex;
-	gap: 25px;
+	gap: 40px;
 }
 
 form .address-box-two input {
@@ -88,7 +88,7 @@ form .address-box-two input {
 form .date-box  {
 	display: flex;
 	width: 100%;
-	gap: 25px;
+	gap: 40px;
 }
 
 form .date-box input {
@@ -98,7 +98,7 @@ form .date-box input {
 
 form .account-age {
 	display: flex;
-	gap: 25px;
+	gap: 40px;
 }
 
 button {
