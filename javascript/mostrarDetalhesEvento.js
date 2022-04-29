@@ -1,6 +1,8 @@
 async function getContent() {
     try {
 
+        //Evento com celebridade: 1
+        //Evento sem celebridade: 5
         const response = await fetch('http://localhost:4000/evento/acharEventoIdEvento/5')
 
         console.log(response)
