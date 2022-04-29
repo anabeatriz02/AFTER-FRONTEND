@@ -22,7 +22,7 @@ function getDadosPerfil() {
 
     const inputCep = document.querySelector('#cep')
     const inputCidade = document.querySelector('#cidade')
-    const inputEstado = document.querySelector('#uf')
+    const inputEstado = document.querySelector('#estado')
 
     const perfil = {
         nickname: inputNickname.value,
