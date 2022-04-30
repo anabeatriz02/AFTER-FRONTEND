@@ -1,16 +1,24 @@
 "use-strict"
 
-const btn = document.querySelector('#salvar')
+// const btn = document.querySelector('#salvar')
 
-btn.addEventListener('click', () => {
+// btn.addEventListener('click', () => {
 
+//     const perfil = getDadosPerfil()
+
+//     enviarPerfilParaAPI(perfil)
+
+//     console.log(perfil)
+
+// })
+
+function chamarFuncoes(){
     const perfil = getDadosPerfil()
 
     enviarPerfilParaAPI(perfil)
 
     console.log(perfil)
-
-})
+} 
 
 function getDadosPerfil() {
     const inputNickname = document.querySelector('#nickname')
