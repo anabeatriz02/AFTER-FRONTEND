@@ -216,7 +216,7 @@ h1 {
 	border: 1.5px solid var(--purpleSecondary);
 }
 
-#company .company-box button {
+#company .company-box button, #salvarEmpresa {
 	width: 25%;
 	height: 50px;
 	border-radius: 10px;
@@ -227,9 +227,13 @@ h1 {
 	background-color: transparent;
 	cursor: pointer;
 	transition: 0.25s linear;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
 }
 
-#company .company-box button:hover {
+#company .company-box button:hover, #salvarEmpresa:hover {
 	background-color: var(--purpleSecondary);
 	color: var(--white);
 }

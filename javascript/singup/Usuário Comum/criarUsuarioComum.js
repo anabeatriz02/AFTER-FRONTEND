@@ -12,7 +12,7 @@
 
 // })
 
-function chamarFuncoes(){
+function realizarCadastro(){
     const perfil = getDadosPerfil()
 
     enviarPerfilParaAPI(perfil)
