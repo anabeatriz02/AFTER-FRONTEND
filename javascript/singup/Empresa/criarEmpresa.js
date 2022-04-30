@@ -1,6 +1,6 @@
 "use-strict"
 
-function realizarCadastro() {
+function realizarCadastroEmpresa() {
     const empresa = getDadosEmpresa()
 
     enviarEmpresaParaAPI(empresa)
@@ -12,17 +12,33 @@ function getDadosEmpresa() {
     const inputNickname = document.querySelector('#nicknameEmpresa')
     const inputEmail = document.querySelector('#emailEmpresa')
     const inputSenha = document.querySelector('#senhaEmpresa')
+    const inputSenhaConfirmar = document.querySelector('#confirmarSenhaEmpresa')
 
     const inputCnpj = document.querySelector('#cnpj')
 
-    const empresa = {
-        nickname: inputNickname.value,
-        email: inputEmail.value,
-        senha: inputSenha.value,
-        cnpj: inputCnpj.value,
-    }
+    if (inputSenhaConfirmar.value !== inputSenha.value) {
 
-    return empresa
+        alert("A senha digitada está incorreta")
+
+        const btnSalvar = document.querySelector('#salvarEmpresa')
+
+        btnSalvar.setAttribute('href', "./singup.html")
+
+        return false
+
+    } else {
+
+        const empresa = {
+            nickname: inputNickname.value,
+            email: inputEmail.value,
+            senha: inputSenha.value,
+            cnpj: inputCnpj.value,
+        }
+    
+        return empresa
+
+    }
+    
 }
 
 async function enviarEmpresaParaAPI(empresa) {
