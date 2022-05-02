@@ -67,7 +67,7 @@
 							</label>
 							<label>
 								Estado
-								<input type="text" id="estado"/>
+								<input type="text" id="uf"/>
 							</label>
 							<label>
 								Cidade
@@ -75,7 +75,11 @@
 							</label>
 						</div>
 					</form>
-					<button id="salvar">AVANÇAR</button>
+					<a href="singup-photo-profile.html" id="salvarUsuario" onclick="realizarCadastroUsuarioComum()">
+						<!-- <button>AVANÇAR</button> -->
+						AVANÇAR
+					</a>
+					
 				</div>
 			</div>
 			<div id="company" data-tab-content>
@@ -83,29 +87,30 @@
 					<form action="">
 						<label>
 							Nome de usuário
-							<input type="text" />
+							<input type="text" id="nicknameEmpresa"/>
 						</label>
 						<label>
 							CNPJ
-							<input type="email" />
+							<input type="email" id="cnpj"/>
 						</label>
 						<label>
 							E-mail
-							<input type="email" />
+							<input type="email" id="emailEmpresa"/>
 						</label>
 
 						<div class="password">
 							<label>
 								Senha
-								<input type="password" />
+								<input type="password" id="senhaEmpresa"/>
 							</label>
 							<label>
 								Confirmar senha
-								<input type="password" />
+								<input type="password" id="confirmarSenhaEmpresa"/>
 							</label>
 						</div>
 					</form>
-					<button>AVANÇAR</button>
+					<!-- <button id="salvarEmpresa" onclick="realizarCadastro()">AVANÇAR</button> -->
+					<a href="singup-photo-profile.html" onclick="realizarCadastroEmpresa()" id="salvarEmpresa">AVANÇAR</a>
 				</div>
 			</div>
 		</section>
@@ -113,5 +118,6 @@
 		<script src="../javascript/singup/tab-area.js"></script>
 		<script src="../javascript/singup/search-cep.js"></script>
 		<script src="../javascript/singup/Usuário Comum/criarUsuarioComum.js"></script>
+		<script src="../javascript/singup/Empresa/criarEmpresa.js"></script>
 	</body>
 </html>
