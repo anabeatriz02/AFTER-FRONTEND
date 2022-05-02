@@ -17,3 +17,6 @@ function pegarFoto(){
         return imagemPerfil
     // })
 }
+
+
+
