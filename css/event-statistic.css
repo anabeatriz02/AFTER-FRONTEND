@@ -1,0 +1,164 @@
+:root {
+	--gapPrimary: 2%;
+	--borderPrimary: 1.5px solid var(--purpleSecondary);
+	--borderSecondary: 1.5px solid var(--backgroundTertiary);
+}
+
+* {
+	user-select: none;
+	outline: none;
+	color: var(--white);
+	letter-spacing: 1px;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	gap: var(--gapPrimary);
+	text-align: left;
+}
+
+[data-tab-content] {
+	display: none;
+}
+
+.active[data-tab-content] {
+	display: block;
+}
+
+.tabs {
+	display: flex;
+	gap: 25px;
+	list-style: none;
+	letter-spacing: 1px;
+	font-size: 1.15rem;
+}
+
+.tab {
+	cursor: pointer;
+}
+
+.tab.active {
+	cursor: pointer;
+	color: var(--purpleSecondary);
+	padding-bottom: 15px;
+	border-bottom: 3px solid var(--purpleSecondary);
+}
+
+.tab:hover {
+	cursor: pointer;
+	color: var(--purpleSecondary);
+	padding-bottom: 15px;
+}
+
+.tab-content {
+	width: 100%;
+	height: 100%;
+	/* background-color: tomato; */
+}
+
+.new-box {
+	width: 100%;
+	height: 250px;
+	border-radius: 10px;
+	border: 1.5px solid var(--purpleSecondary);
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	position: relative;
+}
+
+.new-box .background {
+	position: absolute;
+	width: 100%;
+	-webkit-mask-image: linear-gradient(rgba(4, 9, 30, 0.6), rgba(4, 9, 30, 0.7));
+	z-index: -1;
+}
+
+.new-box .local {
+	/* background-color: lightcoral; */
+	flex-grow: 2;
+	height: 100%;
+	padding: 0 4%;
+	display: flex;
+	gap: 25px;
+	align-items: center;
+}
+
+.new-box .local img {
+	width: 30px;
+	height: 30px;
+}
+
+.new-box .local-information {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	font-size: 1.15rem;
+	font-weight: 200;
+}
+
+.new-box .local-information p:first-child {
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.new-box .statistic {
+	background-color: tomato;
+	flex-grow: 1;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.new-box .statistic .statistic-one {
+	display: flex;
+	padding: 0 4%;
+	gap: 10px;
+}
+
+.new-box .statistic .statistic-one > div {
+	width: 100%;
+    height: %;
+	background-color: aqua;
+    text-align: center;
+}
+
+/* --------------------------------------------------------------- */
+.old-box {
+	width: 100%;
+	height: 200px;
+	border-radius: 10px;
+	/* background-color: lightblue; */
+	border: 1.5px solid var(--purpleSecondary);
+	background-color: var(--backgroundTertiary);
+	display: flex;
+	align-items: center;
+	padding: 0 4%;
+	gap: 25px;
+}
+
+.old-box .image-box {
+	width: 50px;
+	height: 50px;
+	background-color: var(--purpleSecondary);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
+}
+
+.old-box .image-box img {
+	width: 28px;
+	height: 28px;
+	border-radius: 10px;
+}
+
+.old-box label {
+	font-size: 1.1rem;
+	font-weight: 200;
+}

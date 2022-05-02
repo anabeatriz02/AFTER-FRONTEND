@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="../css/event-statistic.css" />
+		<link rel="stylesheet" href="../css/scrollbar.css" />
+		<link rel="stylesheet" href="../css/header-company.css" />
+		<link rel="stylesheet" href="../css/reset.css" />
+
+		<title>Notificações</title>
+	</head>
+	<body>
+		<header class="header" id="header">
+			<script>
+				$(function () {
+					$("#header").load("../common/header-company.html  ");
+				});
+			</script>
+		</header>
+
+		<h1>Estatísticas</h1>
+
+		<ul class="tabs">
+			<li data-tab-target="#new" class="active tab">Ativos</li>
+			<li data-tab-target="#old" class="tab">Encerrados</li>
+		</ul>
+
+		<section class="tab-content">
+			<div id="new" data-tab-content class="active">
+				<div class="new-box">
+					<img class="background" src="../upload/event/photo/photo01.jpg" />
+
+					<div class="local">
+						<img src="../img/icon-ticket.svg" />
+						<div class="local-information">
+							<p>Festa neon</p>
+							<p>AUDIO EVENTOS</p>
+							<p>Av. Francisco Matarazzo, 694 - Mooca - São Paulo - SP</p>
+							<p>Festa neon</p>
+						</div>
+					</div>
+
+					<div class="statistic">
+
+						<div cla>
+							<div>
+								<p>Ingressos vendidos</p>
+								<p>300</p>
+							</div>
+							<div>
+								<p>Lucro</p>
+								<p>R$ 20</p>
+							</div>
+						</div>
+						<div></div>
+						<div></div>
+
+					</div>
+
+					<!-- <img class="background" src="../upload/event/photo/photo01.jpg" alt="" />
+					<div class="container">
+						<div class="image-information">
+							<div class="image-box">
+								<img src="../img/icon-ticket.svg" alt="" />
+							</div>
+							<div class="local">
+								<label><b>Festa neon</b></label>
+								<label>FESTINHAS DO MARK</label>
+								<label>Barueri</label>
+								<label>Av. Francisco Matarazzo, 694 - Mooca - São Paulo - SP</label>
+							</div>
+						</div>
+						<div class="statistic">
+							<div class="statistic-sell">
+								<div>
+									<p>Ingressos vendidos</p>
+									<p>321</p>
+								</div>
+								<div>
+									<p>Lucro</p>
+									<p>R$ 93,090.00</p>
+								</div>
+							</div>
+
+							<div class="statistic-react">
+								<div>
+									<img src="../img/icon-heart-fill.svg" alt="" />
+									<p>R$ 93,090.00</p>
+								</div>
+								<div>
+									<img src="../img/icon-calendar-fill.svg" alt="" />
+									<p>R$ 93,090.00</p>
+								</div>
+							</div>
+                            <div>
+                              <p>Atrações principais:</p>
+                              <p>DJ Sharon & William Serrat</p>
+                            </div>
+						</div>
+					</div> -->
+				</div>
+			</div>
+			<div id="old" data-tab-content>
+				<div class="old-box">
+					<div class="image-box">
+						<img src="../img/icon-calendar-fill-white.svg" alt="" />
+					</div>
+					<label>Faltam 5 dias para Festa Laser!</label>
+				</div>
+			</div>
+		</section>
+
+		<script src="../javascript/notification/toggle-notification.js"></script>
+	</body>
+</html>
