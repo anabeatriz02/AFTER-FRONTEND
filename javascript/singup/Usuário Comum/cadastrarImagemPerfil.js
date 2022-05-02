@@ -7,3 +7,6 @@ function pegarFoto(){
         console.log(teste[2])
     // })
 }
+
+
+
