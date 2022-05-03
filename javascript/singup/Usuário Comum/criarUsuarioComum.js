@@ -1,28 +1,13 @@
 "use-strict"
 
-// const btn = document.querySelector('#salvar')
-
-// btn.addEventListener('click', () => {
-
-//     const perfil = getDadosPerfil()
-
-//     enviarPerfilParaAPI(perfil)
-
-//     console.log(perfil)
-
-// })
-
 function realizarCadastroUsuarioComum() {
     const perfil = getDadosPerfil()
 
-    // enviarPerfilParaAPI(perfil)
-
     console.log(perfil)
+
 }
 
 function getDadosPerfil() {
-    e.preventDefault()
-
     const inputNickname = document.querySelector('#nickname')
     const inputEmail = document.querySelector('#email')
     const inputSenha = document.querySelector('#senha')
@@ -60,17 +45,10 @@ function getDadosPerfil() {
         formData.append("estado", inputEstado.value)
         formData.append("imagemPerfil", inputPerfil.files[0])
 
-        console.log(formData)
-        
-        fetch('http://localhost:4000/perfil/cadastrarPerfilUsuarioComumEndereco', {
-            method: 'POST',
+        axios.post('http://localhost:4000/perfil/cadastrarPerfilUsuarioComumEndereco', formData, {
             headers: {
-                // Accept: 'application/json',
-                // Accept: 'application/json',
                 'Content-Type': 'multipart/form-data'
-            },
-            // body: JSON.stringify(perfil)
-            body: formData
+            }
         })
         // const perfil = {
         //     nickname: inputNickname.value,
@@ -89,22 +67,3 @@ function getDadosPerfil() {
     }
 
 }
-
-// async function enviarPerfilParaAPI(perfil) {
-//     try {
-//         const resposta = await fetch('http://localhost:4000/perfil/cadastrarPerfilUsuarioComumEndereco', {
-//             method: 'POST',
-//             headers: {
-//                 // Accept: 'application/json',
-//                 // Accept: 'application/json',
-//                 'Content-Type': 'multipart/form-data'
-//             },
-//             // body: JSON.stringify(perfil)
-//             body: perfil
-//         })
-
-//     } catch (erro) {
-//         console.error(erro)
-//     }
-
-// }
