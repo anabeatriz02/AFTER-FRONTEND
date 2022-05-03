@@ -75,7 +75,7 @@ function getDadosEvento() {
 
 async function enviarEventoParaAPI(evento) {
 	axios
-		.post("http://localhost:4000/evento/cadastrarEventoEndereco/1/", {
+		.post("https://reqres.in/api/login", {
 			titulo: inputTitulo,
 			descricao: inputDescricao,
 			tblCategoriumIdCategoria: categoriaSelecionada,
