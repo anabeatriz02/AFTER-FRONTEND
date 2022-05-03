@@ -5,7 +5,6 @@ btn.addEventListener('click', () => {
     const evento = getDadosEvento()
 
     enviarEventoParaAPI(evento)
-    enviarAssuntoParaApi(evento)
     // console.log(evento)
 
 })
@@ -17,8 +16,11 @@ function getDadosEvento() {
     const selectCategoria = document.querySelector('#category')
     const categoriaSelecionada = selectCategoria.options[selectCategoria.selectedIndex].value
 
-    const selectAssunto = document.querySelector('#topic')
-    const assuntoSelecionado = selectAssunto.options[selectAssunto.selectedIndex].value
+    // const selectAssunto = document.querySelector('#topic')
+    // const assuntoSelecionado = selectAssunto.options[selectAssunto.selectedIndex].value
+
+    const selectTipoEvento = document.querySelector('#tipoEvento')
+    const tipoEventoSelecionado = selectTipoEvento.options[selectTipoEvento.selectedIndex].value
 
     const inputDescricao = document.querySelector('#descricao')
 
@@ -54,7 +56,8 @@ function getDadosEvento() {
         logradouro: inputLogradouro.value,
         bairro: inputBairro.value,
         cidade: inputCidade.value,
-        estado: inputEstado.value
+        estado: inputEstado.value,
+        tblTipoEventoIdTipoEvento: tipoEventoSelecionado
     }
 
     return evento
@@ -103,61 +106,34 @@ function mostrarCategoria(categorias) {
 
     document.querySelector('#categoryOption').innerHTML = output
 
-    const selectCategoria = document.querySelector('#category')
-
-    selectCategoria.addEventListener('change', () => {
-
-        for (let categoria of categorias) {
-            pegarAssunto(categoria)
-        }
-
-    })
-
-    // console.log(pegarAssunto(categorias))
 }
 
-async function pegarAssunto(categoria) {
 
-    const selectCategoria = document.querySelector('#category')
-
+async function pegarTipoEvento(){
     try {
-        const response = await fetch(`http://localhost:4000/assunto/listarPorCategoria/${categoria.idCategoria}`)
+        const response = await fetch('http://localhost:4000/tipoEvento/listarTipoEvento')
 
         const data = await response.json()
 
-        mostrarAssunto(data)
+        mostrarTipoEvento(data)
 
     } catch (error) {
 
         console.error(error)
 
     }
-
 }
 
-function mostrarAssunto(assuntos) {
+pegarTipoEvento()
+
+function mostrarTipoEvento(tiposEvento) {
 
     let output = ''
 
-    for (let assunto of assuntos) {
-        output += `<option value="${assunto.idAssunto}">${assunto.nomeAssunto}</option>`
+    for (let tipoEvento of tiposEvento) {
+        output += `<option value="${tipoEvento.idTipoEvento}">${tipoEvento.tipo}</option>`
     }
 
-    document.querySelector('#topicOption').innerHTML = output
-}
+    document.querySelector('#tipoEventoOption').innerHTML = output
 
-async function enviarAssuntoParaApi(evento){
-    try {
-        const resposta = await fetch(`http://localhost:4000/intermEventoAssunto/cadastrarIntermEventoAssunto/3/17`, {
-            method: 'POST',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(evento)
-        })
-
-    } catch (erro) {
-        console.error(erro)
-    }
 }
