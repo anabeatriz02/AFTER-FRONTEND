@@ -25,6 +25,12 @@ form {
 	gap: 40px;
 }
 
+form label select option {
+	display: flex;
+	outline: none;
+	flex-direction: row;
+}
+
 form label {
 	width: 100%;
 	display: flex;
