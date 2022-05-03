@@ -15,12 +15,14 @@
 function realizarCadastroUsuarioComum() {
     const perfil = getDadosPerfil()
 
-    enviarPerfilParaAPI(perfil)
+    // enviarPerfilParaAPI(perfil)
 
     console.log(perfil)
 }
 
 function getDadosPerfil() {
+    e.preventDefault()
+
     const inputNickname = document.querySelector('#nickname')
     const inputEmail = document.querySelector('#email')
     const inputSenha = document.querySelector('#senha')
@@ -33,6 +35,8 @@ function getDadosPerfil() {
     const inputCidade = document.querySelector('#cidade')
     const inputEstado = document.querySelector('#uf')
 
+    const inputPerfil = document.querySelector('#imagemPerfil')
+
     if (inputSenhaConfirmar.value !== inputSenha.value) {
         alert("A senha digitada está incorreta")
 
@@ -44,36 +48,63 @@ function getDadosPerfil() {
 
     } else {
 
-        const perfil = {
-            nickname: inputNickname.value,
-            email: inputEmail.value,
-            senha: inputSenha.value,
-            nome: inputNomeCompleto.value,
-            dataNasc: inputDataNasc.value,
-            cep: inputCep.value,
-            cidade: inputCidade.value,
-            estado: inputEstado.value
-        }
+        const formData = new FormData()
 
-        return perfil
+        formData.append("nickname", inputNickname.value)
+        formData.append("email", inputEmail.value)
+        formData.append("senha", inputSenha.value)
+        formData.append("nome", inputNomeCompleto.value)
+        formData.append("dataNasc", inputDataNasc.value)
+        formData.append("cep", inputCep.value)
+        formData.append("cidade", inputCidade.value)
+        formData.append("estado", inputEstado.value)
+        formData.append("imagemPerfil", inputPerfil.files[0])
 
-    }
-
-}
-
-async function enviarPerfilParaAPI(perfil) {
-    try {
-        const resposta = await fetch('http://localhost:4000/perfil/cadastrarPerfilUsuarioComumEndereco', {
+        console.log(formData)
+        
+        fetch('http://localhost:4000/perfil/cadastrarPerfilUsuarioComumEndereco', {
             method: 'POST',
             headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json'
+                // Accept: 'application/json',
+                // Accept: 'application/json',
+                'Content-Type': 'multipart/form-data'
             },
-            body: JSON.stringify(perfil)
+            // body: JSON.stringify(perfil)
+            body: formData
         })
+        // const perfil = {
+        //     nickname: inputNickname.value,
+        //     email: inputEmail.value,
+        //     senha: inputSenha.value,
+        //     nome: inputNomeCompleto.value,
+        //     dataNasc: inputDataNasc.value,
+        //     cep: inputCep.value,
+        //     cidade: inputCidade.value,
+        //     estado: inputEstado.value,
+        //     imagemPerfil: inputPerfil.files[0]
+        // }
 
-    } catch (erro) {
-        console.error(erro)
+        // return perfil
+
     }
 
 }
+
+// async function enviarPerfilParaAPI(perfil) {
+//     try {
+//         const resposta = await fetch('http://localhost:4000/perfil/cadastrarPerfilUsuarioComumEndereco', {
+//             method: 'POST',
+//             headers: {
+//                 // Accept: 'application/json',
+//                 // Accept: 'application/json',
+//                 'Content-Type': 'multipart/form-data'
+//             },
+//             // body: JSON.stringify(perfil)
+//             body: perfil
+//         })
+
+//     } catch (erro) {
+//         console.error(erro)
+//     }
+
+// }

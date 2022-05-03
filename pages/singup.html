@@ -29,7 +29,7 @@
 		<section class="tab-content">
 			<div id="user" data-tab-content class="active">
 				<div class="user-box">
-					<form action="">
+					<form action="" enctype="multipart/form-data" method="post">
 						<label>
 							Nome completo
 							<input type="text" id="nome"/>
@@ -74,11 +74,16 @@
 								<input type="text" id="cidade"/>
 							</label>
 						</div>
+						<label for="">
+							teste
+							<input type="file" id="imagemPerfil">
+						</label>
 					</form>
-					<a href="singup-photo-profile.html" id="salvarUsuario" onclick="realizarCadastroUsuarioComum()">
-						<!-- <button>AVANÇAR</button> -->
+					<!-- <a href="singup-photo-profile.html" id="salvarUsuario" onclick="realizarCadastroUsuarioComum()">
+						<button>AVANÇAR</button>
 						AVANÇAR
-					</a>
+					</a> -->
+					<button id="salvarUsuario" onclick="realizarCadastroUsuarioComum()">AVANÇAR</button>
 					
 				</div>
 			</div>
