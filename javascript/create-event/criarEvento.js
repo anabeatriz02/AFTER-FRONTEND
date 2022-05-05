@@ -1,11 +1,20 @@
 const btn = document.querySelector("#salvar");
 
+// console.log(btn)
+
 btn.addEventListener("click", () => {
 	const evento = getDadosEvento();
 
-	// enviarEventoParaAPI(evento);
+	console.log(evento)
 
-	
+	// enviarEventoParaAPI(evento);
+	// axios.post("http://localhost:4000/evento/cadastrarEventoEndereco/1", evento, {
+	// 	headers: {
+	// 		"Content-Type": "multipart/form-data",
+	// 	},
+	// });
+
+
 });
 
 function getDadosEvento() {
@@ -35,35 +44,92 @@ function getDadosEvento() {
 
 	const inputCapa = document.querySelector("#input-photo-file");
 
+	// console.log(inputTitulo.value);
+	// console.log(selectCategoria.value);
+	// console.log(categoriaSelecionada.value);
+	// console.log(selectTipoEvento.value);
+	// console.log(tipoEventoSelecionado.value);
+	// console.log(inputDescricao.value);
+	// console.log(inputCep.value);
+	// console.log(inputBairro.value);
+	// console.log(inputEstado.value);
+	// console.log(inputLogradouro.value);
+	// console.log(inputCidade.value);
+	// console.log(inputDataFim.value);
+	// console.log(inputDataInicio.value);
+	// console.log(inputHoraFim.value);
+	// console.log(inputHoraInicio.value);
+
+	// var axios = require('axios');
+	var data = JSON.stringify({
+		"titulo": inputTitulo.value,
+		"descricao": inputDescricao.value,
+		"capa": "capa.png",
+		"dataInicio": inputDataInicio.value,
+		"dataFim": inputDataFim.value,
+		"horaInicio": inputHoraInicio.value,
+		"horaFim": inputHoraFim.value,
+		"tblFaixaEtariumIdFaixaEtaria": "1",
+		"tblTipoEventoIdTipoEvento": "1",
+		"tblCategoriumIdCategoria": "1",
+		"tblContaEmpresaIdContaEmpresa": "1",
+		"cep": inputCep.value,
+		"logradouro": inputLogradouro.value,
+		// "complemento": ,
+		"bairro": inputBairro.value,
+		"cidade": inputCidade.value,
+		"estado": inputEstado.value
+	});
 
 	if (inputDataFim.value == null || inputDataFim.value == "") {
 		dataTermino = inputDataInicio.value;
 	} else {
-		dataTermino = çcçç.value;
+		dataTermino = inputDataFim.value;
 	}
 
-	const formData = new FormData();
+	// const formData = new FormData();
 
-	formData.append("titulo", inputTitulo.value);
-	formData.append("descricao", inputDescricao.value);
-	formData.append("tblCategoriumIdCategoria", categoriaSelecionada);
-	formData.append("dataInicio", inputDataInicio.value);
-	formData.append("dataFim", dataTermino.value);
-	formData.append("horaInicio", inputHoraInicio.value);
-	formData.append("horaFim", inputHoraFim.value);
-	formData.append("capa", inputCapa.files[0]);
-	formData.append("cep", inputCep.value);
-	formData.append("logradouro", inputLogradouro.value);
-	formData.append("bairro", inputBairro.value);
-	formData.append("cidade", inputCidade.value);
-	formData.append("estado", inputEstado.value);
-	formData.append("tblTipoEventoIdTipoEvento", tipoEventoSelecionado);
+	// formData.append("titulo", inputTitulo.value);
+	// formData.append("descricao", inputDescricao.value);
+	// formData.append("tblCategoriumIdCategoria", categoriaSelecionada);
+	// formData.append("dataInicio", inputDataInicio.value);
+	// formData.append("dataFim", dataTermino);
+	// formData.append("horaInicio", inputHoraInicio.value);
+	// formData.append("horaFim", inputHoraFim.value);
+	// formData.append("capa", inputCapa.files[0]);
+	// formData.append("cep", inputCep.value);
+	// formData.append("logradouro", inputLogradouro.value);
+	// formData.append("bairro", inputBairro.value);
+	// formData.append("cidade", inputCidade.value);
+	// formData.append("estado", inputEstado.value);
+	// formData.append("tblTipoEventoIdTipoEvento", tipoEventoSelecionado);
 
-	axios.post("http://localhost:4000/evento/cadastrarEventoEndereco/1/", formData, {
+
+
+	// axios.post("http://localhost:4000/evento/cadastrarEventoEndereco", formData, {
+	// 	headers: {
+	// 		"Content-Type": "multipart/form-data",
+	// 	}
+
+	// });
+
+	var config = {
+		method: 'post',
+		url: 'http://localhost:4000/evento/cadastrarEventoEndereco/1',
 		headers: {
-			"Content-Type": "multipart/form-data",
+			'Content-Type': 'application/json'
 		},
-	});
+		data: data
+	};
+
+	axios(config)
+		.then(function (response) {
+			console.log(JSON.stringify(response.data));
+		})
+		.catch(function (error) {
+			console.log(error);
+		});
+
 
 	// const evento = {
 	// 	titulo: inputTitulo.value,
@@ -84,7 +150,7 @@ function getDadosEvento() {
 
 	// return evento;
 }
-
+//**************************************** */
 // btn.addEventListener("click", () => {
 // 	const email = emailInput.value;
 // 	const password = passwordInput.value;
@@ -101,7 +167,7 @@ function getDadosEvento() {
 
 // async function enviarEventoParaAPI(evento) {
 
-	
+
 // }
 
 async function pegarCategoria() {
