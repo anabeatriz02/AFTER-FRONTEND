@@ -2,44 +2,44 @@ const btn = document.querySelector('#avancar')
 
 btn.addEventListener('click', () => {
 
-    const contaBancaria = getDadosContaBancaria()
+    const bancoConta = getDadosbancoConta()
 
-    enviarContaBancariaParaAPI(contaBancaria)
+    enviarbancoContaParaAPI(bancoConta)
 
     // console.log(evento)
 
 })
 
-function getDadosContaBancaria(){
+function getDadosbancoConta(){
 
     const inputBanco = document.querySelector('#banco')
     const inputAgencia = document.querySelector('#agencia')
     const inputNumeroConta = document.querySelector('#descricao')
     const inputDigito = document.querySelector('#digito')
 
-    const variedadeIngressoLote = {
-        tituloIngresso: inputTitulo.value,
-        descricao: inputDescricao.value,
-        quantidade: inputQuantidade.value,
-        valor: inputValor.value 
-    }
+    // const variedadeIngressoLote = {
+    //     tituloIngresso: inputTitulo.value,
+    //     descricao: inputDescricao.value,
+    //     quantidade: inputQuantidade.value,
+    //     valor: inputValor.value 
+    // }
 
 //     return variedadeIngressoLote
 
-// }
+    }
 
-// async function enviarIngressoParaAPI(ingresso) {
-//     try {
-//         const resposta = await fetch('http://localhost:4000/variedadeIngresso/cadastrarVariedadeIngresso', {
-//             method: 'POST',
-//             headers: {
-//                 Accept: 'application/json',
-//                 'Content-Type': 'application/json'
-//             },
-//             body: JSON.stringify(ingresso)
-//         })
+async function enviarbancoContaParaAPI(bancoConta) {
+    try {
+        const resposta = await fetch('http://localhost:4000/ContaEmpresa/cadastrarContaCompleta', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(bancoConta)
+        })
 
-//     } catch (erro) {
-//         console.error(erro)
-//     }
+    } catch (erro) {
+        console.error(erro)
+     }
 }
