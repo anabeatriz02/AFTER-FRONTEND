@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
 		<link rel="stylesheet" href="../css/create-event.css" />
 		<link rel="stylesheet" href="../css/scrollbar.css" />
 		<link rel="stylesheet" href="../css/reset.css" />
@@ -24,7 +24,7 @@
 
 		<h1>Criar evento</h1>
 
-		<form method="post" enctype="multipart/form-data">
+		<form enctype="multipart/form-data" method="post">
 			<label>
 				Título
 				<input type="text" value="" id="titulo" />
@@ -123,9 +123,9 @@
 			<label>
 				Fotos complementares
 				<div class="cover-complement">
-					<input id="input-photo-file" type="file" accept="image/*" onchange="loadComplement(event)" />
-					<label for="input-photo-file" class="photo-complement-label"></label>
-					<img src="../img/back-plus.jpg" id="image-photo-complement-preview" />
+					<input id="profile-input-file"" type="file" accept="image/*" onchange="loadComplement(event)" />
+					<label for="profile-input-file"" class="photo-complement-label"></label>
+					<img src="../img/back-plus.jpg" id="profile-image-preview" />
 				</div>
 			</label>
 
@@ -162,10 +162,13 @@
 		</div>
 
 		<div class="btn">
-			<button id="salvar">Avançar</button>
+			<button type="submit" id="salvar">Avançar</button>
 		</div>
 
-		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+		<!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
 
 		<script src="../javascript/create-event/create-event.js"></script>
 		<script src="../javascript/create-event/search-cep.js"></script>
