@@ -8,6 +8,7 @@ btn.addEventListener("click", () => {
 	console.log(evento)
 
 	// enviarEventoParaAPI(evento);
+<<<<<<< Updated upstream
 	// axios.post("http://localhost:4000/evento/cadastrarEventoEndereco/1", evento, {
 	// 	headers: {
 	// 		"Content-Type": "multipart/form-data",
@@ -15,6 +16,8 @@ btn.addEventListener("click", () => {
 	// });
 
 
+=======
+>>>>>>> Stashed changes
 });
 
 function getDadosEvento() {
@@ -44,6 +47,7 @@ function getDadosEvento() {
 
 	const inputCapa = document.querySelector("#input-photo-file");
 
+<<<<<<< Updated upstream
 	// console.log(inputTitulo.value);
 	// console.log(selectCategoria.value);
 	// console.log(categoriaSelecionada.value);
@@ -81,12 +85,15 @@ function getDadosEvento() {
 		"estado": inputEstado.value
 	});
 
+=======
+>>>>>>> Stashed changes
 	if (inputDataFim.value == null || inputDataFim.value == "") {
 		dataTermino = inputDataInicio.value;
 	} else {
 		dataTermino = inputDataFim.value;
 	}
 
+<<<<<<< Updated upstream
 	// const formData = new FormData();
 
 	// formData.append("titulo", inputTitulo.value);
@@ -116,6 +123,26 @@ function getDadosEvento() {
 	var config = {
 		method: 'post',
 		url: 'http://localhost:4000/evento/cadastrarEventoEndereco/1',
+=======
+	const formData = new FormData();
+
+	formData.append("titulo", inputTitulo.value);
+	formData.append("descricao", inputDescricao.value);
+	formData.append("tblCategoriumIdCategoria", categoriaSelecionada);
+	formData.append("dataInicio", inputDataInicio.value);
+	formData.append("dataFim", dataTermino.value);
+	formData.append("horaInicio", inputHoraInicio.value);
+	formData.append("horaFim", inputHoraFim.value);
+	// formData.append("capa", inputCapa.files[0]);
+	formData.append("cep", inputCep.value);
+	formData.append("logradouro", inputLogradouro.value);
+	formData.append("bairro", inputBairro.value);
+	formData.append("cidade", inputCidade.value);
+	formData.append("estado", inputEstado.value);
+	formData.append("tblTipoEventoIdTipoEvento", tipoEventoSelecionado);
+
+	axios.post("http://localhost:4000/evento/cadastrarEventoEndereco/1/", formData, {
+>>>>>>> Stashed changes
 		headers: {
 			'Content-Type': 'application/json'
 		},
@@ -167,6 +194,12 @@ function getDadosEvento() {
 
 // async function enviarEventoParaAPI(evento) {
 
+<<<<<<< Updated upstream
+=======
+// }
+
+// function enviarEventoParaAPI(evento) {
+>>>>>>> Stashed changes
 
 // }
 
