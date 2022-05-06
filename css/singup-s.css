@@ -109,7 +109,6 @@ h1 {
 }
 
 #user .user-box form input {
-	width: 100%;
 	height: 50px;
 	border-radius: 10px;
 	border: 1.5px solid var(--backgroundTertiary);
@@ -123,8 +122,7 @@ h1 {
 	border: 1.5px solid var(--purpleSecondary);
 }
 
-#user .user-box button,
-#salvarUsuario {
+#user .user-box button, #salvarUsuario {
 	width: 25%;
 	height: 50px;
 	border-radius: 10px;
@@ -141,8 +139,7 @@ h1 {
 	align-items: center;
 }
 
-#user .user-box button:hover,
-#salvarUsuario:hover {
+#user .user-box button:hover, #salvarUsuario:hover {
 	background-color: var(--purpleSecondary);
 	color: var(--white);
 }
@@ -219,8 +216,7 @@ h1 {
 	border: 1.5px solid var(--purpleSecondary);
 }
 
-#company .company-box button,
-#salvarEmpresa {
+#company .company-box button, #salvarEmpresa {
 	width: 25%;
 	height: 50px;
 	border-radius: 10px;
@@ -237,100 +233,7 @@ h1 {
 	text-decoration: none;
 }
 
-#company .company-box button:hover,
-#salvarEmpresa:hover {
+#company .company-box button:hover, #salvarEmpresa:hover {
 	background-color: var(--purpleSecondary);
 	color: var(--white);
-}
-
-/* --------------------------------------------------------------- */
-
-.photos {
-	display: flex;
-	flex-direction: row;
-	gap: 25px;
-}
-
-.photos label {
-	display: flex;
-    
-}
-
-/* --------------------------------------------------------------- */
-
-.profile-photo {
-	width: 200px;
-	height: 200px;
-	display: block;
-	position: relative;
-	/* height: 250px; */
-	border-radius: 10px;
-	overflow: hidden;
-	cursor: pointer;
-	z-index: 1;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border: solid 5px var(--backgroundSecondary);
-}
-
-.profile-photo img {
-	height: 100%;
-	z-index: 1;
-}
-
-.photo-label input[type="file"] {
-	width: 100%;
-	height: 100%;
-	display: none;
-}
-
-.profile-input-file .profile-photo-label {
-	width: 100%;
-	height: 100%;
-	cursor: pointer;
-}
-
-#profile-image-preview {
-	position: absolute;
-	height: 100%;
-}
-
-.cover-photo {
-	width: 100%;
-	height: 200px;
-	display: block;
-	position: relative;
-	/* height: 250px; */
-	border-radius: 10px;
-	overflow: hidden;
-	cursor: pointer;
-	z-index: 1;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border: solid 5px var(--backgroundSecondary);
-}
-
-.cover-photo img {
-	width: 100%;
-	height: 100%;
-	z-index: 1;
-}
-
-.photo-label input[type="file"] {
-	width: 100%;
-	height: 100%;
-	display: none;
-}
-
-.cover-input-file .cover-photo-label {
-	width: 100%;
-	height: 100%;
-	cursor: pointer;
-}
-
-#cover-image-preview {
-	position: absolute;
-	height: 100%;
 }

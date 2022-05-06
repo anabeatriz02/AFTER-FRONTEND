@@ -6,6 +6,7 @@ body {
 	padding: 2% 6%;
 	display: flex;
 	flex-direction: column;
+	overflow-x: hidden;
 	gap: var(--gapPrimary);
 }
 
