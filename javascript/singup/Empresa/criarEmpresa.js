@@ -3,9 +3,7 @@
 function realizarCadastroEmpresa() {
     const empresa = getDadosEmpresa()
 
-    enviarEmpresaParaAPI(empresa)
-
-    console.log(empresa)
+    // console.log(empresa)
 }
 
 function getDadosEmpresa() {
@@ -15,6 +13,9 @@ function getDadosEmpresa() {
     const inputSenhaConfirmar = document.querySelector('#confirmarSenhaEmpresa')
 
     const inputCnpj = document.querySelector('#cnpj')
+
+    const inputPerfil = document.querySelector('#imagemPerfilEmpresa')
+    const inputFundo = document.querySelector('#imagemFundoEmpresa')
 
     if (inputSenhaConfirmar.value !== inputSenha.value) {
 
@@ -28,32 +29,32 @@ function getDadosEmpresa() {
 
     } else {
 
-        const empresa = {
-            nickname: inputNickname.value,
-            email: inputEmail.value,
-            senha: inputSenha.value,
-            cnpj: inputCnpj.value,
-        }
-    
-        return empresa
+        const formData = new FormData()
 
-    }
-    
-}
+        formData.append("nickname", inputNickname.value)
+        formData.append("email", inputEmail.value)
+        formData.append("senha", inputSenha.value)
+        formData.append("cnpj", inputCnpj.value)
+        formData.append("imagemPerfil", inputPerfil.files[0])
+        formData.append("imagemFundo", inputFundo.files[0])
 
-async function enviarEmpresaParaAPI(empresa) {
-    try {
-        const resposta = await fetch('http://localhost:4000/perfil/cadastrarPerfilEmpresa', {
-            method: 'POST',
+        var config = {
+            method: 'post',
+            url: 'http://localhost:4000/perfil/cadastrarPerfilEmpresa',
             headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'multipart/form-data'
             },
-            body: JSON.stringify(empresa)
-        })
+            data: formData
+        };
 
-    } catch (erro) {
-        console.error(erro)
+        axios(config)
+            .then(function (response) {
+                console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+
     }
 
 }
