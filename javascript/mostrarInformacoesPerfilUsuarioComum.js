@@ -1,9 +1,9 @@
-async function getContent(){
+async function getContent() {
     try {
 
         //Empresa com biografia: 3
         //Empresa sem biografia: 7
-        const response = await fetch('http://localhost:4000/perfil/acharPerfil/1')
+        const response = await fetch('http://localhost:4000/perfil/acharPerfil/44')
 
         console.log(response)
 
@@ -13,18 +13,19 @@ async function getContent(){
 
         mostrarNickname(data)
         mostrarBiografia(data)
+        mostrarFotos(data)
 
     } catch (error) {
 
         console.error(error)
 
     }
-   
+
 }
 
 getContent()
 
-function mostrarNickname(user){
+function mostrarNickname(user) {
 
     output = `<h1 id="nickname">${user.nickname}</h1>`
 
@@ -32,7 +33,7 @@ function mostrarNickname(user){
 
 }
 
-function mostrarBiografia(user){
+function mostrarBiografia(user) {
 
     if (user.biografia != null) {
 
@@ -45,5 +46,26 @@ function mostrarBiografia(user){
     }
 
     document.querySelector('#biografia').innerHTML = output
+
+}
+
+function mostrarFotos(user) {
+
+    if (user.imagemPerfil == null) {
+        fotoPerfil = `<img class="profile-file" src="http://localhost:4000/uploads/fundoRoxo.jpg" id="image-profile-preview" />`
+    } else {
+        fotoPerfil = `<img class="profile-file" src="http://localhost:4000/${user.imagemPerfil}" id="image-profile-preview" />`
+    }
+
+    document.querySelector('#fotoPerfil').innerHTML = fotoPerfil
+
     
+    if (user.imagemFundo == null) {
+        fotoFundo = `<img class="background-file" src="http://localhost:4000/uploads/wallpaperRoxo.jpg" id="image-background-preview" />`
+    } else {
+        fotoFundo = `<img class="background-file" src="http://localhost:4000/${user.imagemFundo}" id="image-background-preview" />`
+
+    }
+
+    document.querySelector('#fotoFundo').innerHTML = fotoFundo
 }
