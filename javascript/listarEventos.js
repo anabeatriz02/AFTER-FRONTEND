@@ -47,11 +47,6 @@ function mostrarEventos(eventos) {
                 </div>
             </div>
 
-            <div class="box-edit-event">
-				<button><img src="../img/feed/icon-pencil.svg" alt="" /></button>
-				<button><img src="../img/feed/icon-bin.svg" alt="" /></button>
-			</div>
-
             <div class="box-people">
                 <a href=""><img src="../upload/profile/profile-photo.jpg" alt="" /></a>
                 <a class="e" href=""><img src="../upload/profile/profile-photo.jpg" alt="" /></a>
