@@ -13,6 +13,7 @@ async function getContent(){
 
         mostrarNickname(data)
         mostrarBiografia(data)
+        mostrarFotos(data)
 
     } catch (error) {
 
@@ -46,4 +47,25 @@ function mostrarBiografia(empresa){
 
     document.querySelector('#biografia').innerHTML = output
     
+}
+
+function mostrarFotos(company) {
+
+    if (company.imagemPerfil == null) {
+        fotoPerfil = `<img class="profile-file" src="http://localhost:4000/uploads/fundoRoxo.jpg" id="image-profile-preview" />`
+    } else {
+        fotoPerfil = `<img class="profile-file" src="http://localhost:4000/${company.imagemPerfil}" id="image-profile-preview" />`
+    }
+
+    document.querySelector('#fotoPerfil').innerHTML = fotoPerfil
+
+    
+    if (company.imagemFundo == null) {
+        fotoFundo = `<img class="background-file" src="http://localhost:4000/uploads/wallpaperRoxo.jpg" id="image-background-preview" />`
+    } else {
+        fotoFundo = `<img class="background-file" src="http://localhost:4000/${company.imagemFundo}" id="image-background-preview" />`
+
+    }
+
+    document.querySelector('#fotoFundo').innerHTML = fotoFundo
 }
