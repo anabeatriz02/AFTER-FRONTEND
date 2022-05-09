@@ -30,7 +30,7 @@ function getDadosbancoConta(){
 
 async function enviarbancoContaParaAPI(bancoConta) {
     try {
-        const resposta = await fetch('http://localhost:4000/ContaEmpresa/cadastrarContaCompleta', {
+        const resposta = await fetch('http://localhost:4000/perfil/cadastrarPerfilEmpresaContaBancaria', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
