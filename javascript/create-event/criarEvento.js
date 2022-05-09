@@ -15,8 +15,8 @@ function getDadosEvento() {
 	const selectCategoria = document.querySelector("#category");
 	const categoriaSelecionada = selectCategoria.options[selectCategoria.selectedIndex].value;
 
-	// const selectAssunto = document.querySelector('#topic')
-	// const assuntoSelecionado = selectAssunto.options[selectAssunto.selectedIndex].value
+	const selectAssunto = document.querySelector('#topic')
+	const assuntoSelecionado = selectAssunto.options[selectAssunto.selectedIndex].value
 
 	const selectTipoEvento = document.querySelector("#tipoEvento");
 	const tipoEventoSelecionado = selectTipoEvento.options[selectTipoEvento.selectedIndex].value;
@@ -44,6 +44,13 @@ function getDadosEvento() {
 
 	const inputCapa = document.querySelector("#input-photo-file");
 
+
+	const inputPrimeiraFotoComplementar = document.querySelector('#profile-input-file-1')
+	const inputSegundaFotoComplementar = document.querySelector('#profile-input-file-2')
+	const inputTerceiraFotoComplementar = document.querySelector('#profile-input-file-3')
+	const inputQuartaFotoComplementar = document.querySelector('#profile-input-file-4')
+	const inputQuintaFotoComplementar = document.querySelector('#profile-input-file-5')
+
 	// console.log(inputTitulo.value);
 	// console.log(selectCategoria.value);
 	// console.log(categoriaSelecionada.value);
@@ -66,6 +73,12 @@ function getDadosEvento() {
 		dataTermino = inputDataFim.value;
 	}
 
+	if (inputHoraFim.value == null || inputHoraFim.value == "") {
+		horaTermino = inputHoraInicio.value
+	} else {
+		horaTermino = inputHoraFim.value
+	}
+
 	var data = new FormData();
 	data.append('titulo', inputTitulo.value);
 	data.append('descricao', inputDescricao.value);
@@ -73,7 +86,7 @@ function getDadosEvento() {
 	data.append('dataInicio', inputDataInicio.value);
 	data.append('dataFim', dataTermino);
 	data.append('horaInicio', inputHoraInicio.value);
-	data.append('horaFim', inputHoraFim.value);
+	data.append('horaFim', horaTermino);
 	data.append('tblFaixaEtariumIdFaixaEtaria', faixaEtariaSelecionada);
 	data.append('tblTipoEventoIdTipoEvento', tipoEventoSelecionado);
 	data.append('tblCategoriumIdCategoria', categoriaSelecionada);
@@ -85,10 +98,15 @@ function getDadosEvento() {
 	data.append('cidade', inputCidade.value);
 	data.append('estado', inputEstado.value);
 	data.append('numero', inputNumero.value);
+	data.append('tblAssuntoIdAssunto', assuntoSelecionado)
+
+	if(inputPrimeiraFotoComplementar != null) {
+		data.append('imagem', inputPrimeiraFotoComplementar.files[0])
+	}
 
 	var config = {
 		method: 'post',
-		url: 'http://localhost:4000/evento/cadastrarEventoEndereco/1',
+		url: 'http://localhost:4000/evento/cadastrarEventoEnderecoAssuntoFoto/1',
 		headers: {
 			// ...data.getHeaders()
 			'Content-Type': 'multipart/form-data'
@@ -105,6 +123,8 @@ function getDadosEvento() {
 		});
 
 }
+
+//Mostrando e cadastrando categorias
 
 async function pegarCategoria() {
 	try {
@@ -130,6 +150,8 @@ function mostrarCategoria(categorias) {
 	document.querySelector("#categoryOption").innerHTML = output;
 }
 
+//Mostrando e cadastrando tipo de evento
+
 async function pegarTipoEvento() {
 	try {
 		const response = await fetch("http://localhost:4000/tipoEvento/listarTipoEvento");
@@ -153,6 +175,8 @@ function mostrarTipoEvento(tiposEvento) {
 
 	document.querySelector("#tipoEventoOption").innerHTML = output;
 }
+
+//Mostrando e cadastrando faixa etária de evento
 
 async function pegarFaixaEtaria() {
 	try {
@@ -178,6 +202,8 @@ function mostrarFaixaEtaria(faixasEtaria) {
 	document.querySelector("#faixaEtariaOption").innerHTML = output;
 }
 
+//Mostrando e cadastrando conta de empresa (para receber dinheiro)
+
 async function pegarContaEmpresa() {
 	try {
 		const response = await fetch("http://localhost:4000/contaEmpresa/listarContasPorIdEmpresa/1");
@@ -201,3 +227,43 @@ function mostrarContaEmpresa(contasEmpresa) {
 
 	document.querySelector("#contaEmpresaOption").innerHTML = output;
 }
+
+//Mostrando e cadastrando assunto do evento
+
+async function pegarAssunto() {
+	try {
+		const response = await fetch("http://localhost:4000/assunto/listarAssuntos");
+
+		const data = await response.json();
+
+		mostrarAssunto(data);
+	} catch (error) {
+		console.error(error);
+	}
+}
+
+pegarAssunto()
+
+function mostrarAssunto(assuntos) {
+	let output = "";
+
+	for (let assunto of assuntos) {
+		output += `<option value="${assunto.idAssunto}">${assunto.nomeAssunto}</option>`;
+	}
+
+	document.querySelector("#assuntoOption").innerHTML = output;
+}
+
+// function cadastrarImagensComplementares(){
+
+// 	const inputPrimeiraFotoComplementar = document.querySelector('#profile-input-file-1')
+// 	const inputSegundaFotoComplementar = document.querySelector('#profile-input-file-2')
+// 	const inputTerceiraFotoComplementar = document.querySelector('#profile-input-file-3')
+// 	const inputQuartaFotoComplementar = document.querySelector('#profile-input-file-4')
+// 	const inputQuintaFotoComplementar = document.querySelector('#profile-input-file-5')
+
+// 	var data = new FormData();
+
+// 	data.append
+
+// }

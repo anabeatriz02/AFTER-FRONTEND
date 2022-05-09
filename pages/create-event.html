@@ -42,7 +42,7 @@
 				Assunto
 				<select id="topic" name="topic">
 					<option selected value="">Selecione um assunto..</option>
-					<optgroup></optgroup>
+					<optgroup id="assuntoOption"></optgroup>
 				</select>
 			</label>
 
@@ -123,9 +123,29 @@
 			<label>
 				Fotos complementares
 				<div class="cover-complement">
-					<input id="profile-input-file"" type="file" accept="image/*" onchange="loadComplement(event)" />
-					<label for="profile-input-file"" class="photo-complement-label"></label>
-					<img src="../img/back-plus.jpg" id="profile-image-preview" />
+					<input id="profile-input-file-1" type="file" accept="image/*" onchange="loadComplement(event)" />
+					<label for="profile-input-file" class="photo-complement-label"></label>
+					<img src="../img/back-plus.jpg" id="first-image-photo-complement-preview" />
+				</div>
+				<div class="cover-complement">
+					<input id="profile-input-file-2" type="file" accept="image/*" onchange="loadSecondComplement(event)" />
+					<label for="profile-input-file" class="photo-complement-label"></label>
+					<img src="../img/back-plus.jpg" id="second-image-photo-complement-preview" />
+				</div>
+				<div class="cover-complement">
+					<input id="profile-input-file-3" type="file" accept="image/*" onchange="loadThirdComplement(event)" />
+					<label for="profile-input-file" class="photo-complement-label"></label>
+					<img src="../img/back-plus.jpg" id="third-image-photo-complement-preview" />
+				</div>
+				<div class="cover-complement">
+					<input id="profile-input-file-4" type="file" accept="image/*" onchange="loadFourthComplement(event)" />
+					<label for="profile-input-file" class="photo-complement-label"></label>
+					<img src="../img/back-plus.jpg" id="fourth-image-photo-complement-preview" />
+				</div>
+				<div class="cover-complement">
+					<input id="profile-input-file-5" type="file" accept="image/*" onchange="loadFifthComplement(event)" />
+					<label for="profile-input-file" class="photo-complement-label"></label>
+					<img src="../img/back-plus.jpg" id="fifth-image-photo-complement-preview" />
 				</div>
 			</label>
 
