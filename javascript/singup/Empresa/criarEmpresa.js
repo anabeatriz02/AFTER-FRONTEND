@@ -17,6 +17,14 @@ function getDadosEmpresa() {
     const inputPerfil = document.querySelector('#imagemPerfilEmpresa')
     const inputFundo = document.querySelector('#imagemFundoEmpresa')
 
+
+    // cadastrando BANCO junto com empresa
+    const inputBanco = document.querySelector('#bancoEmpresa')
+    const inputAgencia = document.querySelector('#agenciaEmpresa')
+    const inputNumeroConta = document.querySelector('#numeroContaEmpresa')
+    const inputCvv = document.querySelector('#cvvEmpresa')
+    const inputTipoConta = document.querySelector('#tipoContaEmpresa')
+
     if (inputSenhaConfirmar.value !== inputSenha.value) {
 
         alert("A senha digitada está incorreta")
@@ -37,6 +45,11 @@ function getDadosEmpresa() {
         formData.append("cnpj", inputCnpj.value)
         formData.append("imagemPerfil", inputPerfil.files[0])
         formData.append("imagemFundo", inputFundo.files[0])
+        formData.append("banco", inputBanco.value)
+        formData.append("agencia", inputAgencia.value)
+        formData.append("numeroConta", inputNumeroConta.value)
+        formData.append("cvv", inputCvv.value)
+        formData.append("tipoConta", inputTipoConta.value)
 
         var config = {
             method: 'post',
