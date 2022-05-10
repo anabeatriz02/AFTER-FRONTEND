@@ -168,6 +168,23 @@ async function pegarCategoria() {
 		const data = await response.json();
 
 		mostrarCategoria(data);
+
+		const categoriaSelect = document.querySelector('#category')
+
+		//Mostrando o assunto de acordo com a categoria selecionada
+
+		categoriaSelect.addEventListener("change", async () => {
+
+			const categoria = document.getElementById('category').value
+
+			const responseAssunto = await fetch(`http://localhost:4000/assunto/listarPorCategoria/${categoria}`)
+
+			const dataAssunto = await responseAssunto.json()
+
+			mostrarAssunto(dataAssunto)
+
+		})
+
 	} catch (error) {
 		console.error(error);
 	}
