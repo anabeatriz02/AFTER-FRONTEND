@@ -104,6 +104,22 @@ function getDadosEvento() {
 		data.append('imagem', inputPrimeiraFotoComplementar.files[0])
 	}
 
+	if(inputSegundaFotoComplementar != null) {
+		data.append('imagem', inputSegundaFotoComplementar.files[0])
+	}
+
+	if(inputTerceiraFotoComplementar != null) {
+		data.append('imagem', inputTerceiraFotoComplementar.files[0])
+	}
+
+	if(inputQuartaFotoComplementar != null) {
+		data.append('imagem', inputQuartaFotoComplementar.files[0])
+	}
+
+	if(inputQuintaFotoComplementar != null) {
+		data.append('imagem', inputQuintaFotoComplementar.files[0])
+	}
+
 	var config = {
 		method: 'post',
 		url: 'http://localhost:4000/evento/cadastrarEventoEnderecoAssuntoFoto/1',
