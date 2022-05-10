@@ -14,16 +14,16 @@ function getDadosEmpresa() {
 
     const inputCnpj = document.querySelector('#cnpj')
 
-    const inputPerfil = document.querySelector('#imagemPerfilEmpresa')
-    const inputFundo = document.querySelector('#imagemFundoEmpresa')
+    const inputPerfil = document.querySelector('#imagemPerfil')
+    const inputFundo = document.querySelector('#imagemFundo')
 
 
     // cadastrando BANCO junto com empresa
-    const inputBanco = document.querySelector('#bancoEmpresa')
-    const inputAgencia = document.querySelector('#agenciaEmpresa')
-    const inputNumeroConta = document.querySelector('#numeroContaEmpresa')
-    const inputCvv = document.querySelector('#cvvEmpresa')
-    const inputTipoConta = document.querySelector('#tipoContaEmpresa')
+    const inputBanco = document.querySelector('#banco')
+    const inputAgencia = document.querySelector('#agencia')
+    const inputNumeroConta = document.querySelector('#conta')
+    const inputCvv = document.querySelector('#cvv')
+    const inputTipoConta = document.querySelector('#tipoConta')
 
     if (inputSenhaConfirmar.value !== inputSenha.value) {
 
@@ -45,15 +45,15 @@ function getDadosEmpresa() {
         formData.append("cnpj", inputCnpj.value)
         formData.append("imagemPerfil", inputPerfil.files[0])
         formData.append("imagemFundo", inputFundo.files[0])
-        formData.append("banco", inputBanco.value)
+        formData.append("nomeBanco", inputBanco.value)
         formData.append("agencia", inputAgencia.value)
         formData.append("numeroConta", inputNumeroConta.value)
-        formData.append("cvv", inputCvv.value)
-        formData.append("tipoConta", inputTipoConta.value)
+        formData.append("digito", inputCvv.value)
+        formData.append("nomeTipo", inputTipoConta.value)
 
         var config = {
             method: 'post',
-            url: 'http://localhost:4000/perfil/cadastrarPerfilEmpresa',
+            url: 'http://localhost:4000/perfil/cadastrarPerfilEmpresaContaBancaria',
             headers: {
                 'Content-Type': 'multipart/form-data'
             },
