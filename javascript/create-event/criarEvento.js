@@ -44,12 +44,14 @@ function getDadosEvento() {
 
 	const inputCapa = document.querySelector("#input-photo-file");
 
-
 	const inputPrimeiraFotoComplementar = document.querySelector('#profile-input-file-1')
 	const inputSegundaFotoComplementar = document.querySelector('#profile-input-file-2')
 	const inputTerceiraFotoComplementar = document.querySelector('#profile-input-file-3')
 	const inputQuartaFotoComplementar = document.querySelector('#profile-input-file-4')
 	const inputQuintaFotoComplementar = document.querySelector('#profile-input-file-5')
+
+	const selectCelebridade = document.querySelector('#celebridade')
+	const celebridadeSelecionada = selectCelebridade.options[selectCelebridade.selectedIndex].value;
 
 	// console.log(inputTitulo.value);
 	// console.log(selectCategoria.value);
@@ -79,6 +81,8 @@ function getDadosEvento() {
 		horaTermino = inputHoraFim.value
 	}
 
+	// console.log("Celebridade: "+ celebridadeSelecionada)
+
 	var data = new FormData();
 	data.append('titulo', inputTitulo.value);
 	data.append('descricao', inputDescricao.value);
@@ -100,29 +104,44 @@ function getDadosEvento() {
 	data.append('numero', inputNumero.value);
 	data.append('tblAssuntoIdAssunto', assuntoSelecionado)
 
-	if(inputPrimeiraFotoComplementar != null) {
+	// let celebridade = verificarCelebridade(celebridadeSelecionada)
+
+	// if (celebridadeSelecionada != null || celebridadeSelecionada != undefined || celebridadeSelecionada != '' || celebridadeSelecionada != 0 || celebridadeSelecionada != '0') {
+	// 	data.append('tblCelebridadeIdCelebridade', celebridadeSelecionada)
+	// 	console.log(celebridadeSelecionada + " OPA")
+	// } 
+
+	if (celebridadeSelecionada == 0) {
+		// data.append('tblCelebridadeIdCelebridade', celebridadeSelecionada)
+		console.log(celebridadeSelecionada + " Olá")
+	} else {
+		data.append('tblCelebridadeIdCelebridade', celebridadeSelecionada)
+		console.log(categoriaSelecionada + " Tchau")
+	}
+
+	if (inputPrimeiraFotoComplementar != null) {
 		data.append('imagem', inputPrimeiraFotoComplementar.files[0])
 	}
 
-	if(inputSegundaFotoComplementar != null) {
+	if (inputSegundaFotoComplementar != null) {
 		data.append('imagem', inputSegundaFotoComplementar.files[0])
 	}
 
-	if(inputTerceiraFotoComplementar != null) {
+	if (inputTerceiraFotoComplementar != null) {
 		data.append('imagem', inputTerceiraFotoComplementar.files[0])
 	}
 
-	if(inputQuartaFotoComplementar != null) {
+	if (inputQuartaFotoComplementar != null) {
 		data.append('imagem', inputQuartaFotoComplementar.files[0])
 	}
 
-	if(inputQuintaFotoComplementar != null) {
+	if (inputQuintaFotoComplementar != null) {
 		data.append('imagem', inputQuintaFotoComplementar.files[0])
 	}
 
 	var config = {
 		method: 'post',
-		url: 'http://localhost:4000/evento/cadastrarEventoEnderecoAssuntoFoto/1',
+		url: 'http://localhost:4000/evento/cadastrarEventoCompleto/1',
 		headers: {
 			// ...data.getHeaders()
 			'Content-Type': 'multipart/form-data'
@@ -270,16 +289,32 @@ function mostrarAssunto(assuntos) {
 	document.querySelector("#assuntoOption").innerHTML = output;
 }
 
-// function cadastrarImagensComplementares(){
+//Mostrando e cadastrando celebridade
 
-// 	const inputPrimeiraFotoComplementar = document.querySelector('#profile-input-file-1')
-// 	const inputSegundaFotoComplementar = document.querySelector('#profile-input-file-2')
-// 	const inputTerceiraFotoComplementar = document.querySelector('#profile-input-file-3')
-// 	const inputQuartaFotoComplementar = document.querySelector('#profile-input-file-4')
-// 	const inputQuintaFotoComplementar = document.querySelector('#profile-input-file-5')
+async function pegarCelebridade() {
+	try {
+		const response = await fetch("http://localhost:4000/celebridade/listarCelebridades");
 
-// 	var data = new FormData();
+		const data = await response.json();
 
-// 	data.append
+		mostrarCelebridade(data);
+	} catch (error) {
+		console.error(error);
+	}
+}
 
+pegarCelebridade()
+
+function mostrarCelebridade(celebridades) {
+	let output = "";
+
+	for (let celebridade of celebridades) {
+		output += `<option value="${celebridade.idCelebridade}">${celebridade.tblVerificacaoUsuario.nickname}</option>`;
+	}
+
+	document.querySelector("#celebridadeOption").innerHTML = output;
+}
+
+// function verificarCelebridade(resultado){
+// 	document.querySelector('#resultadoCelebridade').value = resultado
 // }
