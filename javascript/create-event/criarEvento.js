@@ -2,12 +2,16 @@ const btn = document.querySelector("#salvar");
 
 // console.log(btn)
 
-btn.addEventListener("click", () => {
-	const evento = getDadosEvento();
+const form = document.querySelector('#formCriarEvento')
 
-	console.log(evento)
+// btn.addEventListener("click", () => {
+// 	const evento = getDadosEvento();
 
-});
+// 	console.log(evento)
+
+// });
+
+getDadosEvento()
 
 function getDadosEvento() {
 	const inputTitulo = document.querySelector("#titulo");
@@ -53,6 +57,268 @@ function getDadosEvento() {
 	const selectCelebridade = document.querySelector('#celebridade')
 	const celebridadeSelecionada = selectCelebridade.options[selectCelebridade.selectedIndex].value;
 
+	const isRequired = value => value === '' ? false : true;
+
+	//Validação do título
+
+	const checkTitulo = () => {
+		let valid = false
+
+		const titulo = inputTitulo.value.trim()
+
+		if (!isRequired(titulo)) {
+			alert("Você não passou titulo")
+		} else {
+			valid = true
+		}
+
+		return valid
+	}
+
+	//Validação do endereço do evento
+
+	const checkCep = () => {
+		let valid = false
+
+		const cep = inputCep.value.trim()
+
+		if (!isRequired(cep)) {
+			alert("Você não passou cep")
+		} else {
+			valid = true
+		}
+
+		return valid
+	}
+
+	const checkBairro = () => {
+		let valid = false
+
+		const bairro = inputBairro.value.trim()
+
+		if (!isRequired(bairro)) {
+			alert("Você não passou o bairro")
+		} else {
+			valid = true
+		}
+
+		return valid
+	}
+
+	const checkEstado = () => {
+		let valid = false
+
+		const estado = inputEstado.value.trim()
+
+		if (!isRequired(estado)) {
+			alert("Você não passou o estado")
+		} else {
+			valid = true
+		}
+
+		return valid
+	}
+
+	const checkLogradouro = () => {
+		let valid = false
+
+		const logradouro = inputLogradouro.value.trim()
+
+		if (!isRequired(logradouro)) {
+			alert("Você não passou o logradouro")
+		} else {
+			valid = true
+		}
+
+		return valid
+	}
+
+	const checkCidade = () => {
+		let valid = false
+
+		const cidade = inputCidade.value.trim()
+
+		if (!isRequired(cidade)) {
+			alert("Você não passou a cidade")
+		} else {
+			valid = true
+		}
+
+		return valid
+	}
+
+	//Validação da data e hora de início
+
+	const checkDataInicio = () => {
+		let valid = false
+
+		const dataInicio = inputDataInicio.value.trim()
+
+		if (!isRequired(dataInicio)) {
+			alert("Você não passou a data de início")
+		} else {
+			valid = true
+		}
+
+		return valid
+	}
+
+	const checkHoraInicio = () => {
+		let valid = false
+
+		const horaInicio = inputHoraInicio.value.trim()
+
+		if (!isRequired(horaInicio)) {
+			alert("Você não passou a hora de início")
+		} else {
+			valid = true
+		}
+
+		return valid
+	}
+
+	const checkCapa = () => {
+		let valid = false
+
+		if (inputCapa.files.length == 0) {
+			alert("Você não selecionou uma capa")
+		} else {
+			valid = true
+		}
+
+		return valid
+	}
+
+	//Ação de submit do form
+
+	form.addEventListener('submit', function (e) {
+		e.preventDefault()
+
+		//Validação dos campos
+
+		let isTituloValid = checkTitulo(),
+			isCepValid = checkCep(),
+			isBairroValid = checkBairro(),
+			isEstadoValid = checkEstado(),
+			isLogradouroValid = checkLogradouro(),
+			isCidadeValid = checkCidade(),
+			isDataInicioValid = checkDataInicio(),
+			isHoraInicioValid = checkHoraInicio(),
+			isCapaValid = checkCapa()
+
+		let isFormValid =
+			isTituloValid &&
+			isCepValid &&
+			isBairroValid &&
+			isEstadoValid &&
+			isLogradouroValid &&
+			isCidadeValid &&
+			isDataInicioValid &&
+			isHoraInicioValid &&
+			isCapaValid
+
+		//Quando o formulário for válido, fazer o post desse evento
+		if (isFormValid) {
+			alert("Evento cadastrado com sucesso!")
+
+			//Se a data ou hora de término não for passada, incorporar o valor da data ou hora de início nesse atributo
+
+			if (inputDataFim.value == null || inputDataFim.value == "") {
+				dataTermino = inputDataInicio.value;
+			} else {
+				dataTermino = inputDataFim.value;
+			}
+
+			if (inputHoraFim.value == null || inputHoraFim.value == "") {
+				horaTermino = inputHoraInicio.value
+			} else {
+				horaTermino = inputHoraFim.value
+			}
+
+			//Pegando valores de option selecionada em selects
+
+			const categoriaSelecionada = selectCategoria.options[selectCategoria.selectedIndex].value;
+			const assuntoSelecionado = selectAssunto.options[selectAssunto.selectedIndex].value
+			const tipoEventoSelecionado = selectTipoEvento.options[selectTipoEvento.selectedIndex].value;
+			const faixaEtariaSelecionada = selectFaixaEtaria.options[selectFaixaEtaria.selectedIndex].value;
+			const contaEmpresaSelecionada = selectContaEmpresa.options[selectContaEmpresa.selectedIndex].value;
+
+			var data = new FormData();
+			data.append('titulo', inputTitulo.value);
+			data.append('descricao', inputDescricao.value);
+			data.append('capa', inputCapa.files[0]);
+			data.append('dataInicio', inputDataInicio.value);
+			data.append('dataFim', dataTermino);
+			data.append('horaInicio', inputHoraInicio.value);
+			data.append('horaFim', horaTermino);
+			data.append('tblFaixaEtariumIdFaixaEtaria', faixaEtariaSelecionada);
+			data.append('tblTipoEventoIdTipoEvento', tipoEventoSelecionado);
+			data.append('tblCategoriumIdCategoria', categoriaSelecionada);
+			data.append('tblContaEmpresaIdContaEmpresa', contaEmpresaSelecionada);
+			data.append('cep', inputCep.value);
+			data.append('logradouro', inputLogradouro.value);
+			data.append('complemento', inputComplemento.value);
+			data.append('bairro', inputBairro.value);
+			data.append('cidade', inputCidade.value);
+			data.append('estado', inputEstado.value);
+			data.append('numero', inputNumero.value);
+			data.append('tblAssuntoIdAssunto', assuntoSelecionado)
+
+			//Verificar se a celebridade está sendo passada
+
+			if (celebridadeSelecionada == 0) {
+				// data.append('tblCelebridadeIdCelebridade', celebridadeSelecionada)
+				console.log(celebridadeSelecionada + " Olá")
+			} else {
+				data.append('tblCelebridadeIdCelebridade', celebridadeSelecionada)
+				console.log(categoriaSelecionada + " Tchau")
+			}
+
+			//Verificar se fotos complementares estão sendo passadas
+
+			if (inputPrimeiraFotoComplementar != null) {
+				data.append('imagem', inputPrimeiraFotoComplementar.files[0])
+			}
+
+			if (inputSegundaFotoComplementar != null) {
+				data.append('imagem', inputSegundaFotoComplementar.files[0])
+			}
+
+			if (inputTerceiraFotoComplementar != null) {
+				data.append('imagem', inputTerceiraFotoComplementar.files[0])
+			}
+
+			if (inputQuartaFotoComplementar != null) {
+				data.append('imagem', inputQuartaFotoComplementar.files[0])
+			}
+
+			if (inputQuintaFotoComplementar != null) {
+				data.append('imagem', inputQuintaFotoComplementar.files[0])
+			}
+
+			//Configurando rota para criação
+
+			var config = {
+				method: 'post',
+				url: 'http://localhost:4000/evento/cadastrarEventoCompleto/1',
+				headers: {
+					// ...data.getHeaders()
+					'Content-Type': 'multipart/form-data'
+				},
+				data: data
+			};
+
+			axios(config)
+				.then(function (response) {
+					console.log(JSON.stringify(response.data));
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+		}
+	})
+
+
 	// console.log(inputTitulo.value);
 	// console.log(selectCategoria.value);
 	// console.log(categoriaSelecionada.value);
@@ -68,94 +334,6 @@ function getDadosEvento() {
 	// console.log(inputDataInicio.value);
 	// console.log(inputHoraFim.value);
 	// console.log(inputHoraInicio.value);
-
-	if (inputDataFim.value == null || inputDataFim.value == "") {
-		dataTermino = inputDataInicio.value;
-	} else {
-		dataTermino = inputDataFim.value;
-	}
-
-	if (inputHoraFim.value == null || inputHoraFim.value == "") {
-		horaTermino = inputHoraInicio.value
-	} else {
-		horaTermino = inputHoraFim.value
-	}
-
-	// console.log("Celebridade: "+ celebridadeSelecionada)
-
-	var data = new FormData();
-	data.append('titulo', inputTitulo.value);
-	data.append('descricao', inputDescricao.value);
-	data.append('capa', inputCapa.files[0]);
-	data.append('dataInicio', inputDataInicio.value);
-	data.append('dataFim', dataTermino);
-	data.append('horaInicio', inputHoraInicio.value);
-	data.append('horaFim', horaTermino);
-	data.append('tblFaixaEtariumIdFaixaEtaria', faixaEtariaSelecionada);
-	data.append('tblTipoEventoIdTipoEvento', tipoEventoSelecionado);
-	data.append('tblCategoriumIdCategoria', categoriaSelecionada);
-	data.append('tblContaEmpresaIdContaEmpresa', contaEmpresaSelecionada);
-	data.append('cep', inputCep.value);
-	data.append('logradouro', inputLogradouro.value);
-	data.append('complemento', inputComplemento.value);
-	data.append('bairro', inputBairro.value);
-	data.append('cidade', inputCidade.value);
-	data.append('estado', inputEstado.value);
-	data.append('numero', inputNumero.value);
-	data.append('tblAssuntoIdAssunto', assuntoSelecionado)
-
-	// let celebridade = verificarCelebridade(celebridadeSelecionada)
-
-	// if (celebridadeSelecionada != null || celebridadeSelecionada != undefined || celebridadeSelecionada != '' || celebridadeSelecionada != 0 || celebridadeSelecionada != '0') {
-	// 	data.append('tblCelebridadeIdCelebridade', celebridadeSelecionada)
-	// 	console.log(celebridadeSelecionada + " OPA")
-	// } 
-
-	if (celebridadeSelecionada == 0) {
-		// data.append('tblCelebridadeIdCelebridade', celebridadeSelecionada)
-		console.log(celebridadeSelecionada + " Olá")
-	} else {
-		data.append('tblCelebridadeIdCelebridade', celebridadeSelecionada)
-		console.log(categoriaSelecionada + " Tchau")
-	}
-
-	if (inputPrimeiraFotoComplementar != null) {
-		data.append('imagem', inputPrimeiraFotoComplementar.files[0])
-	}
-
-	if (inputSegundaFotoComplementar != null) {
-		data.append('imagem', inputSegundaFotoComplementar.files[0])
-	}
-
-	if (inputTerceiraFotoComplementar != null) {
-		data.append('imagem', inputTerceiraFotoComplementar.files[0])
-	}
-
-	if (inputQuartaFotoComplementar != null) {
-		data.append('imagem', inputQuartaFotoComplementar.files[0])
-	}
-
-	if (inputQuintaFotoComplementar != null) {
-		data.append('imagem', inputQuintaFotoComplementar.files[0])
-	}
-
-	var config = {
-		method: 'post',
-		url: 'http://localhost:4000/evento/cadastrarEventoCompleto/1',
-		headers: {
-			// ...data.getHeaders()
-			'Content-Type': 'multipart/form-data'
-		},
-		data: data
-	};
-
-	axios(config)
-		.then(function (response) {
-			console.log(JSON.stringify(response.data));
-		})
-		.catch(function (error) {
-			console.log(error);
-		});
 
 }
 
@@ -331,7 +509,3 @@ function mostrarCelebridade(celebridades) {
 
 	document.querySelector("#celebridadeOption").innerHTML = output;
 }
-
-// function verificarCelebridade(resultado){
-// 	document.querySelector('#resultadoCelebridade').value = resultado
-// }
