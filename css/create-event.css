@@ -338,7 +338,7 @@ form .btn,
 	position: fixed;
 	/* animation: modal;
 	animation-duration: 800ms; */
-	/* display: none; */
+	display: none;
 	/* display: flex;
 	justify-content: center;
 	align-items: center;
