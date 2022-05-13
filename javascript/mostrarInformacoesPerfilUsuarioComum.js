@@ -1,9 +1,9 @@
-async function getContent(){
+async function getContent() {
     try {
 
         //Empresa com biografia: 3
         //Empresa sem biografia: 7
-        const response = await fetch('http://localhost:4000/perfil/acharPerfil/3')
+        const response = await fetch('http://localhost:4000/perfil/acharPerfil/44')
 
         console.log(response)
 
@@ -20,24 +20,24 @@ async function getContent(){
         console.error(error)
 
     }
-   
+
 }
 
 getContent()
 
-function mostrarNickname(empresa){
+function mostrarNickname(user) {
 
-    output = `<h1 id="nickname">${empresa.nickname}<img src="../img/icon-check.svg"/></h1>`
+    output = `<h1 id="nickname">${user.nickname}</h1>`
 
     document.querySelector('#nickname').innerHTML = output
 
 }
 
-function mostrarBiografia(empresa){
+function mostrarBiografia(user) {
 
-    if (empresa.biografia != null) {
+    if (user.biografia != null) {
 
-        output = `${empresa.biografia}`
+        output = `${user.biografia}`
 
     } else {
 
@@ -46,24 +46,24 @@ function mostrarBiografia(empresa){
     }
 
     document.querySelector('#biografia').innerHTML = output
-    
+
 }
 
-function mostrarFotos(company) {
+function mostrarFotos(user) {
 
-    if (company.imagemPerfil == null) {
+    if (user.imagemPerfil == null) {
         fotoPerfil = `<img class="profile-file" src="http://localhost:4000/uploads/fundoRoxo.jpg" id="image-profile-preview" />`
     } else {
-        fotoPerfil = `<img class="profile-file" src="http://localhost:4000/${company.imagemPerfil}" id="image-profile-preview" />`
+        fotoPerfil = `<img class="profile-file" src="http://localhost:4000/${user.imagemPerfil}" id="image-profile-preview" />`
     }
 
     document.querySelector('#fotoPerfil').innerHTML = fotoPerfil
 
     
-    if (company.imagemFundo == null) {
+    if (user.imagemFundo == null) {
         fotoFundo = `<img class="background-file" src="http://localhost:4000/uploads/wallpaperRoxo.jpg" id="image-background-preview" />`
     } else {
-        fotoFundo = `<img class="background-file" src="http://localhost:4000/${company.imagemFundo}" id="image-background-preview" />`
+        fotoFundo = `<img class="background-file" src="http://localhost:4000/${user.imagemFundo}" id="image-background-preview" />`
 
     }
 

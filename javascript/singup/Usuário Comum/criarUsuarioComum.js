@@ -1,56 +1,79 @@
 "use-strict"
 
-const btn = document.querySelector('#salvar')
-
-btn.addEventListener('click', () => {
-
+function realizarCadastroUsuarioComum() {
     const perfil = getDadosPerfil()
-
-    enviarPerfilParaAPI(perfil)
 
     console.log(perfil)
 
-})
+}
 
 function getDadosPerfil() {
     const inputNickname = document.querySelector('#nickname')
     const inputEmail = document.querySelector('#email')
     const inputSenha = document.querySelector('#senha')
+    const inputSenhaConfirmar = document.querySelector('#senhaConfirmar')
 
     const inputNomeCompleto = document.querySelector('#nome')
     const inputDataNasc = document.querySelector('#dataNasc')
 
     const inputCep = document.querySelector('#cep')
     const inputCidade = document.querySelector('#cidade')
-    const inputEstado = document.querySelector('#estado')
+    const inputEstado = document.querySelector('#uf')
 
-    const perfil = {
-        nickname: inputNickname.value,
-        email: inputEmail.value,
-        senha: inputSenha.value,
-        nome: inputNomeCompleto.value,
-        dataNasc: inputDataNasc.value,
-        cep: inputCep.value,
-        cidade: inputCidade.value,
-        estado: inputEstado.value
-    }
+    const inputPerfil = document.querySelector('#imagemPerfil')
+    const inputFundo = document.querySelector('#imagemFundo')
 
-    return perfil
-}
+    if (inputSenhaConfirmar.value !== inputSenha.value) {
+        alert("A senha digitada está incorreta")
 
-async function enviarPerfilParaAPI(perfil) {
-    try {
-        const resposta = await fetch('http://localhost:4000/perfil/cadastrarPerfilUsuarioComumEndereco', {
-            method: 'POST',
+        const btnSalvar = document.querySelector('#salvarUsuario')
+
+        btnSalvar.setAttribute('href', "./singup.html")
+
+        return false
+
+    } else {
+
+        const formData = new FormData()
+
+        formData.append("nickname", inputNickname.value)
+        formData.append("email", inputEmail.value)
+        formData.append("senha", inputSenha.value)
+        formData.append("nome", inputNomeCompleto.value)
+        formData.append("dataNasc", inputDataNasc.value)
+        formData.append("cep", inputCep.value)
+        formData.append("cidade", inputCidade.value)
+        formData.append("estado", inputEstado.value)
+        formData.append("imagemPerfil", inputPerfil.files[0])
+        formData.append("imagemFundo", inputFundo.files[0])
+
+        axios.post('http://localhost:4000/perfil/cadastrarPerfilUsuarioComumEndereco', formData, {
             headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(perfil)
+                'Content-Type': 'multipart/form-data'
+            }
         })
 
-    } catch (erro) {
-        console.error(erro)
+        axios(config)
+            .then(function (response) {
+                console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        // const perfil = {
+        //     nickname: inputNickname.value,
+        //     email: inputEmail.value,
+        //     senha: inputSenha.value,
+        //     nome: inputNomeCompleto.value,
+        //     dataNasc: inputDataNasc.value,
+        //     cep: inputCep.value,
+        //     cidade: inputCidade.value,
+        //     estado: inputEstado.value,
+        //     imagemPerfil: inputPerfil.files[0]
+        // }
+
+        // return perfil
+
     }
 
 }

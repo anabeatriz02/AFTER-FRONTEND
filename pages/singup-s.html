@@ -33,31 +33,31 @@
 					<form action="" enctype="multipart/form-data" method="post">
 						<label>
 							Nome completo
-							<input type="text" id="nome" />
+							<input type="text" id="nome"/>
 						</label>
 						<div class="date-user">
 							<label>
 								Nome de usuário
-								<input type="text" id="nickname" />
+								<input type="text" id="nickname"/>
 							</label>
 							<label>
 								Data de nascimento
-								<input type="date" id="dataNasc" />
+								<input type="date" id="dataNasc"/>
 							</label>
 						</div>
 						<label>
 							E-mail
-							<input type="email" id="email" />
+							<input type="email" id="email"/>
 						</label>
 
 						<div class="password">
 							<label>
 								Senha
-								<input type="password" id="senha" />
+								<input type="password" id="senha"/>
 							</label>
 							<label>
 								Confirmar senha
-								<input type="password" id="senhaConfirmar" />
+								<input type="password" id="senhaConfirmar"/>
 							</label>
 						</div>
 
@@ -68,52 +68,28 @@
 							</label>
 							<label>
 								Estado
-								<input type="text" id="uf" />
+								<input type="text" id="uf"/>
 							</label>
 							<label>
 								Cidade
-								<input type="text" id="cidade" />
+								<input type="text" id="cidade"/>
 							</label>
 						</div>
-
-						<!-- <div class="photos">
-							<label>
-								Foto de perfil
-								<div class="profile-photo">
-									<input id="profile-input-file" type="file" accept="image/*" onchange="loadBackground(event)" />
-									<label for="profile-input-file" class="profile-photo-label"></label>
-									<img src="../img/back-plus.jpg" id="profile-image-preview" />
-								</div>
-							</label>
-							<label>
-								Foto de fundo
-								<div class="cover-photo">
-									<input id="cover-input-file" type="file" accept="image/*" onchange="loadBackground(event)" />
-									<label for="cover-input-file" class="cover-photo-label"></label>
-									<img src="../img/back-plus.jpg" id="cover-image-preview" />
-								</div>
-							</label>
-						</div> -->
 						<label for="">
-							teste imagem perfil
-							<input type="file" id="imagemPerfilEmpresa" />
+							Imagem de perfil
+							<input type="file" id="imagemPerfil">
 						</label>
 						<label for="">
-							teste imagem fundo
-							<input type="file" id="imagemFundo" />
+							Imagem de fundo
+							<input type="file" id="imagemFundo">
 						</label>
-						<label for="">
-							Biografia
-							<input type="text" id="biografia" />
-						</label>
-
-						
 					</form>
 					<!-- <a href="singup-photo-profile.html" id="salvarUsuario" onclick="realizarCadastroUsuarioComum()">
 						<button>AVANÇAR</button>
 						AVANÇAR
 					</a> -->
 					<button id="salvarUsuario" onclick="realizarCadastroUsuarioComum()">AVANÇAR</button>
+					
 				</div>
 			</div>
 			<div id="company" data-tab-content>
@@ -121,73 +97,40 @@
 					<form action="">
 						<label>
 							Nome de usuário
-							<input type="text" id="nicknameEmpresa" />
+							<input type="text" id="nicknameEmpresa"/>
 						</label>
 						<label>
 							CNPJ
-							<input type="email" id="cnpj" />
+							<input type="email" id="cnpj"/>
 						</label>
 						<label>
 							E-mail
-							<input type="email" id="emailEmpresa" />
+							<input type="email" id="emailEmpresa"/>
 						</label>
 
 						<div class="password">
 							<label>
 								Senha
-								<input type="password" id="senhaEmpresa" />
+								<input type="password" id="senhaEmpresa"/>
 							</label>
 							<label>
 								Confirmar senha
-								<input type="password" id="confirmarSenhaEmpresa" />
+								<input type="password" id="confirmarSenhaEmpresa"/>
 							</label>
 						</div>
 
 						<label for="">
-							teste imagem perfil
-							<input type="file" id="imagemPerfil" />
+							Imagem de perfil
+							<input type="file" id="imagemPerfilEmpresa">
 						</label>
 						<label for="">
-							teste imagem fundo
-							<input type="file" id="imagemFundo" />
+							Imagem de fundo
+							<input type="file" id="imagemFundoEmpresa">
 						</label>
-						<label for="">
-							Biografia
-							<input type="text" id="biografia" />
-						</label>
-
-
-
-						<!--  CONTA BANCÁRIA TESTE -->
-
-
-                        <label>
-                            teste conta bancaria
-							<label for="">
-								Banco
-								<input type="text" id="banco" />
-							</label>
-							<label for="">
-								agencia
-								<input type="text" id="agencia" />
-							</label>
-							<label for="">
-								conta
-								<input type="text" id="conta" />
-							</label>
-							<label for="">
-								cvv
-								<input type="text" id="cvv" />
-							</label>
-							<label for="">
-								tipo conta
-								<input type="text" id="tipoConta" />
-							</label>
-						</label>
-
 					</form>
 					<!-- <button id="salvarEmpresa" onclick="realizarCadastro()">AVANÇAR</button> -->
-					<a  onclick="realizarCadastroEmpresa()" id="salvarEmpresa">AVANÇAR</a>
+					<!-- <a href="singup-photo-profile.html" onclick="realizarCadastroEmpresa()" id="salvarEmpresa">AVANÇAR</a> -->
+					<button id="salvarEmpresa" onclick="realizarCadastroEmpresa()">AVANÇAR</button>
 				</div>
 			</div>
 		</section>
@@ -195,7 +138,6 @@
 		<script src="../javascript/singup/tab-area.js"></script>
 		<script src="../javascript/singup/search-cep.js"></script>
 		<script src="../javascript/singup/Usuário Comum/criarUsuarioComum.js"></script>
-		<script src="../javascript/singup/singup-photo-profile.js"></script>
 		<script src="../javascript/singup/Empresa/criarEmpresa.js"></script>
 	</body>
 </html>

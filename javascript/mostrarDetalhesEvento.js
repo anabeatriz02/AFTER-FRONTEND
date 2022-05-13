@@ -3,7 +3,7 @@ async function getContent() {
 
         //Evento com celebridade: 1
         //Evento sem celebridade: 5
-        const response = await fetch('http://localhost:4000/evento/acharEventoIdEvento/5')
+        const response = await fetch('http://localhost:4000/evento/acharEventoIdEvento/6')
 
         console.log(response)
 
@@ -26,7 +26,7 @@ getContent()
 function mostrarDetalhes(evento) {
 
     //Mostrar título e celebridade
-    if (evento.tblIntermEventoCelebridades[0] == undefined) {
+    if (evento.tblIntermEventoCelebridades[0] == undefined || evento.tblIntermEventoCelebridades[0].tblCelebridade == null) {
         titulo = `${evento.titulo}`
     } else {
         titulo = `${evento.titulo}<span>com</span><a href="">${evento.tblIntermEventoCelebridades[0].tblCelebridade.tblVerificacaoUsuario.nickname}<img src="../img/icon-check.svg" /></a>`
@@ -102,11 +102,24 @@ function mostrarDetalhes(evento) {
 
     } else {
 
-        endereco = `${evento.tblEnderecoEventos[0].logradouro} - ${evento.tblEnderecoEventos[0].bairro}, ${evento.tblEnderecoEventos[0].cidade} - ${evento.tblEnderecoEventos[0].estado} - ${evento.tblEnderecoEventos[0].complemento}`
+        endereco = `${evento.tblEnderecoEventos[0].logradouro} - ${evento.tblEnderecoEventos[0].bairro}, ${evento.tblEnderecoEventos[0].cidade} - ${evento.tblEnderecoEventos[0].estado} - ${evento.tblEnderecoEventos[0].complemento} - ${evento.tblEnderecoEventos[0].numero}`
 
-    }
+    } 
 
     document.querySelector("#enderecoEvento").innerHTML = endereco
+
+
+    
+
+    //Mostrar resumo dos ingresos --> (fazer lógica para menor e maior valor)
+    valor1 = `<p>${evento.tblLotes[0].tblVariedadeIngressoLotes[1].valor}</p>`
+    valor2 = `<p>${evento.tblLotes[0].tblVariedadeIngressoLotes[0].valor}</p>`
+
+    document.querySelector("#menorValor").innerHTML = valor1              
+    document.querySelector("#maiorValor").innerHTML = valor2
+     
+
+    
 
     //Mostrar autor da publicação
     autorDescricao = `DESCRIÇÃO DO EVENTO<span>by</span><a href="">${evento.tblEmpresa.tblPerfil.nickname} <img src="../img/icon-check.svg" alt="" /></a>`
@@ -119,3 +132,4 @@ function mostrarDetalhes(evento) {
     document.querySelector("#descricaoEvento").innerHTML = descricaoEvento
 
 }
+
