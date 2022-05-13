@@ -16,6 +16,19 @@ h3 {
 	letter-spacing: 1px;
 }
 
+.h3-title,
+.label-bigger {
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: var(--white);
+}
+
+.label-bigger {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+}
+
 form {
 	width: 100%;
 	padding: 0 12%;
@@ -268,9 +281,9 @@ form .btn,
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	font-family: "Quicksand", sans-serif;
+	/* font-family: "Quicksand", sans-serif; */
 	font-weight: 500;
-	font-size: 20px;
+	font-size: 1rem;
 	cursor: pointer;
 	color: #cccccc;
 	border: 2.5px dashed var(--purpleSecondary);
@@ -285,9 +298,9 @@ form .btn,
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	font-family: "Quicksand", sans-serif;
+	/* font-family: "Quicksand", sans-serif; */
 	font-weight: 500;
-	font-size: 20px;
+	font-size: 1rem;
 	cursor: pointer;
 	color: #cccccc;
 	border: 2.5px dashed var(--purpleSecondary);
@@ -327,7 +340,7 @@ form .btn,
 
 /* ---------------- MODAL ---------------- */
 
-.modal-form {
+.modal-form-window {
 	width: 100vw;
 	height: 100vh;
 	background: #1f242780;
@@ -336,9 +349,10 @@ form .btn,
 	left: 50%;
 	transform: translate(-50%, -50%);
 	position: fixed;
+	display: none;
 	/* animation: modal;
 	animation-duration: 800ms; */
-	display: none;
+	/* display: none; */
 	/* display: flex;
 	justify-content: center;
 	align-items: center;
@@ -354,7 +368,7 @@ form .btn,
 	}
 } */
 
-.modal-form form {
+.modal-form-window form {
 	width: 50vw;
 	height: 90vh;
 	background: var(--backgroundPrimary);
@@ -369,18 +383,120 @@ form .btn,
 	overflow: scroll;
 }
 
-.modal-form form h1 {
+.modal-form-window form h1 {
 	margin-left: auto;
 	margin-right: auto;
 	font-size: 2.25rem;
 	margin-bottom: 1em;
 }
 
+.modal-form-window form h3 {
+	font-weight: 200;
+	font-size: 1rem;
+}
+
 /* ---------------- LOT BOX ---------------- */
 
+.lot-box-1 {
+	width: 100%;
+	display: flex;
+	gap: 25px;
+	flex-direction: column;
+}
+
+.lot-box-1 label {
+	font-weight: 500;
+	gap: 15px;
+}
+
+.lot-box-1 .ticket-pay {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.lot-box-1 .ticket-pay-1 {
+	display: flex;
+	gap: 20px;
+}
+
+textarea {
+	width: 100%;
+	min-height: 60px;
+	/* height: 60px; */
+	outline: none;
+	border-radius: 10px;
+	padding: 15px;
+	/* flex-direction: column; */
+	border: 1.5px solid var(--backgroundTertiary);
+	background-color: var(--backgroundSecondary);
+	/* padding: 0px 25px; */
+	transition: 0.5s;
+	color: var(--white);
+	/* background-color: var(--backgroundPrimary);
+	border-radius: 10px;
+	padding: 10px;
+	color: var(--white);
+	font-weight: 200;
+	outline: none;
+	border: 1.5px solid var(--backgroundTertiary); */
+}
+
+/* textarea:focus {
+	border: 1.5px solid var(--purpleSecondary);
+}
+
+.lot-box-1 .checkbox {
+	display: flex;
+	flex-direction: row;
+	gap: 5px;
+	font-weight: 300;
+	justify-content: center;
+	align-items: center;
+	color: var(--white);
+}
+
+.lot-box-1 .checkbox input {
+	width: 25px;
+	height: 25px;
+	background-color: var(--backgroundPrimary);
+	border-radius: 10%;
+	border: 2px solid var(--purpleSecondary);
+	appearance: none;
+	-webkit-appearance: none;
+	outline: none;
+	cursor: pointer;
+}
+
+.lot-box-1 .checkbox input:checked {
+	background-color: var(--purpleSecondary);
+}
+
 .lot-box {
+}
+
+.lot-box .ticket-btn {
+	margin: auto;
+	display: flex;
+	gap: 25px;
+}
+
+.lot-box .ticket-btn button {
+	width: 150px;
+}
+
+.lot-box .ticket-btn .cancel {
+	border-color: var(--red);
+}
+
+.lot-box .ticket-btn .cancel:hover {
+	background: var(--red);
+} */
+
+/* ---------------- LOT BOX ---------------- */
+
+/* .lot-box {
 	height: fit-content;
-	/* flex-grow: 5; */
 	background: var(--backgroundTertiary);
 	border-radius: 20px;
 	padding: 40px;
@@ -391,7 +507,6 @@ form .btn,
 
 .lot-box h2 {
 	font-size: 1.5rem;
-	/* margin-bottom: 1em; */
 	color: var(--white);
 
 	text-transform: uppercase;
@@ -399,7 +514,6 @@ form .btn,
 
 .lot-box .about {
 	font-weight: 200;
-	/* color: var(--purpleSecondary); */
 }
 
 .lot-box .step {
@@ -421,19 +535,17 @@ form .btn,
 
 .lot-box .form-group-btn button {
 	font-size: 1rem;
-
 }
 
 .lot-box button {
 	width: 250px;
 	height: 50px;
-}
+} */
 
 /* ---------------- LOT NEW ---------------- */
 
-.lot-new {
+/* .lot-new {
 	flex-grow: 1;
-	/* background: lightgrey; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -448,39 +560,6 @@ form .btn,
 
 .lot-new button:hover {
 	background: var(--backgroundPrimary);
-}
+} */
 
 /* ---------------- LOT BTN ---------------- */
-
-.lot-btn {
-	/* flex-grow: 1; */
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	/* background: lightpink; */
-	gap: 50px;
-}
-
-.lot-btn button {
-	width: 200px;
-	height: 75px;
-}
-
-.lot-btn .cancel {
-	border-color: var(--red);
-}
-
-.lot-btn .cancel:hover {
-	background: var(--red);
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-	-webkit-appearance: none;
-	margin: 0;
-}
-
-/* Firefox */
-input[type="number"] {
-	-moz-appearance: textfield;
-}
