@@ -25,7 +25,7 @@ function mostrarEventos(eventos) {
     let output = ''
     for (let evento of eventos) {
 
-        if(evento.tblIntermEventoCelebridades[0] == undefined){ 
+        if(evento.tblIntermEventoCelebridades[0] == undefined || evento.tblIntermEventoCelebridades[0].tblCelebridade == null){ 
             celebridade = `<label class="upper" for=""></label>`
         } else {
             celebridade = `
@@ -37,7 +37,7 @@ function mostrarEventos(eventos) {
        
         <div class="event-box">
         <div class="event-box-information">
-            <img class="background-photo-event" src="../img/feed/event-box/festa.jpg" />
+            <img class="background-photo-event" src="http://localhost:4000/${evento.capa}" />
 
             <div class="user-information">
                 <a href=""><img src="../upload/profile/profile-photo.jpg" /></a>
@@ -69,4 +69,12 @@ function mostrarEventos(eventos) {
     }
 
     document.querySelector('#eventosFeed').innerHTML = output
+}
+
+function mostrarAviso(){
+
+    const output = "<h2 id='aviso'>Você ainda não possui eventos ativos :( </h2>"
+
+    document.querySelector('.event-area').innerHTML = output
+
 }

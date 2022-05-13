@@ -25,7 +25,7 @@
 
 		<h1>Criar evento</h1>
 
-		<form enctype="multipart/form-data" method="post">
+		<form enctype="multipart/form-data" method="post" id="formCriarEvento">
 			<label>
 				Título
 				<input type="text" value="" id="titulo" />
@@ -116,7 +116,7 @@
 				Foto de capa
 				<div class="drop-zone drop-cover">
 					<span class="drop-zone__prompt">Solte o arquivo aqui ou clique para fazer upload</span>
-					<input type="file" name="myFile" class="drop-zone__input" />
+					<input type="file" name="myFile" class="drop-zone__input" id="input-photo-file"/>
 				</div>
 			</label>
 
@@ -220,6 +220,10 @@
 					</select>
 				</label>
 			</div>
+
+			<div class="btn">
+				<button onclick="openModal()" type="submit" id="salvar">Avançar</button>
+			</div>
 		</form>
 
 		<div class="term">
@@ -231,9 +235,9 @@
 			</label>
 		</div>
 
-		<div class="btn">
+		<!-- <div class="btn">
 			<button onclick="openModal()" type="submit" id="salvar">Avançar</button>
-		</div>
+		</div> -->
 
 
 

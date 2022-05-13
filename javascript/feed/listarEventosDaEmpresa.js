@@ -1,7 +1,7 @@
 async function getContent() {
     try {
 
-        const response = await fetch('http://localhost:4000/evento/acharEventoPorId/2')
+        const response = await fetch('http://localhost:4000/evento/acharEventoPorId/17')
 
         console.log(response)
 
@@ -9,7 +9,11 @@ async function getContent() {
 
         console.log(data)
 
-        mostrarEventosProprios(data)
+        if(data.length != 0){
+            mostrarEventosProprios(data)
+        } else {
+            mostrarAviso()
+        }
 
     } catch (error) {
 
@@ -25,7 +29,7 @@ function mostrarEventosProprios(eventos) {
     let output = ''
     for (let evento of eventos) {
 
-        if(evento.tblIntermEventoCelebridades[0] == undefined){ 
+        if(evento.tblIntermEventoCelebridades[0] == undefined || evento.tblIntermEventoCelebridades[0].tblCelebridade == null){ 
             celebridade = `<label class="upper" for=""></label>`
         } else {
             celebridade = `
@@ -37,7 +41,7 @@ function mostrarEventosProprios(eventos) {
        
         <div class="event-box">
         <div class="event-box-information">
-            <img class="background-photo-event" src="../img/feed/event-box/festa.jpg" />
+            <img class="background-photo-event" src="http://localhost:4000/${evento.capa}" />
 
             <div class="user-information">
                 <a href=""><img src="../upload/profile/profile-photo.jpg" /></a>
@@ -74,4 +78,12 @@ function mostrarEventosProprios(eventos) {
     }
 
     document.querySelector('.event-area').innerHTML = output
+}
+
+function mostrarAviso(){
+
+    const output = "<h2 id='aviso'>Você ainda não possui eventos ativos :( </h2>"
+
+    document.querySelector('.event-area').innerHTML = output
+
 }
