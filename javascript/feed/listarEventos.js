@@ -33,6 +33,12 @@ function mostrarEventos(eventos) {
             <label for="">atrações principais</label>`
         }
 
+        if(evento.tblEmpresa.tblPerfil.imagemPerfil != null){
+            imgPerfil = `<a href=""><img src="http://localhost:4000/${evento.tblEmpresa.tblPerfil.imagemPerfil}" /></a>`
+        } else {
+            imgPerfil = `<a href=""><img src="http://localhost:4000/uploads/fundoRoxo.jpg" /></a>`
+        }
+
         output += `
        
         <div class="event-box">
@@ -40,7 +46,7 @@ function mostrarEventos(eventos) {
             <img class="background-photo-event" src="http://localhost:4000/${evento.capa}" />
 
             <div class="user-information">
-                <a href=""><img src="../upload/profile/profile-photo.jpg" /></a>
+                ${imgPerfil}
                 <div class="user-information-name">
                     <label for="" id="titulo">${evento.titulo}</label>
                     <label class="categoria">${evento.tblCategorium.nomeCategoria}</label>
