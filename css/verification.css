@@ -29,7 +29,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-inline-start: 5px;
+    margin-inline-start: -8%;
     margin-bottom: 2%;
 
 }
@@ -39,36 +39,34 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-inline-start: 5px;
-    margin-bottom: 1.5%;
+    margin-inline-start: -8%;
+    /* margin-bottom: 1%; */
 }
 
-p{
+.ONE{
+    font-size: 14PX;
     color: white;
     user-select: none;
     letter-spacing: 1px;
-    margin-bottom: 2%;
-
+    /* margin-bottom: 0.5%; */
+    margin-inline-start: 32%;
 }
 
-.questio-2{
+.question-2{
     font-size: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-inline-start: 5px;
-    margin-bottom: 1.5%;
-
+    margin-inline-start: -8%;
 }
 
-p{
-    font-size: 12px;
+.TWO{
+    font-size: 14PX;
     color: white;
     user-select: none;
-    letter-spacing: 0.5px;
-    margin-bottom: 2%;
-    margin-inline-start: 16%;
-
+    letter-spacing: 1px;
+    /* margin-bottom: 0.5%; */
+    margin-inline-start: 25%;
 }
 
 .questio-3{
@@ -76,9 +74,62 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-inline-start: 5px;
-    margin-bottom: 1.5%;
+    margin-inline-start: -8%;
+    /* margin-bottom: 1%; */
+}
 
+.THREE{
+    font-size: 14PX;
+    color: white;
+    user-select: none;
+    letter-spacing: 1px;
+    /* margin-bottom: 0.5%; */
+    margin-inline-start: 35%;
+}
+
+.FOR{
+    font-size: 14PX;
+    color: white;
+    user-select: none;
+    letter-spacing: 1px;
+    /* margin-bottom: 0.5%; */
+    margin-inline-start: 35%;
+}
+
+.FIVE{
+    font-size: 14PX;
+    color: white;
+    user-select: none;
+    letter-spacing: 1px;
+    margin-bottom: 0.5%;
+    margin-inline-start: 35%;
+}
+
+.questio-4{
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-inline-start: -8%;
+    /* margin-bottom: 1%; */
+}
+
+.SIX{
+    font-size: 14PX;
+    color: white;
+    user-select: none;
+    letter-spacing: 1px;
+    /* margin-bottom: 0.5%; */
+    margin-inline-start: 35%;
+}
+
+.SEVEN{
+    font-size: 14PX;
+    color: white;
+    user-select: none;
+    letter-spacing: 1px;
+    /* margin-bottom: 0.5%; */
+    margin-inline-start: 35%;
 }
 
 .line-1{

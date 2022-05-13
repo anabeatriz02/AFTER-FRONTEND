@@ -162,3 +162,15 @@ form button, #editar {
 	position: absolute;
 	height: 100%;
 }
+
+
+/* ---------------------------------------------- */
+
+.information-box .complement-cep {
+	display: flex;
+	gap: 30px;
+}
+
+.information-box .complement-cep label:last-child{
+    flex-grow: 1;
+}
