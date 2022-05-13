@@ -3,7 +3,7 @@ const btn = document.querySelector('#editar')
 async function getContent() {
     try {
 
-        const response = await fetch('http://localhost:4000/usuarioComum/acharPerfilUsuario/1')
+        const response = await fetch('http://localhost:4000/empresa/acharEmpresaPorId/17')
 
         console.log(response)
 
@@ -15,10 +15,10 @@ async function getContent() {
 
         btn.addEventListener('click', () => {
 
-            editarPerfilUsuarioComum(data[0].tblPerfilIdPerfil)
-            editarPerfilEndereco(data[0].tblEnderecos[0].idEndereco)
+            const perfil = editarPerfilUsuarioComum(data[0].tblPerfilIdPerfil)
         
         })
+               
 
     } catch (error) {
 
@@ -32,9 +32,6 @@ getContent()
 
 function mostrarDadosPerfil(perfis) {
 
-    const inputNome = document.querySelector('#nome')
-    inputNome.value = perfis[0].nome
-
     const inputNickname = document.querySelector('#nickname')
     inputNickname.value = perfis[0].tblPerfil.nickname
 
@@ -47,11 +44,8 @@ function mostrarDadosPerfil(perfis) {
     const inputSenha = document.querySelector('#senha')
     inputSenha.value = perfis[0].tblPerfil.senha
 
-    const inputDataNasc = document.querySelector('#dataNasc')
-    inputDataNasc.value = perfis[0].dataNasc
-
-    const inputCep = document.querySelector('#cep')
-    inputCep.value = perfis[0].tblEnderecos[0].cep
+    const inputCnpj = document.querySelector('#cnpj')
+    inputCnpj.value = perfis[0].cnpj
 
     if (perfis[0].tblPerfil.imagemPerfil == null || perfis[0].tblPerfil.imagemPerfil == "undefined" || perfis[0].tblPerfil.imagemPerfil == undefined) {
         fotoPerfil = `
@@ -85,21 +79,15 @@ function mostrarDadosPerfil(perfis) {
 
 }
 
-// btn.addEventListener('click', () => {
-
-//     const perfil = editarPerfilUsuarioComum()
-
-// })
 
 function editarPerfilUsuarioComum(idPerfil) {
-    const inputNome = document.querySelector('#nome')
     const inputNickname = document.querySelector('#nickname')
     const inputBiografia = document.querySelector('#biografia')
     const inputEmail = document.querySelector('#email')
     const inputSenha = document.querySelector('#senha')
-    const inputDataNasc = document.querySelector('#dataNasc')
     const inputFotoPerfil = document.querySelector("#input-profile-file")
     const inputFotoFundo = document.querySelector("#input-background-file")
+    const inputCnpj = document.querySelector('#cnpj')
 
     var data = new FormData();
     data.append('nickname', inputNickname.value);
@@ -113,13 +101,13 @@ function editarPerfilUsuarioComum(idPerfil) {
     if (inputFotoFundo != undefined || inputFotoFundo != null) {
         data.append('imagemFundo', inputFotoFundo.files[0]);
     }
+    
     data.append('biografia', inputBiografia.value);
-    data.append('nome', inputNome.value);
-    data.append('dataNasc', inputDataNasc.value);
+    data.append('cnpj', inputCnpj.value)
 
     var config = {
         method: 'put',
-        url: `http://localhost:4000/perfil/editarPerfilUsuarioComum/${idPerfil}`,
+        url: `http://localhost:4000/perfil/editarPerfilEmpresa/${idPerfil}`,
         headers: {
             'Content-Type': 'multipart/form-data'
         },
@@ -133,32 +121,5 @@ function editarPerfilUsuarioComum(idPerfil) {
         .catch(function (error) {
             console.log(error);
         })
-
-}
-
-function editarPerfilEndereco(idEndereco) {
-
-    const inputCep = document.querySelector('#cep')
-
-    var data = JSON.stringify({
-        "cep": inputCep.value
-    });
-
-    var config = {
-        method: 'put',
-        url: `http://localhost:4000/endereco/editarEndereco/${idEndereco}`,
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        data: data
-    };
-
-    axios(config)
-        .then(function (response) {
-            console.log(JSON.stringify(response.data));
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
 
 }
