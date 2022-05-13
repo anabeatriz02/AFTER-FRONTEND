@@ -23,6 +23,8 @@ function getDadosPerfil() {
     const inputPerfil = document.querySelector('#imagemPerfil')
     const inputFundo = document.querySelector('#imagemFundo')
 
+    const inputBiografia = document.querySelector('#biografia')
+
     if (inputSenhaConfirmar.value !== inputSenha.value) {
         alert("A senha digitada está incorreta")
 
@@ -46,6 +48,7 @@ function getDadosPerfil() {
         formData.append("estado", inputEstado.value)
         formData.append("imagemPerfil", inputPerfil.files[0])
         formData.append("imagemFundo", inputFundo.files[0])
+        formData.append("biografia", inputBiografia.value)
 
         axios.post('http://localhost:4000/perfil/cadastrarPerfilUsuarioComumEndereco', formData, {
             headers: {
@@ -53,26 +56,13 @@ function getDadosPerfil() {
             }
         })
 
-        axios(config)
-            .then(function (response) {
-                console.log(JSON.stringify(response.data));
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-        // const perfil = {
-        //     nickname: inputNickname.value,
-        //     email: inputEmail.value,
-        //     senha: inputSenha.value,
-        //     nome: inputNomeCompleto.value,
-        //     dataNasc: inputDataNasc.value,
-        //     cep: inputCep.value,
-        //     cidade: inputCidade.value,
-        //     estado: inputEstado.value,
-        //     imagemPerfil: inputPerfil.files[0]
-        // }
-
-        // return perfil
+        // axios(config)
+        //     .then(function (response) {
+        //         console.log(JSON.stringify(response.data));
+        //     })
+        //     .catch(function (error) {
+        //         console.log(error);
+        //     });
 
     }
 

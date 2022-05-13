@@ -3,7 +3,7 @@
 function realizarCadastroEmpresa() {
     const empresa = getDadosEmpresa()
 
-    // console.log(empresa)
+    console.log(empresa)
 }
 
 function getDadosEmpresa() {
@@ -14,9 +14,10 @@ function getDadosEmpresa() {
 
     const inputCnpj = document.querySelector('#cnpj')
 
-    const inputPerfil = document.querySelector('#imagemPerfil')
-    const inputFundo = document.querySelector('#imagemFundo')
+    const inputPerfil = document.querySelector('#imagemPerfilEmpresa')
+    const inputFundo = document.querySelector('#imagemFundoEmpresa')
 
+    const inputBiografia = document.querySelector('#biografiaEmpresa')
 
     // cadastrando BANCO junto com empresa
     const inputBanco = document.querySelector('#banco')
@@ -45,6 +46,7 @@ function getDadosEmpresa() {
         formData.append("cnpj", inputCnpj.value)
         formData.append("imagemPerfil", inputPerfil.files[0])
         formData.append("imagemFundo", inputFundo.files[0])
+        formData.append("biografia", inputBiografia.value)
         formData.append("nomeBanco", inputBanco.value)
         formData.append("agencia", inputAgencia.value)
         formData.append("numeroConta", inputNumeroConta.value)

@@ -13,6 +13,12 @@ async function getContent() {
 
         mostrarDadosPerfil(data)
 
+        btn.addEventListener('click', () => {
+
+            const perfil = editarPerfilEndereco(data[0].tblEnderecos[0].idEndereco)
+        
+        })
+
     } catch (error) {
 
         console.error(error)
@@ -76,30 +82,23 @@ function mostrarDadosPerfil(perfis) {
 
     document.querySelector('#fotoFundo').innerHTML = fotoFundo
 
-    // const inputFotoFundo = document.querySelector('#image-background-preview')
-    // inputFotoFundo.files = perfis.imagemFundo
-
 }
 
 btn.addEventListener('click', () => {
 
-    const perfil = pegarValores()
-
-    // editarPerfil(perfil)
-    // editarPerfilEndereco(perfil)
+    const perfil = editarPerfilUsuarioComum()
 
 })
 
-function pegarValores() {
+function editarPerfilUsuarioComum() {
     const inputNome = document.querySelector('#nome')
     const inputNickname = document.querySelector('#nickname')
     const inputBiografia = document.querySelector('#biografia')
     const inputEmail = document.querySelector('#email')
     const inputSenha = document.querySelector('#senha')
     const inputDataNasc = document.querySelector('#dataNasc')
-    // const inputCep = document.querySelector('#cep')
-    const inputFotoPerfil = document.querySelector("#image-profile-preview")
-    const inputFotoFundo = document.querySelector("#image-background-preview")
+    const inputFotoPerfil = document.querySelector("#input-profile-file")
+    const inputFotoFundo = document.querySelector("#input-background-file")
 
     var data = new FormData();
     data.append('nickname', inputNickname.value);
@@ -107,20 +106,15 @@ function pegarValores() {
     data.append('email', inputEmail.value)
 
     if (inputFotoPerfil != undefined || inputFotoPerfil != null) {
-        data.append('imagemPerfil', inputFotoPerfil.files);
+        data.append('imagemPerfil', inputFotoPerfil.files[0]);
     }
 
     if (inputFotoFundo != undefined || inputFotoFundo != null) {
-        data.append('imagemFundo', inputFotoFundo.files);
+        data.append('imagemFundo', inputFotoFundo.files[0]);
     }
-    // data.append('imagemPerfil', inputFotoPerfil.files);
-    // data.append('imagemFundo', inputFotoFundo.files);
     data.append('biografia', inputBiografia.value);
     data.append('nome', inputNome.value);
     data.append('dataNasc', inputDataNasc.value);
-    // data.append('cep', inputCep.value);
-
-    console.log(inputFotoPerfil.files)
 
     var config = {
         method: 'put',
@@ -141,35 +135,29 @@ function pegarValores() {
 
 }
 
+function editarPerfilEndereco(idEndereco) {
 
-async function editarPerfil(perfil) {
-    try {
-        const resposta = await fetch('http://localhost:4000/perfil/editarPerfilUsuarioComum/11', {
-            method: 'PUT',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(perfil)
+    const inputCep = document.querySelector('#cep')
+
+    var data = JSON.stringify({
+        "cep": inputCep.value
+    });
+
+    var config = {
+        method: 'put',
+        url: `http://localhost:4000/endereco/editarEndereco/${idEndereco}`,
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        data: data
+    };
+
+    axios(config)
+        .then(function (response) {
+            console.log(JSON.stringify(response.data));
         })
+        .catch(function (error) {
+            console.log(error);
+        });
 
-    } catch (erro) {
-        console.error(erro)
-    }
-}
-
-async function editarPerfilEndereco(perfil, idEndereco) {
-    try {
-        const resposta = await fetch(`http://localhost:4000/endereco/editarEndereco/2`, {
-            method: 'PUT',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(perfil)
-        })
-
-    } catch (erro) {
-        console.error(erro)
-    }
 }

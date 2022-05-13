@@ -46,7 +46,7 @@ body {
     margin-inline-start: 3px;
 }
 
-/* ---------------------------------- buttons ----------------------------------- */
+/* ---------------------------------- inputs ----------------------------------- */
 
 
 button{
@@ -63,29 +63,36 @@ form{
     height: 70%;
 }
 
+/* ----------------- line 1 ------------------- */
+
 .line-1{
     display: flex;
     gap: 56px;
 }
 
-.line-1 button{
+.line-1 input{
+    width: 270px;
+    height: 100px;
+    border-radius: 10px;
+    background-color: var(--backgroundTertiary);
+    border: 2px solid var(--purpleSecondary);
+    cursor: pointer;
     font-size: 1.1rem;
     font-weight: 600;
     letter-spacing: 1px;
     color: white;
-    background-color:  var(--backgroundTertiary);
-    border: 2px solid var(--backgroundTertiary);
-    cursor: pointer;
-    border-radius: 10px;
-    width: 270px;
-    height: 100px;
-    transition: linear 0.5s;
 }
 
-.line-1 button:hover{
-    border: 4px solid var(--purpleSecondary);
-    /* background-color: var(--borderPrimary); */
+.line-1 input:hover{
+    background-color: var(--purpleSecondary);
+    /* background-color: var(--purpleSecondary); */
 }
+
+.line-1 input:focus{
+     background-color: var(--purpleSecondary);
+}
+
+/* ----------------- line 2 ------------------- */
 
 .line-2{
     display: flex;
@@ -93,24 +100,30 @@ form{
     gap: 50px;
 }
 
-.line-2 button{
+.line-2 input{
+    width: 270px;
+    height: 100px;
+    border-radius: 10px;
+    background-color: var(--backgroundTertiary);
+    border: 2px solid var(--purpleSecondary);
+    cursor: pointer;
     font-size: 1.1rem;
     font-weight: 600;
     letter-spacing: 1px;
     color: white;
-    background-color: var(--backgroundTertiary);
-    border: 2px solid var(--backgroundTertiary);
-    cursor: pointer;
-    border-radius: 10px;
-    width: 270px;
-    height: 100px;
-    transition: linear 0.5s;
 }
 
-.line-2 button:hover{
-    border: 4px solid var(--purpleSecondary);
+.line-2 input:hover{
+    background-color: var(--purpleSecondary);
     /* background-color: var(--purpleSecondary); */
 }
+
+.line-2 input:focus{
+    display: fixed;
+    background-color: var(--purpleSecondary);
+}
+
+/* ----------------- line 3 ------------------- */
 
 .line-3{
     display: flex;
@@ -118,24 +131,37 @@ form{
     gap: 30px;
 }
 
-.line-3 button{
+.line-3 input{
+    width: 270px;
+    height: 100px;
+    border-radius: 10px;
+    background-color: var(--backgroundTertiary);
+    border: 2px solid var(--purpleSecondary);
+    cursor: pointer;
     font-size: 1.1rem;
     font-weight: 600;
     letter-spacing: 1px;
     color: white;
-    background-color: var(--backgroundTertiary);
-    border: 2px solid var(--backgroundTertiary);
-    cursor: pointer;
-    border-radius: 10px;
-    width: 270px;
-    height: 100px;
-    transition: linear 0.5s;
 }
 
-.line-3 button:hover{
-    border: 4px solid var(--purpleSecondary);
+.line-3 input:hover{
+    background-color: var(--purpleSecondary);
     /* background-color: var(--purpleSecondary); */
 }
+
+.line-3 input:focus{
+    background-color: var(--purpleSecondary);
+}
+/* 
+.line-3 input:focus:hover{
+    background-color: var(--purpleSecondary);
+} */
+
+input button:focus-within {
+	color: var(--purpleSecondary);
+}
+
+/* ----------------- line 4 ------------------- */ 
 
 .line-4{
     display: flex;
@@ -151,7 +177,7 @@ form{
     height: 70px;
     cursor: pointer;
     border-radius: 10px;
-    background-color: var(--purpleSecondary);
+    background-color: var(--backgroundTertiary);
     background-color: var(--borderPrimary);
     color: white;
     letter-spacing: 1px;
