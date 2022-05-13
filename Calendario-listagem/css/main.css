@@ -29,13 +29,14 @@
   
   body {
    
-    height: 100vh;
+    height: 50vh;
     -webkit-font-smoothing: antialiased;
   }
   
   body, input, button {
     font: 16px Roboto, sans-serif;
   }
+
   
   .content {
     display: grid;

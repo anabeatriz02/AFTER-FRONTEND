@@ -1,0 +1,116 @@
+body{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    overflow-x: hidden;
+    letter-spacing: 1px;
+}
+
+form{
+    width: 100%;
+    padding: 0 12%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 5%;
+}
+
+form label{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: white;
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+form label:focus-within{
+    color: var(--purpleSecondary);
+}
+
+form input{
+    display: flex;
+    height: 60px;
+    border-radius: 10px;
+    flex-direction: column;
+    border: 1.5px solid var(--backgroundTertiary);
+    background-color: var(--backgroundSecondary);
+    padding: 0px 25px;
+    transition: 0.5s;
+    color: white;
+    margin-bottom: 4px;
+}
+
+/* ---------------- image ---------------- */
+
+.cover{
+    width: 100%;
+    display: block;
+    position: relative;
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 5px var(--backgroundSecondary); 
+}
+
+.cover img{
+    width: 100%;
+    z-index: 1;
+}
+
+.cover input[type="file"]{
+    display: none;
+}
+
+.cover .photo-label{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.cover .photo-label{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#image-photo-preview{
+    position: absolute;
+    width: 100%;
+}
+
+button{
+    width: 25%;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.5s;
+    background-color: var(--backgroudPrimary);
+    border: 2px solid var(--purpleSecondary);
+}
+
+form button:hover, button:hover{
+    background-color: var(--purpleSecondary);
+}
+
+form .btn, .btn{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

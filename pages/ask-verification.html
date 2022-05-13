@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="../css/ask-verification.css" />
+		<link rel="stylesheet" href="../css/scrollbar.css" />
+		<link rel="stylesheet" href="../css/header-company.css" />
+		<link rel="stylesheet" href="../css/reset.css" />
+
+		<title>Pedido de verificação</title>
+	</head>
+	<body>
+		<header class="header" id="header">
+			<script>
+				$(function () {
+					$("#header").load("../common/header-company.html  ");
+				});
+			</script>
+		</header>
+
+
+
+		<form method="get" action=".">
+			<label>
+				Nome de usuário
+				<input type="name" value="" id="name" />
+			</label>
+
+            <label>
+				Nome completo
+				<input type="name" value="" id="name" />
+			</label>
+
+            <label>
+				Anexe um documento de comprovação com foto
+				<div class="cover">
+					<input id="input-photo-file" type="file" accept="image/*" onchange="loadBackground(event)" />
+					<label for="input-photo-file" class="photo-label"></label>
+					<img src="../img/back-plus.jpg" id="image-photo-preview" />
+				</div>
+			</label>
+
+            <label>
+                Digite o motivo para verificação	
+                <input type=descricao value="" id="descricao" />
+			</label>
+		</form>
+
+        <div class="btn">
+			<button id="salvar">PEDIR VERIFICAÇÃO</button>
+		</div>
+
+	</body>
+    </html>
