@@ -48,11 +48,11 @@ function getDadosEvento() {
 
 	const inputCapa = document.querySelector("#input-photo-file");
 
-	const inputPrimeiraFotoComplementar = document.querySelector('#profile-input-file-1')
-	const inputSegundaFotoComplementar = document.querySelector('#profile-input-file-2')
-	const inputTerceiraFotoComplementar = document.querySelector('#profile-input-file-3')
-	const inputQuartaFotoComplementar = document.querySelector('#profile-input-file-4')
-	const inputQuintaFotoComplementar = document.querySelector('#profile-input-file-5')
+	const inputPrimeiraFotoComplementar = document.querySelector('#first-image-photo-complement-preview')
+	const inputSegundaFotoComplementar = document.querySelector('#second-image-photo-complement-preview')
+	const inputTerceiraFotoComplementar = document.querySelector('#third-image-photo-complement-preview')
+	const inputQuartaFotoComplementar = document.querySelector('#fourth-image-photo-complement-preview')
+	const inputQuintaFotoComplementar = document.querySelector('#fifth-image-photo-complement-preview')
 
 	const selectCelebridade = document.querySelector('#celebridade')
 	const celebridadeSelecionada = selectCelebridade.options[selectCelebridade.selectedIndex].value;
@@ -295,6 +295,12 @@ function getDadosEvento() {
 			if (inputQuintaFotoComplementar != null) {
 				data.append('imagem', inputQuintaFotoComplementar.files[0])
 			}
+
+			// console.log(inputPrimeiraFotoComplementar.files)
+			// console.log(inputSegundaFotoComplementar.files)
+			// console.log(inputTerceiraFotoComplementar.files)
+			// console.log(inputQuartaFotoComplementar.files)
+			// console.log(inputQuintaFotoComplementar.files)
 
 			//Configurando rota para criação
 
