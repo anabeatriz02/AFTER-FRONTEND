@@ -1,8 +1,6 @@
 async function getContent() {
     try {
 
-        //Evento com celebridade: 1
-        //Evento sem celebridade: 5
         const response = await fetch('http://localhost:4000/evento/acharEventoIdEvento/19')
 
         console.log(response)
@@ -126,19 +124,18 @@ function mostrarDetalhes(evento) {
 
     //Mostrar resumo dos ingresos --> (fazer lógica para menor e maior valor)
 
-    if(evento.tblLotes[0] == undefined){
+    if (evento.tblLotes[0] == undefined) {
         aviso = "<p>Esse evento não possui ingressos à venda</p>"
-        
+
         document.querySelector("#informacoesIngresso").innerHTML = aviso
         document.querySelector("#comprarIngresso").style.display = "none"
+    } else {
+        valor1 = `<p>${evento.tblLotes[0].tblVariedadeIngressoLotes[1].valor}</p>`
+        valor2 = `<p>${evento.tblLotes[0].tblVariedadeIngressoLotes[0].valor}</p>`
+
+        document.querySelector("#menorValor").innerHTML = valor1
+        document.querySelector("#maiorValor").innerHTML = valor2
     }
-
-    valor1 = `<p>${evento.tblLotes[0].tblVariedadeIngressoLotes[1].valor}</p>`
-    valor2 = `<p>${evento.tblLotes[0].tblVariedadeIngressoLotes[0].valor}</p>`
-
-    document.querySelector("#menorValor").innerHTML = valor1
-    document.querySelector("#maiorValor").innerHTML = valor2
-
 
     //Mostrar autor da publicação
     autorDescricao = `DESCRIÇÃO DO EVENTO<span>by</span><a href="">${evento.tblEmpresa.tblPerfil.nickname} <img src="../img/icon-check.svg" alt="" /></a>`
@@ -149,5 +146,12 @@ function mostrarDetalhes(evento) {
     descricaoEvento = `<p>${evento.descricao}</p>`
 
     document.querySelector("#descricaoEvento").innerHTML = descricaoEvento
+
+    //Mostrar capa como primeira imagem
+    let imagemCapa = `<img src="http://localhost:4000/${evento.capa}"/>`
+
+    console.log(imagemCapa)
+
+    document.querySelector("#capaImagem").innerHTML = imagemCapa
 
 }

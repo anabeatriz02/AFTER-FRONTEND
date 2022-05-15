@@ -1,7 +1,7 @@
 async function getContent() {
     try {
 
-        const response = await fetch('http://localhost:4000/imagensEvento/listarImagensIdEvento/64')
+        const response = await fetch('http://localhost:4000/imagensEvento/listarImagensIdEvento/28')
 
         console.log(response)
 
@@ -25,11 +25,10 @@ function mostrarImagens(imagens){
     let output = "";
 
 	for (let imagem of imagens) {
-		output += `<div class="item-photo"><img src="http://localhost:4000/${imagem.imagem}" /></div>`;
+		output += `<img src="http://localhost:4000/${imagem.imagem}" />`;
 	}
 
-    console.log(output)
-    return output
+    // return output
 
-	// document.querySelector("#imagensCarousel").innerHTML = output
+	// document.querySelector("#imagens").innerHTML = output
 }
