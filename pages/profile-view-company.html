@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="../css/profile-view-company.css" />
-		<link rel="stylesheet" href="../css/reset.css" />
-		<link rel="stylesheet" href="../css/scrollbar.css" />
-		<title>Perfil</title>
-	</head>
-	<body>
-		<section class="photo-box">
-			<div class="cover" id="fotoFundo">
-				<img class="background-file" src="../upload/profile/background.jpg" id="image-background-preview" />
-			</div>
-			<div class="profile" id="fotoPerfil">
-				<img class="profile-file" src="../img/home/happy-person.jpg" id="image-profile-preview" />
-			</div>
-		</section>
-		<section class="information-box">
-			<h1 id="nickname">festinhas do mark<img src="../img/icon-check.svg"/></h1>
-			<p id="biografia">Quingui ofi zap, instagram i feiciboki</p>
-			<div class="followers">
-				<p>100 Bilhões <button id="follow-button">Seguir</button></p>
-				<p>Seguidores</p>
-			</div>
-		</section>
 
-		<span></span>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="../css/profile-view-company.css" />
+	<link rel="stylesheet" href="../css/reset.css" />
+	<link rel="stylesheet" href="../css/scrollbar.css" />
+	<title>Perfil</title>
+</head>
 
-		<section class="event-schedule">
-			<div class="event-lifu-container">
-				<div class="what-box">
-					<p class="number">2</p>
-					<p>Eventos futuros</p>
-					<p id="event-like">Eventos curtidos</p>
-				</div>
+<body>
+	<section class="photo-box">
+		<div class="cover" id="fotoFundo">
+			<img class="background-file" src="../upload/profile/background.jpg" id="image-background-preview" />
+		</div>
+		<div class="profile" id="fotoPerfil">
+			<img class="profile-file" src="../img/home/happy-person.jpg" id="image-profile-preview" />
+		</div>
+	</section>
+	<section class="information-box">
+		<h1 id="nickname">festinhas do mark<img src="../img/icon-check.svg" /></h1>
+		<p id="biografia">Quingui ofi zap, instagram i feiciboki</p>
+		<div class="followers">
+			<p>100 Bilhões <button id="follow-button">Seguir</button></p>
+			<p>Seguidores</p>
+		</div>
+	</section>
 
+	<span></span>
+
+	<section class="event-schedule">
+		<div class="event-lifu-container">
+			<div class="what-box">
+				<p class="number">2</p>
+				<p>Eventos futuros</p>
+				<p id="event-like">Eventos curtidos</p>
+			</div>
+
+			<div id="eventosAtivos">
 				<div class="event-box">
 					<div class="event-box-information">
 						<img class="background-photo-event" src="../img/feed/event-box/festa.jpg" />
@@ -57,14 +60,18 @@
 					</div>
 				</div>
 			</div>
-			<div class="event-clca-container">
-				<div class="what-box">
-					<p class="number">2</p>
-					<p class="future-events<">Eventos futuros</p>
-					<p id="event-held">Eventos realizados</p>
-					<p id="event-gone">Eventos idos</p>
-				</div>
 
+		</div>
+
+		<div class="event-clca-container">
+			<div class="what-box">
+				<p class="number">2</p>
+				<p class="future-events<">Eventos passados</p>
+				<p id="event-held">Eventos realizados</p>
+				<p id="event-gone">Eventos idos</p>
+			</div>
+
+			<div id="eventosAntigos">
 				<div class="event-box-old">
 					<div class="event-box-information-old">
 						<img class="background-photo-event-old" src="../img/feed/event-box/festa.jpg" />
@@ -85,9 +92,11 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 
 
-	</body>
-	<script src="../javascript/mostrarInformacoesPerfilEmpresa.js"></script>
+</body>
+<script src="../javascript/mostrarInformacoesPerfilEmpresa.js"></script>
+
 </html>

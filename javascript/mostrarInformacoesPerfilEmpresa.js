@@ -1,9 +1,9 @@
-async function getContent(){
+async function getContent() {
     try {
 
         //Empresa com biografia: 3
         //Empresa sem biografia: 7
-        const response = await fetch('http://localhost:4000/perfil/acharPerfil/3')
+        const response = await fetch('http://localhost:4000/perfil/acharPerfil/50')
 
         console.log(response)
 
@@ -20,12 +20,12 @@ async function getContent(){
         console.error(error)
 
     }
-   
+
 }
 
 getContent()
 
-function mostrarNickname(empresa){
+function mostrarNickname(empresa) {
 
     output = `<h1 id="nickname">${empresa.nickname}<img src="../img/icon-check.svg"/></h1>`
 
@@ -33,7 +33,7 @@ function mostrarNickname(empresa){
 
 }
 
-function mostrarBiografia(empresa){
+function mostrarBiografia(empresa) {
 
     if (empresa.biografia != null) {
 
@@ -46,7 +46,7 @@ function mostrarBiografia(empresa){
     }
 
     document.querySelector('#biografia').innerHTML = output
-    
+
 }
 
 function mostrarFotos(company) {
@@ -59,7 +59,7 @@ function mostrarFotos(company) {
 
     document.querySelector('#fotoPerfil').innerHTML = fotoPerfil
 
-    
+
     if (company.imagemFundo == null) {
         fotoFundo = `<img class="background-file" src="http://localhost:4000/uploads/wallpaperRoxo.jpg" id="image-background-preview" />`
     } else {
@@ -68,4 +68,70 @@ function mostrarFotos(company) {
     }
 
     document.querySelector('#fotoFundo').innerHTML = fotoFundo
+}
+
+async function getEventosAtivos() {
+    try {
+
+        const response = await fetch('http://localhost:4000/evento/acharEventoPorId/17')
+
+        console.log(response)
+
+        const data = await response.json()
+
+        console.log(data)
+
+        mostrarEventosAtivos(data)
+
+    } catch (error) {
+
+        console.error(error)
+
+    }
+}
+
+getEventosAtivos()
+
+function mostrarEventosAtivos(eventos) {
+
+    let output = ''
+    for (let evento of eventos) {
+
+        if(evento.tblIntermEventoCelebridades[0] == undefined || evento.tblIntermEventoCelebridades[0].tblCelebridade == null){ 
+            celebridade = `<label class="upper" for=""></label>`
+        } else {
+            celebridade = `
+            <label class="upper" for="">${evento.tblIntermEventoCelebridades[0].tblCelebridade.tblVerificacaoUsuario.nickname}</label>
+            <label for="">atrações principais</label>`
+        }
+
+        if(evento.tblEmpresa.tblPerfil.imagemPerfil != null){
+            imgPerfil = `<a href=""><img src="http://localhost:4000/${evento.tblEmpresa.tblPerfil.imagemPerfil}" /></a>`
+        } else {
+            imgPerfil = `<a href=""><img src="http://localhost:4000/uploads/fundoRoxo.jpg" /></a>`
+        }
+
+        output += `<div class="event-box-old">
+        <div class="event-box-information-old">
+
+            <img class="background-photo-event-old" src="http://localhost:4000/${evento.capa}" />
+
+            <div class="user-information-old">
+                ${imgPerfil}
+                <div class="user-information-name-old">
+                    <label for="" id="titulo-old">${evento.titulo}</label>
+                    <label for="" id="categoria-old">${evento.tblEmpresa.tblPerfil.nickname}</label>
+                </div>
+            </div>
+
+            <div class="box-title-old">
+                ${celebridade}
+            </div>
+
+        </div>
+    </div>`
+    }
+
+    document.querySelector("#eventosAtivos").innerHTML = output
+
 }
