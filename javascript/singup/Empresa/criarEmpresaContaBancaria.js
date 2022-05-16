@@ -19,6 +19,13 @@ function getDadosEmpresa() {
 
     const inputBiografia = document.querySelector('#biografiaEmpresa')
 
+    // cadastrando BANCO junto com empresa
+    const inputBanco = document.querySelector('#banco')
+    const inputAgencia = document.querySelector('#agencia')
+    const inputNumeroConta = document.querySelector('#conta')
+    const inputCvv = document.querySelector('#cvv')
+    const inputTipoConta = document.querySelector('#tipoConta')
+
     if (inputSenhaConfirmar.value !== inputSenha.value) {
 
         alert("A senha digitada está incorreta")
@@ -40,10 +47,15 @@ function getDadosEmpresa() {
         formData.append("imagemPerfil", inputPerfil.files[0])
         formData.append("imagemFundo", inputFundo.files[0])
         formData.append("biografia", inputBiografia.value)
+        formData.append("nomeBanco", inputBanco.value)
+        formData.append("agencia", inputAgencia.value)
+        formData.append("numeroConta", inputNumeroConta.value)
+        formData.append("digito", inputCvv.value)
+        formData.append("nomeTipo", inputTipoConta.value)
 
         var config = {
             method: 'post',
-            url: 'http://localhost:4000/perfil/cadastrarPerfilEmpresa',
+            url: 'http://localhost:4000/perfil/cadastrarPerfilEmpresaContaBancaria',
             headers: {
                 'Content-Type': 'multipart/form-data'
             },
