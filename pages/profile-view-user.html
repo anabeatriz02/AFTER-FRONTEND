@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="../css/profile-view-company.css" />
-		<link rel="stylesheet" href="../css/reset.css" />
-		<link rel="stylesheet" href="../css/scrollbar.css" />
-		<title>Perfil</title>
-	</head>
-	<body>
-		<section class="photo-box">
-			<div class="cover" id="fotoFundo">
-				<img class="background-file" src="../upload/profile/background.jpg" id="image-background-preview" />
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="../css/profile-view-user.css" />
+	<link rel="stylesheet" href="../css/reset.css" />
+	<link rel="stylesheet" href="../css/scrollbar.css" />
+	<title>Perfil</title>
+</head>
+
+<body>
+	<section class="photo-box">
+		<div class="cover" id="fotoFundo">
+			<img class="background-file" src="../upload/profile/background.jpg" id="image-background-preview" />
+		</div>
+		<div class="profile" id="fotoPerfil">
+			<img class="profile-file" src="../img/home/happy-person.jpg" id="image-profile-preview" />
+		</div>
+	</section>
+	<section class="information-box">
+		<h1 id="nickname">Cirilo</h1>
+		<p id="biografia">dskhfkjhsdkhald</p>
+	</section>
+
+	<span></span>
+
+	<section class="event-schedule">
+		<div class="event-lifu-container">
+			<div class="what-box">
+				<p class="number">2</p>
+				<p>Eventos curtidos</p>
 			</div>
-			<div class="profile" id="fotoPerfil">
-				<img class="profile-file" src="../img/home/happy-person.jpg" id="image-profile-preview" />
-			</div>
-		</section>
-		<section class="information-box">
-			<h1 id="nickname">Cirilo</h1>
-			<p id="biografia">dskhfkjhsdkhald</p>
-		</section>
-
-		<span></span>
-
-		<section class="event-schedule">
-			<div class="event-lifu-container">
-				<div class="what-box">
-					<p class="number">2</p>
-					<p>Eventos futuros</p>
-				</div>
-
+			<section id="eventosCurtidos">
 				<div class="event-box">
 					<div class="event-box-information">
 						<img class="background-photo-event" src="../img/feed/event-box/festa.jpg" />
@@ -51,36 +53,38 @@
 
 					</div>
 				</div>
+			</section>
+		</div>
+		<div class="event-clca-container">
+			<div class="what-box">
+				<p class="number" id="numeroEventosCurtidos">2</p>
+				<p class="future-events<">Eventos idos</p>
 			</div>
-			<div class="event-clca-container">
-				<div class="what-box">
-					<p class="number">2</p>
-					<p class="future-events<">Eventos idos</p>
-				</div>
 
-				<div class="event-box-old">
-					<div class="event-box-information-old">
-						<img class="background-photo-event-old" src="../img/feed/event-box/festa.jpg" />
+			<div class="event-box-old">
+				<div class="event-box-information-old">
+					<img class="background-photo-event-old" src="../img/feed/event-box/festa.jpg" />
 
-						<div class="user-information-old">
-							<a href=""><img src="../upload/profile/profile-photo.jpg" /></a>
-							<div class="user-information-name-old">
-								<label for="" id="titulo-old">teste</label>
-								<label for="" id="categoria-old">testeeeeeeeeeeeeeee</label>
-							</div>
+					<div class="user-information-old">
+						<a href=""><img src="../upload/profile/profile-photo.jpg" /></a>
+						<div class="user-information-name-old">
+							<label for="" id="titulo-old">teste</label>
+							<label for="" id="categoria-old">testeeeeeeeeeeeeeee</label>
 						</div>
-
-						<div class="box-title-old">
-							<label class="upper-old" for="">teste</label>
-							<label for="">teste</label>
-						</div>
-
 					</div>
+
+					<div class="box-title-old">
+						<label class="upper-old" for="">teste</label>
+						<label for="">teste</label>
+					</div>
+
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 
 
-	</body>
-	<script src="../javascript/mostrarInformacoesPerfilUsuarioComum.js"></script>
+</body>
+<script src="../javascript/mostrarInformacoesPerfilUsuarioComum.js"></script>
+
 </html>
