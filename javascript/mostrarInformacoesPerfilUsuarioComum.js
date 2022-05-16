@@ -1,9 +1,7 @@
 async function getContent() {
     try {
 
-        //Empresa com biografia: 3
-        //Empresa sem biografia: 7
-        const response = await fetch('http://localhost:4000/perfil/acharPerfil/44')
+        const response = await fetch('http://localhost:4000/perfil/acharPerfil/6')
 
         console.log(response)
 

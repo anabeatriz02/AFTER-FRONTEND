@@ -1,7 +1,7 @@
 async function getContent() {
     try {
 
-        const response = await fetch('http://localhost:4000/evento/acharEventoIdEvento/19')
+        const response = await fetch('http://localhost:4000/evento/acharEventoIdEvento/75')
 
         console.log(response)
 

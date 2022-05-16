@@ -1,9 +1,7 @@
 async function getContent() {
     try {
 
-        //Empresa com biografia: 3
-        //Empresa sem biografia: 7
-        const response = await fetch('http://localhost:4000/perfil/acharPerfil/50')
+        const response = await fetch('http://localhost:4000/perfil/acharPerfil/5')
 
         console.log(response)
 
@@ -73,7 +71,7 @@ function mostrarFotos(company) {
 async function getEventosAtivos() {
     try {
 
-        const response = await fetch('http://localhost:4000/evento/acharEventoPorId/17')
+        const response = await fetch('http://localhost:4000/evento/acharEventoPorId/1')
 
         console.log(response)
 

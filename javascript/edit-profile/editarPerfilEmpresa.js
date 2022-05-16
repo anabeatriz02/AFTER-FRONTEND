@@ -3,7 +3,7 @@ const btn = document.querySelector('#editar')
 async function getContent() {
     try {
 
-        const response = await fetch('http://localhost:4000/empresa/acharEmpresaPorId/17')
+        const response = await fetch('http://localhost:4000/empresa/acharEmpresaPorId/1')
 
         console.log(response)
 
