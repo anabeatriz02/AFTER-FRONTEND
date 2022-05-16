@@ -250,6 +250,7 @@ h3{
 }
 
 .user-information img {
+	object-fit: cover;
 	width: 100%;
 }
 
