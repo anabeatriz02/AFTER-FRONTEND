@@ -134,4 +134,7 @@ function mostrarEventosAtivos(eventos) {
 
     document.querySelector("#eventosAtivos").innerHTML = output
 
+    const numeroEvento = `${eventos.length}`
+    document.querySelector("#numeroEventosAtivos").innerHTML = numeroEvento
+
 }
