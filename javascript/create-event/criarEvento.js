@@ -242,6 +242,7 @@ function getDadosEvento() {
 			const tipoEventoSelecionado = selectTipoEvento.options[selectTipoEvento.selectedIndex].value;
 			const faixaEtariaSelecionada = selectFaixaEtaria.options[selectFaixaEtaria.selectedIndex].value;
 			const contaEmpresaSelecionada = selectContaEmpresa.options[selectContaEmpresa.selectedIndex].value;
+			const celebridadeSelecionada = selectCelebridade.options[selectCelebridade.selectedIndex].value;
 
 			var data = new FormData();
 			data.append('titulo', inputTitulo.value);
@@ -306,7 +307,7 @@ function getDadosEvento() {
 
 			var config = {
 				method: 'post',
-				url: 'http://localhost:4000/evento/cadastrarEventoCompleto/17',
+				url: 'http://localhost:4000/evento/cadastrarEventoCompleto/2',
 				headers: {
 					// ...data.getHeaders()
 					'Content-Type': 'multipart/form-data'
