@@ -53,6 +53,12 @@ function mostrarDadosPerfil(perfis) {
     const inputCep = document.querySelector('#cep')
     inputCep.value = perfis[0].tblEnderecos[0].cep
 
+    const inputEstado = document.querySelector('#estado')
+    inputEstado.value = perfis[0].tblEnderecos[0].estado
+
+    const inputCidade = document.querySelector('#cidade')
+    inputCidade.value = perfis[0].tblEnderecos[0].cidade
+
     if (perfis[0].tblPerfil.imagemPerfil == null || perfis[0].tblPerfil.imagemPerfil == "undefined" || perfis[0].tblPerfil.imagemPerfil == undefined) {
         fotoPerfil = `
             <input id="input-profile-file" type="file" accept="image/*" onchange="loadProfile(event)" />
