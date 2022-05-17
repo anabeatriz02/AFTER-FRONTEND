@@ -51,6 +51,16 @@ body {
 	overflow: hidden;
 	border: var(--borderPrimary);
 	margin: -100px 0 10px;
+	/* position: relative; */
+}
+
+.photo-box .profile {
+}
+
+.photo-box .profile #image-profile-preview {
+	display: block;
+	margin: auto;
+	max-width: 100%;
 }
 
 .information-box {
@@ -71,7 +81,8 @@ body {
 	gap: 10px;
 }
 
-.information-box h1 img, #verificado {
+.information-box h1 img,
+#verificado {
 	width: 15px;
 	height: 15px;
 	align-items: flex-start;
@@ -162,9 +173,7 @@ span {
 	display: none;
 }
 
-
 /* --------------------------------------------------- */
-
 
 .event-box {
 	width: 40vw;
@@ -223,7 +232,6 @@ span {
 	font-size: 0.9rem;
 }
 
-
 .box-people a {
 	width: 40px;
 	height: 40px;
@@ -270,7 +278,6 @@ span {
 
 /* --------------------------------------------------- */
 
-
 .event-box-old {
 	width: 40vw;
 	height: 25vh;
@@ -278,7 +285,6 @@ span {
 	background-color: var(--backgroundTertiary);
 	padding: 10px;
 	cursor: pointer;
-	
 }
 
 .event-box-information-old {
@@ -328,7 +334,6 @@ span {
 	color: var(--white);
 	font-size: 0.9rem;
 }
-
 
 .box-people-old a {
 	width: 40px;

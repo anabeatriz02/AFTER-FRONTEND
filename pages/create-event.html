@@ -242,53 +242,150 @@
 		<!-- ------------------------ MODAL FORM ------------------------ -->
 
 		<div class="modal-form-window">
-			<form>
-				<div class="step step-1 active">
-					<div class="form-group">
-						<label for="firstName">First Name</label>
-						<input type="text" id="firstName" name="first-name" />
-					</div>
-					<div class="form-group">
-						<label for="lastName">Last Name</label>
-						<input type="text" id="lastName" name="last-name" />
-					</div>
-					<div class="form-group">
-						<label for="nickName">Nick Name</label>
-						<input type="text" id="nickName" name="nick-name" />
-					</div>
-					<button type="button" class="next-btn">Next</button>
-				</div>
+			<div class="form-window">
+				<h1>LOTE</h1>
+				<form>
+					<label class="event-title">Festa Neon - lote 1</label>
 
-				<div class="step step-2">
-					<div class="form-group">
-						<label for="email">Email</label>
-						<input type="text" id="email" name="email" />
-					</div>
-					<div class="form-group">
-						<label for="phone">Phone</label>
-						<input type="number" id="phone" name="phone-number" />
-					</div>
-					<button type="button" class="previous-btn">Prev</button>
-					<button type="button" class="next-btn">Next</button>
-				</div>
+					<!-- ---------------------- PASSO 01  ---------------------- -->
 
-				<div class="step step-3">
-					<div class="form-group">
-						<label for="country">country</label>
-						<input type="text" id="country" name="country" />
+					<div class="step step-1 active">
+						<h2>Sobre as vendas:</h2>
+						<div class="form-group">
+							<label>
+								Data do início
+								<input type="date" />
+							</label>
+							<label>
+								Hora do início
+								<input type="time" />
+							</label>
+						</div>
+						<div class="form-group">
+							<label>
+								Data do término
+								<input type="date" />
+							</label>
+							<label>
+								Hora do término
+								<input type="time" />
+							</label>
+						</div>
+						<div class="form-group">
+							<label>
+								Quantidade de ingressos
+								<input type="number" />
+							</label>
+						</div>
+						<h2>Quantidade permitida por compra</h2>
+						<div class="form-group">
+							<label>
+								Mínima
+								<input type="number" />
+							</label>
+							<label>
+								Maxima
+								<input type="number" />
+							</label>
+						</div>
+						<button type="button" class="next-btn">Avançar</button>
 					</div>
-					<div class="form-group">
-						<label for="city">City</label>
-						<input type="text" id="city" name="city" />
+
+					<!-- ---------------------- BUTTONS PAGO OU GRATUITO  ---------------------- -->
+
+					<div class="step step-2">
+						<button type="button" class="no-pay-btn">INGRESSSO GRATUITO</button>
+						<button type="button" class="pay-btn">INGRESSO PAGO</button>
 					</div>
-					<div class="form-group">
-						<label for="postCode">Post Code</label>
-						<input type="text" id="postCode" name="post-code" />
+
+					<!-- ---------------------- INGRESSO PAGO  ---------------------- -->
+
+					<div class="step step-3">
+						<h2>Ingresso Pago</h2>
+						<div class="form-group">
+							<label>
+								Título do ingresso
+								<input type="text" />
+							</label>
+						</div>
+						<div class="form-group">
+							<label>
+								Quantidade
+								<input type="text" />
+							</label>
+						</div>
+						<div class="form-group">
+							<label>
+								Descrição do ingresso
+								<textarea name="" id="" cols="30" rows="10"></textarea>
+								<!-- <input type="text" /> -->
+							</label>
+						</div>
+						<div class="form-group">
+							<label class="checkbox-1">
+								<input id="chkCamp1" type="checkbox" class="cb" onclick="showMe('optCamp1', this)" />
+								<span class="checkmark-1"></span>
+								Criar meia-entrada para esse ingresso
+							</label>
+						</div>
+						<div id="optCamp1" class="form-group-checked ocult">
+							<label>
+								Título do ingresso
+								<input type="text" />
+							</label>
+							<div>
+								<label>
+									Quantidade
+									<input type="text" />
+								</label>
+								<label>
+									Preço
+									<input type="text" />
+								</label>
+							</div>
+							<label>
+								Descrição do ingresso
+								<textarea name="" id="" cols="30" rows="10"></textarea>
+							</label>
+						</div>
+
+						<!-- <button type="button" class="previous-btn">Prev</button> -->
+						<button type="submit" class="conclude-btn">Concluir</button>
 					</div>
-					<button type="button" class="previous-btn">Prev</button>
-					<button type="submit" class="submit-btn">Submit</button>
-				</div>
-			</form>
+
+					<!-- ---------------------- INGRESSO GRATUITO  ---------------------- -->
+
+					<div class="step step-4">
+						<h2>Ingresso gratuito</h2>
+						<div class="form-group">
+							<label>
+								Título do ingresso
+								<input type="text" />
+							</label>
+							<div>
+								<label>
+									Preço
+									<input type="text" />
+								</label>
+								<label>
+									Preço
+									<div class="free">GRÁTIS</div>
+								</label>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label>
+								Descrição do ingresso
+								<textarea name="" id="" cols="30" rows="10"></textarea>
+							</label>
+						</div>
+
+						<!-- <button type="button" class="previous-btn">Prev</button> -->
+						<button type="submit" class="conclude-btn">Concluir</button>
+					</div>
+				</form>
+			</div>
 		</div>
 
 		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -300,5 +397,6 @@
 		<script src="../javascript/create-event/criarEvento.js"></script>
 		<script src="../javascript/create-event/modal.js"></script>
 		<script src="../javascript/create-event/multi-step.js"></script>
+		<script src="../javascript/create-event/modal-hide-show.js"></script>
 	</body>
 </html>
