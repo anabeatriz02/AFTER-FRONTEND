@@ -350,6 +350,7 @@ form .btn,
 	left: 50%;
 	transform: translate(-50%, -50%);
 	position: fixed;
+	display: none;
 }
 
 .modal-form-window .form-window {
@@ -390,10 +391,12 @@ form .btn,
 /* ---------------------- MOSTRAR ELEMENTOS DO MODAL ---------------------- */
 
 .modal-form-window .form-window form .step-1 {
-	display: none;
+
 }
 
 .modal-form-window .form-window form .step-2 {
+	width: 100%;
+	
 	display: none;
 }
 
@@ -402,10 +405,27 @@ form .btn,
 }
 
 .modal-form-window .form-window form .step-4 {
-	/* display: none; */
+	display: none;
 }
 
 /* ------------------------------------------------------------------------- */
+
+.modal-form-window .form-window form .step-2 button{
+	width: 100%;
+	margin-top: 20PX;
+}
+
+
+.modal-form-window .form-window form .step-3 div {
+	margin-top: 20px;
+	
+}
+
+.modal-form-window .form-window form .step-3 button {
+	margin: auto 0 0 auto;
+	width: 50%;
+}
+
 
 .modal-form-window .form-window form .step-4 div {
 	display: flex;
@@ -427,23 +447,24 @@ form .btn,
 .modal-form-window .form-window form .step h2 {
 	font-size: 1rem;
 	font-weight: 200;
+	text-transform: uppercase;
 	color: var(--white);
 }
 
 .modal-form-window .form-window form .step .no-pay-btn {
-	height: 50px;
+	height: 60px;
 }
 
 .modal-form-window .form-window form .step .pay-btn {
-	height: 50px;
+	height: 60px;
 }
 
 .modal-form-window .form-window form .step .conclude-btn {
-	height: 50px;
+	height: 60px;
 }
 
 .modal-form-window .form-window form .step .next-btn {
-	height: 50px;
+	height: 60px;
 }
 
 .modal-form-window .form-window form .form-group {
@@ -494,7 +515,7 @@ textarea:focus {
 
 /* ---------------- LOT BTN ---------------- */
 
-.checkbox-1 {
+.checkbox {
 	display: flex;
 	gap: 5px;
 	flex-direction: row;
@@ -504,7 +525,7 @@ textarea:focus {
 	margin: 1em 0em;
 }
 
-.checkbox-1 input {
+.checkbox input {
 	width: 25px;
 	height: 25px;
 	background-color: var(--backgroundPrimary);
@@ -517,7 +538,7 @@ textarea:focus {
 	cursor: pointer;
 }
 
-.checkbox-1 input:checked {
+.checkbox input:checked {
 	background: var(--purpleSecondary);
 	color: var(--purpleSecondary);
 }

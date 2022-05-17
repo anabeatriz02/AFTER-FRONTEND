@@ -221,19 +221,19 @@
 				</label>
 			</div>
 
+			<div class="term">
+				<p>Para saiber mais sobre os termos, <a href="">clique aqui!</a></p>
+				<label class="checkbox">
+					<input type="checkbox" />
+					<span class="checkmark"></span>
+					Li e concordo com os termos
+				</label>
+			</div>
+
 			<div class="btn">
-				<button onclick="openModal()" type="submit" id="salvar">Avançar</button>
+				<button onclick="abre()" type="submit" id="salvar">Avançar</button>
 			</div>
 		</form>
-
-		<div class="term">
-			<p>Para saiber mais sobre os termos, <a href="">clique aqui!</a></p>
-			<label class="checkbox">
-				<input type="checkbox" />
-				<span class="checkmark"></span>
-				Li e concordo com os termos
-			</label>
-		</div>
 
 		<!-- <div class="btn">
 			<button onclick="openModal()" type="submit" id="salvar">Avançar</button>
@@ -241,7 +241,7 @@
 
 		<!-- ------------------------ MODAL FORM ------------------------ -->
 
-		<div class="modal-form-window">
+		<div class="modal-form-window" id="modal-form-window">
 			<div class="form-window">
 				<h1>LOTE</h1>
 				<form>
@@ -249,7 +249,7 @@
 
 					<!-- ---------------------- PASSO 01  ---------------------- -->
 
-					<div class="step step-1 active">
+					<div class="step step-1 active" id="step-1">
 						<h2>Sobre as vendas:</h2>
 						<div class="form-group">
 							<label>
@@ -288,26 +288,27 @@
 								<input type="number" />
 							</label>
 						</div>
-						<button type="button" class="next-btn">Avançar</button>
+						<button type="button" id="next_btn1" onclick="next_step1()" class="next-btn">Avançar</button>
 					</div>
 
 					<!-- ---------------------- BUTTONS PAGO OU GRATUITO  ---------------------- -->
 
-					<div class="step step-2">
-						<button type="button" class="no-pay-btn">INGRESSSO GRATUITO</button>
-						<button type="button" class="pay-btn">INGRESSO PAGO</button>
+					<div class="step step-2" id="step-2">
+						<h2>TIPO DE INGRESSO</h2>
+						<button type="button" class="no-pay-btn" id="next_btn2" onclick="next_step2()">INGRESSSO GRATUITO</button>
+						<button type="button" class="pay-btn" id="next_btn3" onclick="next_step3()">INGRESSO PAGO</button>
 					</div>
 
 					<!-- ---------------------- INGRESSO PAGO  ---------------------- -->
 
-					<div class="step step-3">
+					<div class="step step-3" id="step-3">
 						<h2>Ingresso Pago</h2>
 						<div class="form-group">
 							<label>
 								Título do ingresso
 								<input type="text" />
 							</label>
-						</div>
+						</div>	
 						<div class="form-group">
 							<label>
 								Quantidade
@@ -322,9 +323,9 @@
 							</label>
 						</div>
 						<div class="form-group">
-							<label class="checkbox-1">
+							<label class="checkbox">
 								<input id="chkCamp1" type="checkbox" class="cb" onclick="showMe('optCamp1', this)" />
-								<span class="checkmark-1"></span>
+								<span class="checkmark"></span>
 								Criar meia-entrada para esse ingresso
 							</label>
 						</div>
@@ -355,7 +356,7 @@
 
 					<!-- ---------------------- INGRESSO GRATUITO  ---------------------- -->
 
-					<div class="step step-4">
+					<div class="step step-4" id="step-4">
 						<h2>Ingresso gratuito</h2>
 						<div class="form-group">
 							<label>

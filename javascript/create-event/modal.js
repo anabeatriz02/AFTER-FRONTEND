@@ -1,11 +1,13 @@
-function openModal() {
-	let modal = document.querySelector(".modal-form-window ");
+var modal = document.getElementById("modal-form-window");
+modal.addEventListener("click", function (e) {
+	if (e.target == this) fecha();
+});
 
+function abre() {
 	modal.style.display = "block";
 }
 
-function closeModel() {
-	let modal = document.querySelector(".modal-form-window ");
-
+function fecha() {
 	modal.style.display = "none";
 }
+
