@@ -27,7 +27,11 @@ function mostrarEventos(eventos) {
 
         if(evento.tblIntermEventoCelebridades[0] == undefined || evento.tblIntermEventoCelebridades[0].tblCelebridade == null){ 
             celebridade = `<label class="upper" for=""></label>`
+            imgCelebridade = `<div class="box-people"></div>`
         } else {
+            imgCelebridade = `<div class="box-people">
+            <a href=""><img src="http://localhost:4000/${evento.tblIntermEventoCelebridades[0].tblCelebridade.tblVerificacaoUsuario.tblUsuarioComum.tblPerfil.imagemPerfil}" alt="" /></a>
+        </div>`
             celebridade = `
             <label class="upper" for="">${evento.tblIntermEventoCelebridades[0].tblCelebridade.tblVerificacaoUsuario.nickname}</label>
             <label for="">atrações principais</label>`
@@ -53,12 +57,7 @@ function mostrarEventos(eventos) {
                 </div>
             </div>
 
-            <div class="box-people">
-                <a href=""><img src="../upload/profile/profile-photo.jpg" alt="" /></a>
-                <a class="e" href=""><img src="../upload/profile/profile-photo.jpg" alt="" /></a>
-                <a class="e" href=""><img src="../upload/profile/profile-photo.jpg" alt="" /></a>
-                <label class="e" for="">30+</label>
-            </div>
+            ${imgCelebridade}
 
             <div class="box-title">
                 ${celebridade}

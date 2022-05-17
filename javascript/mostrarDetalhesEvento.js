@@ -1,7 +1,7 @@
 async function getContent() {
     try {
 
-        const response = await fetch('http://localhost:4000/evento/acharEventoIdEvento/75')
+        const response = await fetch('http://localhost:4000/evento/acharEventoIdEvento/6')
 
         console.log(response)
 
@@ -130,11 +130,50 @@ function mostrarDetalhes(evento) {
         document.querySelector("#informacoesIngresso").innerHTML = aviso
         document.querySelector("#comprarIngresso").style.display = "none"
     } else {
-        valor1 = `<p>${evento.tblLotes[0].tblVariedadeIngressoLotes[1].valor}</p>`
-        valor2 = `<p>${evento.tblLotes[0].tblVariedadeIngressoLotes[0].valor}</p>`
 
-        document.querySelector("#menorValor").innerHTML = valor1
-        document.querySelector("#maiorValor").innerHTML = valor2
+        if (evento.tblLotes[1] != undefined && evento.tblLotes[1].tblVariedadeIngressoLotes[0] != undefined) {  
+
+            let primeiroValor = evento.tblLotes[0].tblVariedadeIngressoLotes[0].valor
+            let primeiroIngresso = parseFloat(primeiroValor)
+            let primeiroIngressoValor = primeiroIngresso.toString().replace('.',',')
+
+            let segundoValor = evento.tblLotes[1].tblVariedadeIngressoLotes[0].valor
+            let segundoIngresso = parseFloat(segundoValor)
+            let segundoIngressoValor = segundoIngresso.toString().replace('.',',')
+
+            valor = `
+            <img src="../img/icon-ticket.svg" />
+            <p>Ingressos com preços de R$${primeiroIngressoValor} e R$${segundoIngressoValor}</p>`
+
+            document.querySelector("#informacoesIngresso").innerHTML = valor
+        } else if(evento.tblLotes[0].tblVariedadeIngressoLotes[1] != undefined){
+            
+            let primeiroValor = evento.tblLotes[0].tblVariedadeIngressoLotes[1].valor
+            let primeiroIngresso = parseFloat(primeiroValor)
+            let primeiroIngressoValor = primeiroIngresso.toString().replace('.',',')
+
+            let segundoValor = evento.tblLotes[0].tblVariedadeIngressoLotes[0].valor
+            let segundoIngresso = parseFloat(segundoValor)
+            let segundoIngressoValor = segundoIngresso.toString().replace('.',',')
+            
+            valor = `
+            <img src="../img/icon-ticket.svg" />
+            <p>Ingressos com preços de R$${primeiroIngressoValor} e R$${segundoIngressoValor}</p>`
+
+            document.querySelector("#informacoesIngresso").innerHTML = valor
+        } else {
+
+            let primeiroValor = evento.tblLotes[0].tblVariedadeIngressoLotes[0].valor
+            let primeiroIngresso = parseFloat(primeiroValor)
+            let primeiroIngressoValor = primeiroIngresso.toString().replace('.',',')
+
+            valor = `
+            <img src="../img/icon-ticket.svg" />
+            <p>Ingressos com preços de R$${primeiroIngressoValor}</p>`
+
+            document.querySelector("#informacoesIngresso").innerHTML = valor
+        }
+
     }
 
     //Mostrar autor da publicação

@@ -307,7 +307,7 @@ function getDadosEvento() {
 
 			var config = {
 				method: 'post',
-				url: 'http://localhost:4000/evento/cadastrarEventoCompleto/2',
+				url: 'http://localhost:4000/evento/cadastrarEventoCompleto/5',
 				headers: {
 					// ...data.getHeaders()
 					'Content-Type': 'multipart/form-data'
@@ -443,7 +443,7 @@ function mostrarFaixaEtaria(faixasEtaria) {
 
 async function pegarContaEmpresa() {
 	try {
-		const response = await fetch("http://localhost:4000/contaEmpresa/listarContasPorIdEmpresa/1");
+		const response = await fetch("http://localhost:4000/contaEmpresa/listarContasPorIdEmpresa/5");
 
 		const data = await response.json();
 
@@ -459,7 +459,7 @@ function mostrarContaEmpresa(contasEmpresa) {
 	let output = "";
 
 	for (let contaEmpresa of contasEmpresa) {
-		output += `<option value="${contaEmpresa.idContaEmpresa}">${contaEmpresa.numeroConta}</option>`;
+		output += `<option value="${contaEmpresa.idContaEmpresa}">${contaEmpresa.numeroConta}-${contaEmpresa.digito}</option>`;
 	}
 
 	document.querySelector("#contaEmpresaOption").innerHTML = output;

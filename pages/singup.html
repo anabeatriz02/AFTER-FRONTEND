@@ -96,7 +96,7 @@
 						</div> -->
 						<label for="">
 							teste imagem perfil
-							<input type="file" id="imagemPerfilEmpresa" />
+							<input type="file" id="imagemPerfil" />
 						</label>
 						<label for="">
 							teste imagem fundo
@@ -145,15 +145,15 @@
 
 						<label for="">
 							teste imagem perfil
-							<input type="file" id="imagemPerfil" />
+							<input type="file" id="imagemPerfilEmpresa" />
 						</label>
 						<label for="">
 							teste imagem fundo
-							<input type="file" id="imagemFundo" />
+							<input type="file" id="imagemFundoEmpresa" />
 						</label>
 						<label for="">
 							Biografia
-							<input type="text" id="biografia" />
+							<input type="text" id="biografiaEmpresa" />
 						</label>
 
 
@@ -162,26 +162,32 @@
 
 
                         <label>
-                            teste conta bancaria
+                           	Conta bancária
 							<label for="">
 								Banco
-								<input type="text" id="banco" />
+								<select id="banco" name="">
+									<option selected value="">Selecione um banco..</option>
+									<optgroup id="bancoOption"></optgroup>
+								</select>
 							</label>
 							<label for="">
-								agencia
+								Agência
 								<input type="text" id="agencia" />
 							</label>
 							<label for="">
-								conta
+								Conta
 								<input type="text" id="conta" />
 							</label>
 							<label for="">
-								cvv
-								<input type="text" id="cvv" />
+								Dígito
+								<input type="text" id="digito" />
 							</label>
 							<label for="">
-								tipo conta
-								<input type="text" id="tipoConta" />
+								Tipo de conta
+								<select id="tipoConta" name="">
+									<option selected value="">Selecione um tipo de conta..</option>
+									<optgroup id="tipoContaOption"></optgroup>
+								</select>
 							</label>
 						</label>
 
