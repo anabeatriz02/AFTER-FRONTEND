@@ -20,11 +20,14 @@ function getDadosEmpresa() {
     const inputBiografia = document.querySelector('#biografiaEmpresa')
 
     // cadastrando BANCO junto com empresa
-    const inputBanco = document.querySelector('#banco')
+
+    // const inputBanco = document.querySelector('#banco')
+    const selectBanco = document.querySelector('#banco')
     const inputAgencia = document.querySelector('#agencia')
     const inputNumeroConta = document.querySelector('#conta')
-    const inputCvv = document.querySelector('#cvv')
-    const inputTipoConta = document.querySelector('#tipoConta')
+    const inputDigito = document.querySelector('#digito')
+    // const inputTipoConta = document.querySelector('#tipoConta')
+    const selectTipoConta = document.querySelector('#tipoConta')
 
     if (inputSenhaConfirmar.value !== inputSenha.value) {
 
@@ -38,6 +41,9 @@ function getDadosEmpresa() {
 
     } else {
 
+        const bancoSelecionado = selectBanco.options[selectBanco.selectedIndex].value
+        const tipoSelecionado = selectTipoConta.options[selectTipoConta.selectedIndex].value
+
         const formData = new FormData()
 
         formData.append("nickname", inputNickname.value)
@@ -47,15 +53,15 @@ function getDadosEmpresa() {
         formData.append("imagemPerfil", inputPerfil.files[0])
         formData.append("imagemFundo", inputFundo.files[0])
         formData.append("biografia", inputBiografia.value)
-        formData.append("nomeBanco", inputBanco.value)
         formData.append("agencia", inputAgencia.value)
         formData.append("numeroConta", inputNumeroConta.value)
-        formData.append("digito", inputCvv.value)
-        formData.append("nomeTipo", inputTipoConta.value)
+        formData.append("digito", inputDigito.value)
+        formData.append("tblBancoContumIdBancoConta", bancoSelecionado)
+        formData.append("tblTipoContumIdTipoConta", tipoSelecionado)
 
         var config = {
             method: 'post',
-            url: 'http://localhost:4000/perfil/cadastrarPerfilEmpresaContaBancaria',
+            url: 'http://localhost:4000/perfil/cadastrarPerfilEmpresaComConta',
             headers: {
                 'Content-Type': 'multipart/form-data'
             },
@@ -72,4 +78,52 @@ function getDadosEmpresa() {
 
     }
 
+}
+
+async function pegarBanco() {
+	try {
+		const response = await fetch("http://localhost:4000/bancoConta/listarBancoConta");
+
+		const data = await response.json();
+
+		mostrarBanco(data);
+	} catch (error) {
+		console.error(error);
+	}
+}
+
+pegarBanco();
+
+function mostrarBanco(bancos) {
+	let output = "";
+
+	for (let banco of bancos) {
+		output += `<option value="${banco.idBancoConta}">${banco.nomeBanco}</option>`;
+	}
+
+	document.querySelector("#bancoOption").innerHTML = output;
+}
+
+async function pegarTipoConta() {
+	try {
+		const response = await fetch("http://localhost:4000/tipoConta/listarTiposConta");
+
+		const data = await response.json();
+
+		mostrarTipoConta(data);
+	} catch (error) {
+		console.error(error);
+	}
+}
+
+pegarTipoConta();
+
+function mostrarTipoConta(tipos) {
+	let output = "";
+
+	for (let tipo of tipos) {
+		output += `<option value="${tipo.idTipoConta}">${tipo.nomeTipo}</option>`;
+	}
+
+	document.querySelector("#tipoContaOption").innerHTML = output;
 }

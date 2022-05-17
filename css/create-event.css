@@ -350,6 +350,7 @@ form .btn,
 	left: 50%;
 	transform: translate(-50%, -50%);
 	position: fixed;
+	display: none;
 }
 
 .modal-form-window .form-window {
@@ -402,7 +403,7 @@ form .btn,
 }
 
 .modal-form-window .form-window form .step-4 {
-	/* display: none; */
+	display: none;
 }
 
 /* ------------------------------------------------------------------------- */
