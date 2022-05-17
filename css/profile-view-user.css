@@ -182,6 +182,7 @@ span {
 	background-color: var(--backgroundTertiary);
 	padding: 10px;
 	cursor: pointer;
+	margin-bottom: 5px;
 }
 
 .event-box-information {
@@ -274,6 +275,10 @@ span {
 	text-transform: uppercase;
 	font-weight: 700;
 	font-size: 1.5rem;
+}
+
+#eventosCurtidos {
+	margin-bottom: 5px;
 }
 
 /* --------------------------------------------------- */
