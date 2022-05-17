@@ -132,21 +132,44 @@ function mostrarDetalhes(evento) {
     } else {
 
         if (evento.tblLotes[1] != undefined && evento.tblLotes[1].tblVariedadeIngressoLotes[0] != undefined) {  
+
+            let primeiroValor = evento.tblLotes[0].tblVariedadeIngressoLotes[0].valor
+            let primeiroIngresso = parseFloat(primeiroValor)
+            let primeiroIngressoValor = primeiroIngresso.toString().replace('.',',')
+
+            let segundoValor = evento.tblLotes[1].tblVariedadeIngressoLotes[0].valor
+            let segundoIngresso = parseFloat(segundoValor)
+            let segundoIngressoValor = segundoIngresso.toString().replace('.',',')
+
             valor = `
             <img src="../img/icon-ticket.svg" />
-            <p>Ingressos com preços de R$${evento.tblLotes[0].tblVariedadeIngressoLotes[0].valor} e R$${evento.tblLotes[1].tblVariedadeIngressoLotes[0].valor}</p>`
+            <p>Ingressos com preços de R$${primeiroIngressoValor} e R$${segundoIngressoValor}</p>`
 
             document.querySelector("#informacoesIngresso").innerHTML = valor
         } else if(evento.tblLotes[0].tblVariedadeIngressoLotes[1] != undefined){
+            
+            let primeiroValor = evento.tblLotes[0].tblVariedadeIngressoLotes[1].valor
+            let primeiroIngresso = parseFloat(primeiroValor)
+            let primeiroIngressoValor = primeiroIngresso.toString().replace('.',',')
+
+            let segundoValor = evento.tblLotes[0].tblVariedadeIngressoLotes[0].valor
+            let segundoIngresso = parseFloat(segundoValor)
+            let segundoIngressoValor = segundoIngresso.toString().replace('.',',')
+            
             valor = `
             <img src="../img/icon-ticket.svg" />
-            <p>Ingressos com preços de R$${evento.tblLotes[0].tblVariedadeIngressoLotes[1].valor} e R$${evento.tblLotes[0].tblVariedadeIngressoLotes[0].valor}</p>`
+            <p>Ingressos com preços de R$${primeiroIngressoValor} e R$${segundoIngressoValor}</p>`
 
             document.querySelector("#informacoesIngresso").innerHTML = valor
         } else {
+
+            let primeiroValor = evento.tblLotes[0].tblVariedadeIngressoLotes[0].valor
+            let primeiroIngresso = parseFloat(primeiroValor)
+            let primeiroIngressoValor = primeiroIngresso.toString().replace('.',',')
+
             valor = `
             <img src="../img/icon-ticket.svg" />
-            <p>Ingressos com preços de R$${evento.tblLotes[0].tblVariedadeIngressoLotes[0].valor}</p>`
+            <p>Ingressos com preços de R$${primeiroIngressoValor}</p>`
 
             document.querySelector("#informacoesIngresso").innerHTML = valor
         }
