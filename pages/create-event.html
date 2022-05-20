@@ -244,7 +244,7 @@
 		<div class="modal-form-window" id="modal-form-window">
 			<div class="form-window">
 				<h1>LOTE</h1>
-				<form>
+				<form enctype="multipart/form-data" method="post" id="formCriarEvento">
 					<label class="event-title">Festa Neon - lote 1</label>
 
 					<!-- ---------------------- PASSO 01  ---------------------- -->
@@ -254,38 +254,40 @@
 						<div class="form-group">
 							<label>
 								Data do início
-								<input type="date" />
+								<input id="lote-data-inicio" type="date" />
 							</label>
 							<label>
 								Hora do início
-								<input type="time" />
+								<input id="lote-hora-inicio" type="time" />
 							</label>
 						</div>
 						<div class="form-group">
 							<label>
 								Data do término
-								<input type="date" />
+								<input id="lote-data-termino" type="date" />
 							</label>
 							<label>
 								Hora do término
-								<input type="time" />
+								<input id="lote-hora-termino" type="time" />
 							</label>
 						</div>
 						<div class="form-group">
 							<label>
 								Quantidade de ingressos
-								<input type="number" />
+								<input id="lote-quantidade-ingresso" type="number" />
 							</label>
 						</div>
-						<h2>Quantidade permitida por compra</h2>
 						<div class="form-group">
-							<label>
-								Mínima
-								<input type="number" />
+							<label class="checkbox-tax">
+								<input class="checkbox-input-tax" id="lote-taxa-absorcao" type="checkbox" />
+								<span class="checkmark-tax"></span>
+								Taxa da absorção
 							</label>
+							<h2>Quantidade permitida por compra</h2>
+
 							<label>
 								Maxima
-								<input type="number" />
+								<input id="lote-quantidade-maxima" type="number" />
 							</label>
 						</div>
 						<button type="button" id="next_btn1" onclick="next_step1()" class="next-btn">Avançar</button>
@@ -306,19 +308,23 @@
 						<div class="form-group">
 							<label>
 								Título do ingresso
-								<input type="text" />
+								<input id="lote-ip-titulo" type="text" />
 							</label>
-						</div>	
-						<div class="form-group">
+						</div>
+						<div class="form-group price">
 							<label>
 								Quantidade
-								<input type="text" />
+								<input id="lote-ip-quantidade" type="number" />
+							</label>
+							<label>
+								Preço
+								<input id="lote-ip-preco" type="number" />
 							</label>
 						</div>
 						<div class="form-group">
 							<label>
 								Descrição do ingresso
-								<textarea name="" id="" cols="30" rows="10"></textarea>
+								<textarea id="lote-ip-descricao" cols="30" rows="10"></textarea>
 								<!-- <input type="text" /> -->
 							</label>
 						</div>
@@ -332,26 +338,28 @@
 						<div id="optCamp1" class="form-group-checked ocult">
 							<label>
 								Título do ingresso
-								<input type="text" />
+								<input id="lote-ip-titulo-meia" type="text" />
 							</label>
 							<div>
 								<label>
 									Quantidade
-									<input type="text" />
+									<input id="lote-ip-quantidade-meia" type="text" />
 								</label>
 								<label>
 									Preço
-									<input type="text" />
+									<input id="lote-ip-preco-meia" type="text" />
 								</label>
 							</div>
 							<label>
 								Descrição do ingresso
-								<textarea name="" id="" cols="30" rows="10"></textarea>
+								<textarea name="" id="lote-ip-descricao-meia" cols="30" rows="10"></textarea>
 							</label>
 						</div>
 
 						<!-- <button type="button" class="previous-btn">Prev</button> -->
-						<button type="submit" class="conclude-btn">Concluir</button>
+						<div class="send">
+							<button type="submit" id="conclude-btn" class="conclude-btn">Concluir</button>
+						</div>
 					</div>
 
 					<!-- ---------------------- INGRESSO GRATUITO  ---------------------- -->
@@ -361,16 +369,16 @@
 						<div class="form-group">
 							<label>
 								Título do ingresso
-								<input type="text" />
+								<input id="lote-ig-titulo" type="text" />
 							</label>
 							<div>
 								<label>
-									Preço
-									<input type="text" />
+									Quantidade
+									<input id="lote-ig-quantidade" type="text" />
 								</label>
 								<label>
 									Preço
-									<div class="free">GRÁTIS</div>
+									<div id="lote-ig-preco" class="free">GRÁTIS</div>
 								</label>
 							</div>
 						</div>
@@ -378,12 +386,14 @@
 						<div class="form-group">
 							<label>
 								Descrição do ingresso
-								<textarea name="" id="" cols="30" rows="10"></textarea>
+								<textarea id="lote-ig-descricao" cols="30" rows="10"></textarea>
 							</label>
 						</div>
 
 						<!-- <button type="button" class="previous-btn">Prev</button> -->
-						<button type="submit" class="conclude-btn">Concluir</button>
+						<div class="send">
+							<button type="submit" class="conclude-btn">Concluir</button>
+						</div>
 					</div>
 				</form>
 			</div>
