@@ -132,7 +132,7 @@ function getDadosPerfil() {
 
         if (senha != senhaConfirmar) {
             alert("A senha está incorreta")
-        } else if(!isRequired(senha) && !isRequired(senhaConfirmar)){
+        } else if (!isRequired(senha) && !isRequired(senhaConfirmar)) {
             alert("Você não passou a senha")
         } else {
             valid = true
@@ -165,7 +165,7 @@ function getDadosPerfil() {
 
     //Quando o formulário for válido, fazer o post desse evento
     if (isFormValid) {
-        alert("Conta cadastrada com sucesso!")
+
 
         const formData = new FormData()
 
@@ -186,6 +186,12 @@ function getDadosPerfil() {
                 'Content-Type': 'multipart/form-data'
             }
         })
+        .catch(error => {
+            if(error.response){
+                alert("Esse e-mail já está sendo utilizado. Por favor, tente outro email.")
+            }
+        })
+
     }
 
 }
