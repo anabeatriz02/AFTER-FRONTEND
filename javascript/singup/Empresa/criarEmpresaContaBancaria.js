@@ -1,9 +1,9 @@
 "use-strict"
 
 function realizarCadastroEmpresa() {
+    
     const empresa = getDadosEmpresa()
 
-    console.log(empresa)
 }
 
 function getDadosEmpresa() {

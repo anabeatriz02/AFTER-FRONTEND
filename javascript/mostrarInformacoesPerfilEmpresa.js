@@ -1,7 +1,7 @@
 async function getContent() {
     try {
 
-        const response = await fetch('http://localhost:4000/perfil/acharPerfil/5')
+        const response = await fetch('http://localhost:4000/perfil/acharPerfil/18')
 
         console.log(response)
 
@@ -71,7 +71,7 @@ function mostrarFotos(company) {
 async function getEventosAtivos() {
     try {
 
-        const response = await fetch('http://localhost:4000/evento/acharEventoPorId/1')
+        const response = await fetch('http://localhost:4000/evento/acharEventoPorId/8')
 
         console.log(response)
 
