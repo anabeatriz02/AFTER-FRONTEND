@@ -3,7 +3,7 @@ const btn = document.querySelector('#editar')
 async function getContent() {
     try {
 
-        const response = await fetch('http://localhost:4000/usuarioComum/acharPerfilUsuario/1')
+        const response = await fetch('http://localhost:4000/usuarioComum/acharPerfilUsuario/7')
 
         console.log(response)
 
@@ -145,9 +145,13 @@ function editarPerfilUsuarioComum(idPerfil) {
 function editarPerfilEndereco(idEndereco) {
 
     const inputCep = document.querySelector('#cep')
+    const inputEstado = document.querySelector('#estado')
+    const inputCidade = document.querySelector('#cidade')
 
     var data = JSON.stringify({
-        "cep": inputCep.value
+        "cep": inputCep.value,
+        "estado": inputEstado.value,
+        "cidade": inputCidade.value
     });
 
     var config = {
