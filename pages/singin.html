@@ -8,6 +8,7 @@
 
 		<link rel="stylesheet" href="../css/reset.css" />
 		<link rel="stylesheet" href="../css/singin.css" />
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 		<title>Entrar</title>
 	</head>
 
@@ -27,27 +28,31 @@
 
 			<h1>Entrar</h1>
 
-			<form action="">
+			<form action="" id="formLogin">
 
 				<label>
 					Nome de usuário ou e-mail
-					<input type="text">
+					<input type="text" id="inputEmail">
 				</label>
 
 				<label>
 					Senha
-					<input type="text">
+					<input type="text" id="inputSenha">
 					<a href="">Esqueci minha senha</a>
 				</label>
 
-				<button>ENTRAR</button>
+				
 
-				<label class="register" for="">Não tem uma conta?<a class="register" href="">Registre-se</a></label>
-
+				<label class="register" for="">Não tem uma conta?<a class="register" onclick="usuarioAutenticado()">Registre-se</a></label>
+				
+				<button id="btnEntrar" type="submit">ENTRAR</button>
 			</form>
+
 			
 		</section>
 
 	
 	</body>
+
+	<script src="../javascript/signin/logar.js"></script>
 </html>
