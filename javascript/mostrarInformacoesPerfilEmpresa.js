@@ -1,7 +1,17 @@
 async function getContent() {
     try {
 
-        const response = await fetch('http://localhost:4000/perfil/acharPerfil/18')
+        var myHeaders = new Headers();
+
+        myHeaders.append("Authorization", localStorage.getItem("token"))
+
+        var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            redirect: 'follow'
+        };
+
+        const response = await fetch(`http://localhost:4000/perfil/acharPerfilLogado`, requestOptions)  
 
         console.log(response)
 
@@ -25,7 +35,7 @@ getContent()
 
 function mostrarNickname(empresa) {
 
-    output = `<h1 id="nickname">${empresa.nickname}<img src="../img/icon-check.svg"/></h1>`
+    output = `<h1 id="nickname">${empresa[0].nickname}<img src="../img/icon-check.svg"/></h1>`
 
     document.querySelector('#nickname').innerHTML = output
 
@@ -33,9 +43,9 @@ function mostrarNickname(empresa) {
 
 function mostrarBiografia(empresa) {
 
-    if (empresa.biografia != null) {
+    if (empresa[0].biografia != null) {
 
-        output = `${empresa.biografia}`
+        output = `${empresa[0].biografia}`
 
     } else {
 
@@ -49,19 +59,19 @@ function mostrarBiografia(empresa) {
 
 function mostrarFotos(company) {
 
-    if (company.imagemPerfil == null) {
+    if (company[0].imagemPerfil == null) {
         fotoPerfil = `<img class="profile-file" src="http://localhost:4000/uploads/fundoRoxo.jpg" id="image-profile-preview" />`
     } else {
-        fotoPerfil = `<img class="profile-file" src="http://localhost:4000/${company.imagemPerfil}" id="image-profile-preview" />`
+        fotoPerfil = `<img class="profile-file" src="http://localhost:4000/${company[0].imagemPerfil}" id="image-profile-preview" />`
     }
 
     document.querySelector('#fotoPerfil').innerHTML = fotoPerfil
 
 
-    if (company.imagemFundo == null) {
+    if (company[0].imagemFundo == null) {
         fotoFundo = `<img class="background-file" src="http://localhost:4000/uploads/wallpaperRoxo.jpg" id="image-background-preview" />`
     } else {
-        fotoFundo = `<img class="background-file" src="http://localhost:4000/${company.imagemFundo}" id="image-background-preview" />`
+        fotoFundo = `<img class="background-file" src="http://localhost:4000/${company[0].imagemFundo}" id="image-background-preview" />`
 
     }
 
@@ -95,7 +105,7 @@ function mostrarEventosAtivos(eventos) {
     let output = ''
     for (let evento of eventos) {
 
-        if(evento.tblIntermEventoCelebridades[0] == undefined || evento.tblIntermEventoCelebridades[0].tblCelebridade == null){ 
+        if (evento.tblIntermEventoCelebridades[0] == undefined || evento.tblIntermEventoCelebridades[0].tblCelebridade == null) {
             celebridade = `<label class="upper" for=""></label>`
         } else {
             celebridade = `
@@ -103,7 +113,7 @@ function mostrarEventosAtivos(eventos) {
             <label for="">atrações principais</label>`
         }
 
-        if(evento.tblEmpresa.tblPerfil.imagemPerfil != null){
+        if (evento.tblEmpresa.tblPerfil.imagemPerfil != null) {
             imgPerfil = `<a href=""><img src="http://localhost:4000/${evento.tblEmpresa.tblPerfil.imagemPerfil}" /></a>`
         } else {
             imgPerfil = `<a href=""><img src="http://localhost:4000/uploads/fundoRoxo.jpg" /></a>`
