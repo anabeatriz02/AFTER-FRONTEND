@@ -6,12 +6,12 @@ const inputSenha = document.querySelector("#inputSenha")
 const btnEntrar = document.querySelector("#btnEntrar")
 
 form.addEventListener("submit", function (e) {
-    e.preventDefault();
+    e.preventDefault()
 
     var data = JSON.stringify({
         "email": inputEmail.value,
         "senha": inputSenha.value
-    });
+    })
 
     var config = {
         method: 'post',
@@ -30,11 +30,14 @@ form.addEventListener("submit", function (e) {
         })
         .catch(function (error) {
             console.log(error);
-        });
+        })
+
+    window.location.href = "./profile-view-company.html"
 
 
 })
 
+// btnEntrar.addEventListener('click', window.location.href = "./profile-view-company.html")
 
 
 const usuarioAutenticado = () => {
