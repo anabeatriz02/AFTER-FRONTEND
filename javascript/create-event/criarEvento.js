@@ -54,8 +54,8 @@ function getDadosEvento() {
 	const inputQuartaFotoComplementar = document.querySelector("#fourth-image-photo-complement-preview");
 	const inputQuintaFotoComplementar = document.querySelector("#fifth-image-photo-complement-preview");
 
-	const selectCelebridade = document.querySelector("#celebridade");
-	const celebridadeSelecionada = selectCelebridade.options[selectCelebridade.selectedIndex].value;
+	// const selectCelebridade = document.querySelector("#celebridade");
+	// const celebridadeSelecionada = selectCelebridade.options[selectCelebridade.selectedIndex].value;
 
 	// STEP 1 - ID
 	const loteDataInicio = document.querySelector("#lote-data-inicio");
@@ -260,14 +260,14 @@ function getDadosEvento() {
 			const tipoEventoSelecionado = selectTipoEvento.options[selectTipoEvento.selectedIndex].value;
 			const faixaEtariaSelecionada = selectFaixaEtaria.options[selectFaixaEtaria.selectedIndex].value;
 			const contaEmpresaSelecionada = selectContaEmpresa.options[selectContaEmpresa.selectedIndex].value;
-			const celebridadeSelecionada = selectCelebridade.options[selectCelebridade.selectedIndex].value;
+			// const celebridadeSelecionada = selectCelebridade.options[selectCelebridade.selectedIndex].value;
 
 			var data = new FormData();
 			data.append("titulo", inputTitulo.value);
 			data.append("descricao", inputDescricao.value);
 			data.append("capa", inputCapa.files[0]);
 			data.append("dataInicio", inputDataInicio.value);
-			data.append("dataFim", dataTermino.value);
+			data.append("dataFim", dataTermino);
 			data.append("horaInicio", inputHoraInicio.value);
 			data.append("horaFim", horaTermino);
 			data.append("tblFaixaEtariumIdFaixaEtaria", faixaEtariaSelecionada);
@@ -318,13 +318,13 @@ function getDadosEvento() {
 
 			//Verificar se a celebridade está sendo passada
 
-			if (celebridadeSelecionada == 0) {
-				// data.append('tblCelebridadeIdCelebridade', celebridadeSelecionada)
-				console.log(celebridadeSelecionada + " Olá");
-			} else {
-				data.append("tblCelebridadeIdCelebridade", celebridadeSelecionada);
-				console.log(categoriaSelecionada + " Tchau");
-			}
+			// if (celebridadeSelecionada == 0) {
+			// 	// data.append('tblCelebridadeIdCelebridade', celebridadeSelecionada)
+			// 	console.log(celebridadeSelecionada + " Olá");
+			// } else {
+			// 	data.append("tblCelebridadeIdCelebridade", celebridadeSelecionada);
+			// 	console.log(categoriaSelecionada + " Tchau");
+			// }
 
 			//Verificar se fotos complementares estão sendo passadas
 
@@ -539,29 +539,29 @@ function mostrarAssunto(assuntos) {
 
 //Mostrando e cadastrando celebridade
 
-async function pegarCelebridade() {
-	try {
-		const response = await fetch("http://localhost:4000/celebridade/listarCelebridades");
+// async function pegarCelebridade() {
+// 	try {
+// 		const response = await fetch("http://localhost:4000/celebridade/listarCelebridades");
 
-		const data = await response.json();
+// 		const data = await response.json();
 
-		mostrarCelebridade(data);
-	} catch (error) {
-		console.error(error);
-	}
-}
+// 		mostrarCelebridade(data);
+// 	} catch (error) {
+// 		console.error(error);
+// 	}
+// }
 
-pegarCelebridade();
+// pegarCelebridade();
 
-function mostrarCelebridade(celebridades) {
-	let output = "";
+// function mostrarCelebridade(celebridades) {
+// 	let output = "";
 
-	for (let celebridade of celebridades) {
-		output += `<option value="${celebridade.idCelebridade}">${celebridade.tblVerificacaoUsuario.nickname}</option>`;
-	}
+// 	for (let celebridade of celebridades) {
+// 		output += `<option value="${celebridade.idCelebridade}">${celebridade.tblVerificacaoUsuario.nickname}</option>`;
+// 	}
 
-	document.querySelector("#celebridadeOption").innerHTML = output;
-}
+// 	document.querySelector("#celebridadeOption").innerHTML = output;
+// }
 
 function next_step1() {
 	document.getElementById("step-1").style.display = "none";
