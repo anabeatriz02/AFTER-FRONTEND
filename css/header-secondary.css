@@ -25,15 +25,14 @@ header .icon-bag,
 .icon-user {
 	background-color: var(--backgroundTertiary);
 	border-radius: 10px;
-    border: 1px solid var(--backgroundTertiary);
-    transition: .5s;
+	border: 1px solid var(--backgroundTertiary);
+	transition: 0.5s;
 }
 
 header .icon-bag:hover,
 .icon-user:hover {
-    background-color: var(--backgroundPrimary);
-    border: 1px solid var(--purpleSecondary);
-
+	background-color: var(--backgroundPrimary);
+	border: 1px solid var(--purpleSecondary);
 }
 
 header .logo img {
@@ -41,4 +40,59 @@ header .logo img {
 	height: 40px;
 }
 
+/* ------------–--------- */
 
+.dropdown_button {
+	height: 50px;
+	width: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+
+	background-color: var(--backgroundTertiary);
+	border: 1px solid var(--backgroundTertiary);
+
+	/* color: white; */
+	/* padding: 16px; */
+	/* font-size: 16px; */
+	/* border: none; */
+	cursor: pointer;
+
+	/* font-family: montserrat; */
+	/* border: 1px solid #ffffff; */
+}
+
+.courses {
+	display: none;
+	position: absolute;
+	right: 113px;
+	margin-top: 10px;
+	background-color: #f1f1f1;
+	min-width: 200px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+.courses li {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	list-style: none;
+	background-color: rgb(47, 47, 47);
+	font-family: montserrat;
+	border: 1px solid white;
+}
+
+.courses li a {
+	text-decoration: none;
+	color: white;
+	display: block;
+	padding: 10px;
+}
+
+.courses li:hover {
+	background-color: #0979ad;
+	color: white;
+}

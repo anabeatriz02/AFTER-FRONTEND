@@ -12,9 +12,40 @@
 		<header>
 			<a class="icon-bag" href=""><img src="../img/icon-bag.svg" alt="" /></a>
 
-			<a class="logo" href=""><img src="../img/logo-light.svg" alt="Logo" /></a>
+			<a class="logo" href="./pages/feed-user.html"><img src="../img/logo-light.svg" alt="Logo" /></a>
 
-			<a class="icon-user" href=""><img src="../img/icon-user.svg" alt="" /></a>
+			<div class="main">
+				<div class="dropdown_list">
+					<button class="dropdown_button" onclick="show_list()"><img src="../img/icon-user.svg" alt="" /></button>
+
+					<div id="courses_id" class="courses">
+						<li><a href="">Machine learning</a></li>
+						<li><a href="">Data science</a></li>
+						<li><a href="">Data analysis</a></li>
+						<li><a href="">Data mining</a></li>
+						<li><a href="">Data warehousing</a></li>
+					</div>
+				</div>
+			</div>
+
+			<!-- <a class="icon-user" href=""><img src="../img/icon-user.svg" alt="" /> </a> -->
 		</header>
+
+		<script>
+			function show_list() {
+				var courses = document.getElementById("courses_id");
+
+				if (courses.style.display == "block") {
+					courses.style.display = "none";
+				} else {
+					courses.style.display = "block";
+				}
+			}
+			window.onclick = function (event) {
+				if (!event.target.matches(".dropdown_button")) {
+					document.getElementById("courses_id").style.display = "none";
+				}
+			};
+		</script>
 	</body>
 </html>
