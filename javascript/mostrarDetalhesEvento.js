@@ -125,46 +125,14 @@ function mostrarDetalhes(evento) {
 
     document.querySelector("#enderecoEvento").innerHTML = endereco
 
-    //Mostrar resumo dos ingresos --> (fazer lógica para menor e maior valor)
-
-    if (evento.tblLotes[0] == undefined) {
+    if (evento.tblLotes[0] == undefined || evento.tblLotes[0].tblVariedadeIngressoLotes[0] == undefined) {
         aviso = "<p>Esse evento não possui ingressos à venda</p>"
 
         document.querySelector("#informacoesIngresso").innerHTML = aviso
         document.querySelector("#comprarIngresso").style.display = "none"
     } else {
 
-        if (evento.tblLotes[1] != undefined && evento.tblLotes[1].tblVariedadeIngressoLotes[0] != undefined) {  
-
-            let primeiroValor = evento.tblLotes[0].tblVariedadeIngressoLotes[0].valor
-            let primeiroIngresso = parseFloat(primeiroValor)
-            let primeiroIngressoValor = primeiroIngresso.toString().replace('.',',')
-
-            let segundoValor = evento.tblLotes[1].tblVariedadeIngressoLotes[0].valor
-            let segundoIngresso = parseFloat(segundoValor)
-            let segundoIngressoValor = segundoIngresso.toString().replace('.',',')
-
-            valor = `
-            <img src="../img/icon-ticket.svg" />
-            <p>Ingressos com preços de R$${primeiroIngressoValor} e R$${segundoIngressoValor}</p>`
-
-            document.querySelector("#informacoesIngresso").innerHTML = valor
-        } else if(evento.tblLotes[0].tblVariedadeIngressoLotes[1] != undefined){
-            
-            let primeiroValor = evento.tblLotes[0].tblVariedadeIngressoLotes[1].valor
-            let primeiroIngresso = parseFloat(primeiroValor)
-            let primeiroIngressoValor = primeiroIngresso.toString().replace('.',',')
-
-            let segundoValor = evento.tblLotes[0].tblVariedadeIngressoLotes[0].valor
-            let segundoIngresso = parseFloat(segundoValor)
-            let segundoIngressoValor = segundoIngresso.toString().replace('.',',')
-            
-            valor = `
-            <img src="../img/icon-ticket.svg" />
-            <p>Ingressos com preços de R$${primeiroIngressoValor} e R$${segundoIngressoValor}</p>`
-
-            document.querySelector("#informacoesIngresso").innerHTML = valor
-        } else {
+        if (evento.tblLotes[0] != undefined && evento.tblLotes[0].tblVariedadeIngressoLotes[0] != undefined) {  
 
             let primeiroValor = evento.tblLotes[0].tblVariedadeIngressoLotes[0].valor
             let primeiroIngresso = parseFloat(primeiroValor)
@@ -172,7 +140,7 @@ function mostrarDetalhes(evento) {
 
             valor = `
             <img src="../img/icon-ticket.svg" />
-            <p>Ingressos com preços de R$${primeiroIngressoValor}</p>`
+            <p>Com ingressos de R$${primeiroIngressoValor}</p>`
 
             document.querySelector("#informacoesIngresso").innerHTML = valor
         }
@@ -192,7 +160,7 @@ function mostrarDetalhes(evento) {
     //Mostrar capa como primeira imagem
     let imagemCapa = `<img src="http://localhost:4000/${evento.capa}"/>`
 
-    console.log(imagemCapa)
+    // console.log(imagemCapa)
 
     document.querySelector("#capaImagem").innerHTML = imagemCapa
 
