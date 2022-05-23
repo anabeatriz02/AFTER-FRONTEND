@@ -125,9 +125,7 @@ function mostrarDetalhes(evento) {
 
     document.querySelector("#enderecoEvento").innerHTML = endereco
 
-    //Mostrar resumo dos ingresos --> (fazer lógica para menor e maior valor)
-
-    if (evento.tblLotes[0] == undefined) {
+    if (evento.tblLotes[0] == undefined || evento.tblLotes[0].tblVariedadeIngressoLotes[0] == undefined) {
         aviso = "<p>Esse evento não possui ingressos à venda</p>"
 
         document.querySelector("#informacoesIngresso").innerHTML = aviso
