@@ -37,7 +37,7 @@ h1 {
 	height: 40%;
 }
 
-.logo-container button {
+.logo-container .button {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -54,16 +54,16 @@ h1 {
 	transition: 0.15s linear;
 }
 
-.logo-container button:hover {
+.logo-container .button:hover {
 	background-color: transparent;
 	border: 1.5px solid var(--backgroundPrimary);
 }
 
-.logo-container button:hover path {
+.logo-container .button:hover path {
 	stroke: var(--backgroundPrimary);
 }
 
-.logo-container button img {
+.logo-container .button img {
 	width: 24px;
 	height: 24px;
 }

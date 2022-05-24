@@ -25,15 +25,14 @@ header .icon-bag,
 .icon-user {
 	background-color: var(--backgroundTertiary);
 	border-radius: 10px;
-    border: 1px solid var(--backgroundTertiary);
-    transition: .5s;
+	border: 1px solid var(--backgroundTertiary);
+	transition: 0.5s;
 }
 
 header .icon-bag:hover,
 .icon-user:hover {
-    background-color: var(--backgroundPrimary);
-    border: 1px solid var(--purpleSecondary);
-
+	background-color: var(--backgroundPrimary);
+	border: 1px solid var(--purpleSecondary);
 }
 
 header .logo img {
@@ -41,4 +40,76 @@ header .logo img {
 	height: 40px;
 }
 
+/* ------------–--------- */
 
+.dropdown_button {
+	height: 50px;
+	width: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+
+	background-color: var(--backgroundTertiary);
+	border: 1px solid var(--backgroundTertiary);
+
+	/* color: white; */
+	/* padding: 16px; */
+	/* font-size: 16px; */
+	/* border: none; */
+	cursor: pointer;
+
+	/* font-family: montserrat; */
+	/* border: 1px solid #ffffff; */
+}
+
+.courses {
+	display: none;
+	position: absolute;
+	right: 6%;
+	margin-top: 10px;
+	/* background-color: #f1f1f1; */
+	min-width: 100px;
+	overflow: hidden;
+	border-radius: 10px 0px 10px 10px;
+	/* display: flex; */
+
+	/* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
+	z-index: 1;
+}
+
+.courses li {
+	/* width: 200px; */
+	/* height: 50px; */
+	/* color: black; */
+	/* padding: 12px 16px; */
+	text-decoration: none;
+	display: block;
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 70px;
+	background-color: var(--purpleSecondary);
+	/* background-color: rgb(47, 47, 47); */
+	/* font-family: mont	serrat; */
+	/* border: 1px solid 	; */
+}
+
+.courses li a {
+	width: 100%;
+	height: 100%;
+	/* height: FF100%; */
+	text-align: center;
+	/* padding: 0 20px; */
+
+	text-decoration: none;
+	color: white;
+	display: block;
+	/* padding: 10px; */
+}
+
+.courses li:hover {
+	background-color: #0979ad;
+	color: white;
+}

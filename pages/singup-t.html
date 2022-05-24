@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<link rel="stylesheet" href="../css/reset.css" />
+		<link rel="stylesheet" href="../css/singup-t.css" />
+		<link rel="stylesheet" href="../css/header-logo.css" />
+
+		<title>Document</title>
+	</head>
+	<body>
+		<header id="header">
+			<script>
+				$(function () {
+					$("#header").load("../common/header-logo.html  ");
+				});
+			</script>
+		</header>
+
+		<h1>CADASTRO</h1>
+
+		<ul class="tabs">
+			<li data-tab-target="#user" class="active tab">Usuário</li>
+			<li data-tab-target="#company" class="tab">Empresa</li>
+		</ul>
+
+		<section class="tab-content">
+			<div id="user" data-tab-content class="active">
+				<div class="user-box">
+					<form acti  on="">
+						<label>
+							Nome de completo
+							<input type="text" />
+						</label>
+
+						<div>
+							<label>
+								Nome de usuário
+								<input type="text" />
+							</label>
+							<label>
+								Data de nascimento
+								<input type="date" />
+							</label>
+						</div>
+
+                        <label>
+							Biografia
+							<input type="text" />
+						</label>
+
+						<label>
+							E-mail
+							<input type="email" />
+						</label>
+						<div>
+							<label>
+								Senha
+								<input type="password" />
+							</label>
+							<label>
+								Confirmar senha
+								<input type="password" />
+							</label>
+						</div>
+						<div>
+							<label>
+								CEP
+								<input type="password" />
+							</label>
+							<label>
+								Estado
+								<input type="password" />
+							</label>
+							<label>
+								Cidade
+								<input type="password" />
+							</label>
+						</div>
+
+						<label>
+                            Foto de perfil
+							<div class="drop-zone drop-profile">
+								<span class="drop-zone__prompt">Solte o arquivo aqui ou clique para fazer upload</span>
+								<input type="file" name="myFile" class="drop-zone__input" id="fourth-image-photo-complement-preview" />
+							</div>
+						</label>
+
+						<label>
+                            Foto de fundo
+							<div class="drop-zone drop-background">
+								<span class="drop-zone__prompt">Solte o arquivo aqui ou clique para fazer upload</span>
+								<input type="file" name="myFile" class="drop-zone__input" id="fourth-image-photo-complement-preview" />
+							</div>
+						</label>
+					</form>
+					<button id="salvarUsuario" onclick="realizarCadastroUsuarioComum()">AVANÇAR</button>
+
+				</div>
+			</div>
+			<div id="company" data-tab-content>
+				<div class="company-box"></div>
+			</div>
+		</section>
+
+		<script src="../javascript/singup/tab-area.js"></script>
+	</body>
+</html>
