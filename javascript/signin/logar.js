@@ -27,12 +27,15 @@ form.addEventListener("submit", function (e) {
             console.log(JSON.stringify(response.data));
 
             localStorage.setItem("token", "Bearer " + response.data.token)
+
+            window.location.href = "./profile-view-company.html"
         })
         .catch(function (error) {
+            alert('Usuário ou senha incorreto')
             console.log(error);
         })
 
-    window.location.href = "./profile-view-company.html"
+
 
 
 })

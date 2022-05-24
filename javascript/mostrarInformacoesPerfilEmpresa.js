@@ -23,14 +23,26 @@ async function getContent() {
         mostrarBiografia(data)
         mostrarFotos(data)
 
-        getEventosAtivos(data)
+        if(data[0].tblUsuarioComums[0] != undefined){
 
-        if(data[0].tblUsuarioComums[0].idUsuarioComum != undefined){
             var selo = document.querySelector("#seloVerificado")
 
             selo.style.display = "none"
 
             document.querySelector(".followers").style.display = "none"
+
+            document.querySelector('#eventosFuturos').style.display = "none"
+            document.querySelector('#event-like').style.display = "block"
+
+            getEventosCurtidos(data)
+
+            document.querySelector('.future-events').style.display = "none"
+            document.querySelector('#event-gone').style.display = "block"
+
+        } else {
+
+            getEventosAtivos(data)
+
         }
 
     } catch (error) {
@@ -153,6 +165,73 @@ function mostrarEventosAtivos(eventos) {
     document.querySelector("#eventosAtivos").innerHTML = output
 
     const numeroEvento = `${eventos.length}`
+    document.querySelector("#numeroEventosAtivos").innerHTML = numeroEvento
+
+}
+
+async function getEventosCurtidos(perfil) {
+    try {
+
+        const response = await fetch(`http://localhost:4000/interacao/listarCurtidasPorIdPerfil/${perfil[0].idPerfil}`)
+
+        console.log(response)
+
+        const data = await response.json()
+
+        console.log(data)
+
+        mostrarEventosCurtidos(data)
+
+    } catch (error) {
+
+        console.error(error)
+
+    }
+}
+
+function mostrarEventosCurtidos(curtidas) {
+
+    let output = ''
+
+    for (let curtida of curtidas) {
+
+        if(curtida.tblEvento.tblIntermEventoCelebridades[0] == undefined || curtida.tblEvento.tblIntermEventoCelebridades[0].tblCelebridade == null){ 
+            celebridade = `<label class="upper" for=""></label>`
+        } else {
+            celebridade = `
+            <label class="upper" for="">${curtida.tblEvento.tblIntermEventoCelebridades[0].tblCelebridade.tblVerificacaoUsuario.nickname}</label>
+            <label for="">atrações principais</label>`
+        }
+
+        if(curtida.tblEvento.tblEmpresa.tblPerfil.imagemPerfil != null){
+            imgPerfil = `<a href=""><img src="http://localhost:4000/${curtida.tblEvento.tblEmpresa.tblPerfil.imagemPerfil}" /></a>`
+        } else {
+            imgPerfil = `<a href=""><img src="http://localhost:4000/uploads/fundoRoxo.jpg" /></a>`
+        }
+
+        output += `<div class="event-box">
+        <div class="event-box-information">
+            <img class="background-photo-event" src="http://localhost:4000/${curtida.tblEvento.capa}" />
+    
+            <div class="user-information">
+                ${imgPerfil}
+                <div class="user-information-name">
+                    <label for="" id="titulo">${curtida.tblEvento.titulo}</label>
+                    <label for="" id="categoria">${curtida.tblEvento.tblCategorium.nomeCategoria}</label>
+                </div>
+            </div>
+    
+            <div class="box-title">
+                ${celebridade}
+            </div>
+    
+        </div>
+    </div>`
+    }
+
+    document.querySelector('#eventosAtivos').innerHTML = output
+
+    const numeroEvento = `${curtidas.length}`
     document.querySelector("#numeroEventosAtivos").innerHTML = numeroEvento
 
 }
