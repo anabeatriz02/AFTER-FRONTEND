@@ -32,7 +32,7 @@
 		<section class="tab-content">
 			<div id="user" data-tab-content class="active">
 				<div class="user-box">
-					<form acti  on="">
+					<form acti on="">
 						<label>
 							Nome de completo
 							<input type="text" />
@@ -49,7 +49,7 @@
 							</label>
 						</div>
 
-                        <label>
+						<label>
 							Biografia
 							<input type="text" />
 						</label>
@@ -84,7 +84,7 @@
 						</div>
 
 						<label>
-                            Foto de perfil
+							Foto de perfil
 							<div class="drop-zone drop-profile">
 								<span class="drop-zone__prompt">Solte o arquivo aqui ou clique para fazer upload</span>
 								<input type="file" name="myFile" class="drop-zone__input" id="fourth-image-photo-complement-preview" />
@@ -92,7 +92,7 @@
 						</label>
 
 						<label>
-                            Foto de fundo
+							Foto de fundo
 							<div class="drop-zone drop-background">
 								<span class="drop-zone__prompt">Solte o arquivo aqui ou clique para fazer upload</span>
 								<input type="file" name="myFile" class="drop-zone__input" id="fourth-image-photo-complement-preview" />
@@ -100,14 +100,81 @@
 						</label>
 					</form>
 					<button id="salvarUsuario" onclick="realizarCadastroUsuarioComum()">AVANÇAR</button>
-
 				</div>
 			</div>
 			<div id="company" data-tab-content>
-				<div class="company-box"></div>
+				<div class="company-box">
+					<form acti on="">
+						<label>
+							Nome de usuário
+							<input type="text" />
+						</label>
+						<label>
+							CNPJ
+							<input type="number" />
+						</label>
+
+						<label>
+							Biografia
+							<input type="text" />
+						</label>
+
+						<label>
+							E-mail
+							<input type="email" />
+						</label>
+						<div>
+							<label>
+								Senha
+								<input type="password" />
+							</label>
+							<label>
+								Confirmar senha
+								<input type="password" />
+							</label>
+						</div>
+
+						<label>
+							Foto de perfil
+							<div class="drop-zone drop-profile">
+								<span class="drop-zone__prompt">Solte o arquivo aqui ou clique para fazer upload</span>
+								<input type="file" name="myFile" class="drop-zone__input" id="fourth-image-photo-complement-preview" />
+							</div>
+						</label>
+
+						<label>
+							Foto de fundo
+							<div class="drop-zone drop-background">
+								<span class="drop-zone__prompt">Solte o arquivo aqui ou clique para fazer upload</span>
+								<input type="file" name="myFile" class="drop-zone__input" id="fourth-image-photo-complement-preview" />
+							</div>
+						</label>
+					</form>
+					<button onclick="abre()" type="submit" id="salvar">Avançar</button>
+
+					<!-- <button id="avancar" onclick="abre()">AVANÇAR</button> -->
+				</div>
+			</div>
+		</section>
+
+		<section id="modal-bank" class="modal-bank">
+			<div class="bank-alternative">
+
+				<h1>CONTA BANCÁRIA</h1>
+
+				<h2>Deseja adicionar conta bancária</h2>
+
+				<div>
+
+					<button>SIM</button>
+					<button>NÃO</button>
+
+				</div>
+
 			</div>
 		</section>
 
 		<script src="../javascript/singup/tab-area.js"></script>
+		<script src="../javascript/singup/bank-modal.js"></script>
 	</body>
 </html>

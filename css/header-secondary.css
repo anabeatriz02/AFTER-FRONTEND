@@ -110,6 +110,6 @@ header .logo img {
 }
 
 .courses li:hover {
-	background-color: #0979ad;
+	background-color: var(--purplePrimary);
 	color: white;
 }

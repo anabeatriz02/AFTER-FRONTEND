@@ -20,7 +20,6 @@ $(".owl-moment").owlCarousel({
 		}
 	},
 });
-
 $(".owl-caregory").owlCarousel({
 	loop: false,
 	margin: 5,
