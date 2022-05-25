@@ -216,6 +216,24 @@ function getDadosEvento() {
 		return valid;
 	};
 
+	// ------------------------------ CHECK LOTE ------------------------------
+
+	const checkCep = () => {
+		let valid = false;
+
+		const cep = inputCep.value.trim();
+
+		if (!isRequired(cep)) {
+			alert("Você não passou cep");
+		} else {
+			valid = true;
+		}
+
+		return valid;
+	};
+
+	// ------------------------------ CHECK LOTE - INGRESSO PAGO------------------------------
+
 	//Ação de submit do form
 
 	form.addEventListener("submit", function (e) {
@@ -307,7 +325,6 @@ function getDadosEvento() {
 			// if (loteIpCheckbox.type == "checkbox" && loteIpCheckbox.checked ){
 			// }
 
-		
 			// if (next_step2 == true) {
 			// 	loteVariavelIg.append("valor", 0);
 
@@ -357,8 +374,8 @@ function getDadosEvento() {
 			//Configurando rota para criação
 
 			var config = {
-				method: 'post',
-				url: 'http://localhost:4000/evento/cadastrarEventoCompleto/8',
+				method: "post",
+				url: "http://localhost:4000/evento/cadastrarEventoCompleto/8",
 				headers: {
 					// ...data.getHeaders()
 					"Content-Type": "multipart/form-data",
