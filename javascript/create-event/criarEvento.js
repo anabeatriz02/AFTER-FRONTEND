@@ -1,6 +1,38 @@
 const btn = document.querySelector("#salvar");
 
 // console.log(btn)
+async function getContent() {
+	var myHeaders = new Headers();
+
+	myHeaders.append("Authorization", localStorage.getItem("token"))
+
+	var requestOptions = {
+		method: 'GET',
+		headers: myHeaders,
+		redirect: 'follow'
+	};
+
+	const response = await fetch(`http://localhost:4000/perfil/acharPerfilLogado`, requestOptions)  
+
+	// console.log(response)
+
+	const data = await response.json()
+
+	console.log(data)
+
+
+	const imgPerfil = document.querySelector('.icon-user')
+
+	if(data[0].imagemPerfil != null){
+		imgPerfil.innerHTML = `<img src="http://localhost:4000/${data[0].imagemPerfil}" alt="" />`
+	} else {
+		imgPerfil.innerHTML = `<img src="http://localhost:4000/uploads/fundoRoxo.jpg" alt="" />`
+	}
+
+}
+
+getContent()
+
 
 const form = document.querySelector("#formCriarEvento");
 
@@ -58,31 +90,31 @@ function getDadosEvento() {
 	// const celebridadeSelecionada = selectCelebridade.options[selectCelebridade.selectedIndex].value;
 
 	// STEP 1 - ID
-	const loteDataInicio = document.querySelector("#lote-data-inicio");
-	const loteHoraInicio = document.querySelector("#lote-hora-inicio");
-	const loteDataTerminio = document.querySelector("#lote-data-termino");
-	const loteHoraTermino = document.querySelector("#lote-hora-termino");
-	const loteQuantidadeIngressos = document.querySelector("#lote-quantidade-ingresso");
-	const loteTaxaAbsorcao = document.querySelector("#lote-taxa-absorcao");
-	const loteQuantidadeMaxima = document.querySelector("#lote-quantidade-maxima");
+	const inputLoteDataInicio = document.querySelector("#lote-data-inicio");
+	const inputLoteHoraInicio = document.querySelector("#lote-hora-inicio");
+	const inputLoteDataTerminio = document.querySelector("#lote-data-termino");
+	const inputLoteHoraTermino = document.querySelector("#lote-hora-termino");
+	const inputLoteQuantidadeIngressos = document.querySelector("#lote-quantidade-ingresso");
+	const inputLoteTaxaAbsorcao = document.querySelector("#lote-taxa-absorcao");
+	const inputLoteQuantidadeMaxima = document.querySelector("#lote-quantidade-maxima");
 
 	// STEP 3 - ID
-	const loteIpTitulo = document.querySelector("#lote-ip-titulo");
-	const loteIpQuantidade = document.querySelector("#lote-ip-quantidade");
-	const loteIpPreco = document.querySelector("#lote-ip-preco");
-	const loteIpDescricao = document.querySelector("#lote-ip-descricao");
+	const inputLoteIpTitulo = document.querySelector("#lote-ip-titulo");
+	const inputLoteIpQuantidade = document.querySelector("#lote-ip-quantidade");
+	const inputLoteIpPreco = document.querySelector("#lote-ip-preco");
+	const inputLoteIpDescricao = document.querySelector("#lote-ip-descricao");
 	// STEP 3 - ID MEIA
-	const loteIpCheckbox = document.querySelector("#chkCamp1");
-	const loteIpTituloMeia = document.querySelector("#lote-ip-titulo-meia");
-	const loteIpQuantidadeMeia = document.querySelector("#lote-ip-quantidade-meia");
-	const loteIpPrecoMeia = document.querySelector("#lote-ip-preco-meia");
-	const loteIpDescricaoMeia = document.querySelector("#lote-ip-descricao-meia");
+	const inputLoteIpCheckbox = document.querySelector("#chkCamp1");
+	const inputLoteIpTituloMeia = document.querySelector("#lote-ip-titulo-meia");
+	const inputLoteIpQuantidadeMeia = document.querySelector("#lote-ip-quantidade-meia");
+	const inputLoteIpPrecoMeia = document.querySelector("#lote-ip-preco-meia");
+	const inputLoteIpDescricaoMeia = document.querySelector("#lote-ip-descricao-meia");
 
 	// STEP 4 - ID
-	const loteIgTitulo = document.querySelector("#lote-ig-titulo");
-	const loteIgQuantidade = document.querySelector("#lote-ig-quantidade");
-	const loteIgPreco = document.querySelector("#lote-ig-preco");
-	const loteIgDescricao = document.querySelector("#lote-ig-descricao");
+	const inputLoteIgTitulo = document.querySelector("#lote-ig-titulo");
+	const inputLoteIgQuantidade = document.querySelector("#lote-ig-quantidade");
+	const inputLoteIgPreco = document.querySelector("#lote-ig-preco");
+	const inputLoteIgDescricao = document.querySelector("#lote-ig-descricao");
 
 	const isRequired = (value) => (value === "" ? false : true);
 
@@ -218,19 +250,91 @@ function getDadosEvento() {
 
 	// ------------------------------ CHECK LOTE ------------------------------
 
-	const checkCep = () => {
+	const checkLoteDataInicio = () => {
 		let valid = false;
 
-		const cep = inputCep.value.trim();
+		const loteDataInicio = inputLoteDataInicio.value.trim();
 
-		if (!isRequired(cep)) {
-			alert("Você não passou cep");
+		if (!isRequired(loteDataInicio)) {
+			alert("Você não passou a data de ínicio do lote");
 		} else {
 			valid = true;
 		}
 
 		return valid;
 	};
+
+	const checkLoteHoraInicio = () => {
+		let valid = false;
+
+		const loteHoraInicio = inputLoteHoraInicio.value.trim();
+
+		if (!isRequired(loteHoraInicio)) {
+			alert("Você não passou a hora de ínicio do lote");
+		} else {
+			valid = true;
+		}
+
+		return valid;
+	};
+
+	const checkLoteDataTerminio = () => {
+		let valid = false;
+
+		const loteDataTermino = inputLoteDataTerminio.value.trim();
+
+		if (!isRequired(loteDataTermino)) {
+			alert("Você não passou a data de termino do lote");
+		} else {
+			valid = true;
+		}
+
+		return valid;
+	};
+
+	const checkLoteHoraTerminio = () => {
+		let valid = false;
+
+		const loteHoraTermino = inputLoteHoraTermino.value.trim();
+
+		if (!isRequired(loteHoraTermino)) {
+			alert("Você não passou a hora de termino do lote");
+		} else {
+			valid = true;
+		}
+
+		return valid;
+	};
+
+	const checkLoteQuantidadeIngressos = () => {
+		let valid = false;
+
+		const loteQuantidadeIngressos = inputLoteQuantidadeIngressos.value.trim();
+
+		if (!isRequired(loteQuantidadeIngressos)) {
+			alert("Você não passou a quantidade de ingressos do lote");
+		} else {
+			valid = true;
+		}
+
+		return valid;
+	};
+
+	const checkLoteQuantidadeMaxima = () => {
+		let valid = false;
+
+		const loteQuantidadeMaxima = inputLoteQuantidadeMaxima.value.trim();
+
+		if (!isRequired(loteQuantidadeMaxima)) {
+			alert("Você não passou a quantidade de máxima ingressos do lote");
+		} else {
+			valid = true;
+		}
+
+		return valid;
+	};
+
+	// ------------------------------ CHECK LOTE - INGRESSO GRATUITO ------------------------------
 
 	// ------------------------------ CHECK LOTE - INGRESSO PAGO------------------------------
 
@@ -250,6 +354,11 @@ function getDadosEvento() {
 			isDataInicioValid = checkDataInicio(),
 			isHoraInicioValid = checkHoraInicio(),
 			isCapaValid = checkCapa();
+
+			isLoteDataInicio = checkLoteDataInicio(),
+			isLote
+
+
 
 		let isFormValid = isTituloValid && isCepValid && isBairroValid && isEstadoValid && isLogradouroValid && isCidadeValid && isDataInicioValid && isHoraInicioValid && isCapaValid;
 
@@ -374,8 +483,8 @@ function getDadosEvento() {
 			//Configurando rota para criação
 
 			var config = {
-				method: "post",
-				url: "http://localhost:4000/evento/cadastrarEventoCompleto/8",
+				method: 'post',
+				url: 'http://localhost:4000/evento/cadastrarEventoCompleto/10',
 				headers: {
 					// ...data.getHeaders()
 					"Content-Type": "multipart/form-data",
@@ -506,7 +615,7 @@ function mostrarFaixaEtaria(faixasEtaria) {
 
 async function pegarContaEmpresa() {
 	try {
-		const response = await fetch("http://localhost:4000/contaEmpresa/listarContasPorIdEmpresa/8");
+		const response = await fetch("http://localhost:4000/contaEmpresa/listarContasPorIdEmpresa/10");
 
 		const data = await response.json();
 

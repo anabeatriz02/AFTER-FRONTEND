@@ -1,10 +1,50 @@
+async function getPerfil() {
+	var myHeaders = new Headers();
+
+	myHeaders.append("Authorization", localStorage.getItem("token"))
+
+	var requestOptions = {
+		method: 'GET',
+		headers: myHeaders,
+		redirect: 'follow'
+	};
+
+	const response = await fetch(`http://localhost:4000/perfil/acharPerfilLogado`, requestOptions)  
+
+	// console.log(response)
+
+	const data = await response.json()
+
+	console.log(data)
+
+    // var imgPerfil = document.querySelector('.dropdown_button')
+
+    // console.log(imgPerfil)
+
+    // if(data[0].imagemPerfil != null){
+    //     imgPerfil.innerHTML = `<img src="http://localhost:4000/${data[0].imagemPerfil}" alt="" />`
+    // } else {
+    //     imgPerfil.innerHTML = `<img src="http://localhost:4000/uploads/fundoRoxo.jpg" alt="" />`
+    // }
+
+}
+
+getPerfil()
+
 async function getContent() {
     try {
 
-        //79 - Mais de um ingresso
-        //81 - 1 ingresso
-        //82 - Sem ingressos
-        const response = await fetch('http://localhost:4000/evento/acharEventoIdEvento/79')
+        var myHeaders = new Headers();
+
+        myHeaders.append("Authorization", localStorage.getItem("token"))
+
+        var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            redirect: 'follow'
+        };
+        
+        const response = await fetch('http://localhost:4000/evento/listarEventoIdEvento/88', requestOptions)
 
         console.log(response)
 
