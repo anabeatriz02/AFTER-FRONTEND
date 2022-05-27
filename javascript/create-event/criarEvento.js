@@ -21,10 +21,12 @@ async function getContent() {
 	console.log(data)
 
 
-	const imgPerfil = document.querySelector('#')
+	const imgPerfil = document.querySelector('.icon-user')
 
 	if(data[0].imagemPerfil != null){
-
+		imgPerfil.innerHTML = `<img src="http://localhost:4000/${data[0].imagemPerfil}" alt="" />`
+	} else {
+		imgPerfil.innerHTML = `<img src="http://localhost:4000/uploads/fundoRoxo.jpg" alt="" />`
 	}
 
 }
