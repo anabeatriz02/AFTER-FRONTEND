@@ -1,11 +1,8 @@
 async function getContent() {
     try {
 
-        //79 - Mais de um ingresso
-        //81 - 1 ingresso
-        //82 - Sem ingressos
-        const response = await fetch('http://localhost:4000/evento/acharEventoIdEvento/79')
-
+        const response = await fetch('http://localhost:4000/evento/acharEventoIdEvento/88')
+        
         console.log(response)
 
         const data = await response.json()

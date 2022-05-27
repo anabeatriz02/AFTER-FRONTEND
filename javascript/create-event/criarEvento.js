@@ -1,6 +1,36 @@
 const btn = document.querySelector("#salvar");
 
 // console.log(btn)
+async function getContent() {
+	var myHeaders = new Headers();
+
+	myHeaders.append("Authorization", localStorage.getItem("token"))
+
+	var requestOptions = {
+		method: 'GET',
+		headers: myHeaders,
+		redirect: 'follow'
+	};
+
+	const response = await fetch(`http://localhost:4000/perfil/acharPerfilLogado`, requestOptions)  
+
+	// console.log(response)
+
+	const data = await response.json()
+
+	console.log(data)
+
+
+	const imgPerfil = document.querySelector('#')
+
+	if(data[0].imagemPerfil != null){
+		
+	}
+
+}
+
+getContent()
+
 
 const form = document.querySelector("#formCriarEvento");
 
@@ -358,7 +388,7 @@ function getDadosEvento() {
 
 			var config = {
 				method: 'post',
-				url: 'http://localhost:4000/evento/cadastrarEventoCompleto/8',
+				url: 'http://localhost:4000/evento/cadastrarEventoCompleto/10',
 				headers: {
 					// ...data.getHeaders()
 					"Content-Type": "multipart/form-data",
@@ -489,7 +519,7 @@ function mostrarFaixaEtaria(faixasEtaria) {
 
 async function pegarContaEmpresa() {
 	try {
-		const response = await fetch("http://localhost:4000/contaEmpresa/listarContasPorIdEmpresa/8");
+		const response = await fetch("http://localhost:4000/contaEmpresa/listarContasPorIdEmpresa/10");
 
 		const data = await response.json();
 
