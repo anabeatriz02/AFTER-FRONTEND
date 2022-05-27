@@ -67,10 +67,10 @@ getContent()
 function mostrarDetalhes(evento) {
 
     //Mostrar título e celebridade
-    if (evento.tblIntermEventoCelebridades[0] == undefined || evento.tblIntermEventoCelebridades[0].tblCelebridade == null) {
-        titulo = `${evento.titulo}`
+    if (evento[0].tblIntermEventoCelebridades[0] == undefined || evento[0].tblIntermEventoCelebridades[0].tblCelebridade == null) {
+        titulo = `${evento[0].titulo}`
     } else {
-        titulo = `${evento.titulo}<span>com</span><a href="">${evento.tblIntermEventoCelebridades[0].tblCelebridade.tblVerificacaoUsuario.nickname}<img src="../img/icon-check.svg" /></a>`
+        titulo = `${evento[0].titulo}<span>com</span><a href="">${evento[0].tblIntermEventoCelebridades[0].tblCelebridade.tblVerificacaoUsuario.nickname}<img src="../img/icon-check.svg" /></a>`
     }
 
     document.querySelector("#tituloAutor").innerHTML = titulo
@@ -83,10 +83,10 @@ function mostrarDetalhes(evento) {
         return hora + 'h' + minuto;
     }
 
-    if (evento.horaFim == evento.horaInicio) {
-        duracao = `Às ${formatHour(evento.horaInicio)}`
+    if (evento[0].horaFim == evento[0].horaInicio) {
+        duracao = `Às ${formatHour(evento[0].horaInicio)}`
     } else {
-        duracao = `De ${formatHour(evento.horaInicio)} a ${formatHour(evento.horaFim)}`
+        duracao = `De ${formatHour(evento[0].horaInicio)} a ${formatHour(evento[0].horaFim)}`
     }
 
     document.querySelector("#horarioEvento").innerHTML = duracao
@@ -129,10 +129,10 @@ function mostrarDetalhes(evento) {
         return day + ' de ' + month + ' de ' + year;
     }
 
-    if (evento.dataFim == evento.dataInicio) {
-        dataEvento = `${formatDate(evento.dataInicio)}`
+    if (evento[0].dataFim == evento[0].dataInicio) {
+        dataEvento = `${formatDate(evento[0].dataInicio)}`
     } else {
-        dataEvento = `${formatDate(evento.dataInicio)} a ${formatDate(evento.dataFim)}`
+        dataEvento = `${formatDate(evento[0].dataInicio)} a ${formatDate(evento[0].dataFim)}`
     }
 
 
@@ -140,12 +140,12 @@ function mostrarDetalhes(evento) {
 
     //Mostrar endereço do evento
 
-    if (evento.tblEnderecoEventos[0].complemento == null || evento.tblEnderecoEventos[0].complemento == "") {
+    if (evento[0].tblEnderecoEventos[0].complemento == null || evento[0].tblEnderecoEventos[0].complemento == "") {
 
         //Verificação para se tiver o campo de "número" em endereço
 
-        if (evento.tblEnderecoEventos[0].numero != null || evento.tblEnderecoEventos[0].numero != "") {
-            endereco = `${evento.tblEnderecoEventos[0].logradouro}, ${evento.tblEnderecoEventos[0].numero} - ${evento.tblEnderecoEventos[0].bairro}, ${evento.tblEnderecoEventos[0].cidade} - ${evento.tblEnderecoEventos[0].estado}`
+        if (evento[0].tblEnderecoEventos[0].numero != null || evento[0].tblEnderecoEventos[0].numero != "") {
+            endereco = `${evento[0].tblEnderecoEventos[0].logradouro}, ${evento[0].tblEnderecoEventos[0].numero} - ${evento[0].tblEnderecoEventos[0].bairro}, ${evento[0].tblEnderecoEventos[0].cidade} - ${evento[0].tblEnderecoEventos[0].estado}`
         } else {
             endereco = `${evento.tblEnderecoEventos[0].logradouro} - ${evento.tblEnderecoEventos[0].bairro}, ${evento.tblEnderecoEventos[0].cidade} - ${evento.tblEnderecoEventos[0].estado}`
         }
