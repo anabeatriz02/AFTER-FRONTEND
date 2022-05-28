@@ -1,35 +1,35 @@
-async function getPerfil() {
-	var myHeaders = new Headers();
+// async function getPerfil() {
+//     var myHeaders = new Headers();
 
-	myHeaders.append("Authorization", localStorage.getItem("token"))
+//     myHeaders.append("Authorization", localStorage.getItem("token"))
 
-	var requestOptions = {
-		method: 'GET',
-		headers: myHeaders,
-		redirect: 'follow'
-	};
+//     var requestOptions = {
+//         method: 'GET',
+//         headers: myHeaders,
+//         redirect: 'follow'
+//     };
 
-	const response = await fetch(`http://localhost:4000/perfil/acharPerfilLogado`, requestOptions)  
+//     const response = await fetch(`http://localhost:4000/perfil/acharPerfilLogado`, requestOptions)
 
-	// console.log(response)
+//     // console.log(response)
 
-	const data = await response.json()
+//     const data = await response.json()
 
-	console.log(data)
+//     console.log(data)
 
-    // var imgPerfil = document.querySelector('.dropdown_button')
+//     // var imgPerfil = document.querySelector('.dropdown_button')
 
-    // console.log(imgPerfil)
+//     // console.log(imgPerfil)
 
-    // if(data[0].imagemPerfil != null){
-    //     imgPerfil.innerHTML = `<img src="http://localhost:4000/${data[0].imagemPerfil}" alt="" />`
-    // } else {
-    //     imgPerfil.innerHTML = `<img src="http://localhost:4000/uploads/fundoRoxo.jpg" alt="" />`
-    // }
+//     // if(data[0].imagemPerfil != null){
+//     //     imgPerfil.innerHTML = `<img src="http://localhost:4000/${data[0].imagemPerfil}" alt="" />`
+//     // } else {
+//     //     imgPerfil.innerHTML = `<img src="http://localhost:4000/uploads/fundoRoxo.jpg" alt="" />`
+//     // }
 
-}
+// }
 
-getPerfil()
+// getPerfil()
 
 async function getContent() {
     try {
@@ -43,16 +43,42 @@ async function getContent() {
             headers: myHeaders,
             redirect: 'follow'
         };
-        
-        const response = await fetch('http://localhost:4000/evento/listarEventoIdEvento/88', requestOptions)
+
+        //Acessando rota de listagem de evento por Id de evento
+        const response = await fetch('http://localhost:4000/evento/listarEventoIdEvento/17', requestOptions)
 
         console.log(response)
 
         const data = await response.json()
-
         console.log(data)
 
+        //Acessando rota de listagem de informações do perfil logado
+        const responsePerfil = await fetch(`http://localhost:4000/perfil/acharPerfilLogado`, requestOptions)
+
+        const dataPerfil = await responsePerfil.json()
+
+        console.log(dataPerfil)
+
         mostrarDetalhes(data)
+
+        getComentarios(data[0].idEvento)
+
+        const inputComentario = document.querySelector('#inputComentario')
+        const formComentario = document.querySelector('#formComentario')
+
+        formComentario.addEventListener('submit', async (e) => {
+
+            e.preventDefault()
+
+            const comentario = inputComentario.value
+
+            enviarComentarioParaAPI(comentario, dataPerfil[0].idPerfil, data[0].idEvento)
+
+            document.location.reload()
+
+            // console.log(evento)
+
+        })
 
     } catch (error) {
 
@@ -147,7 +173,7 @@ function mostrarDetalhes(evento) {
         if (evento[0].tblEnderecoEventos[0].numero != null || evento[0].tblEnderecoEventos[0].numero != "") {
             endereco = `${evento[0].tblEnderecoEventos[0].logradouro}, ${evento[0].tblEnderecoEventos[0].numero} - ${evento[0].tblEnderecoEventos[0].bairro}, ${evento[0].tblEnderecoEventos[0].cidade} - ${evento[0].tblEnderecoEventos[0].estado}`
         } else {
-            endereco = `${evento.tblEnderecoEventos[0].logradouro} - ${evento.tblEnderecoEventos[0].bairro}, ${evento.tblEnderecoEventos[0].cidade} - ${evento.tblEnderecoEventos[0].estado}`
+            endereco = `${evento[0].tblEnderecoEventos[0].logradouro} - ${evento[0].tblEnderecoEventos[0].bairro}, ${evento[0].tblEnderecoEventos[0].cidade} - ${evento[0].tblEnderecoEventos[0].estado}`
         }
 
 
@@ -155,28 +181,28 @@ function mostrarDetalhes(evento) {
 
         //Verificação para se tiver o campo de "número" em endereço
 
-        if (evento.tblEnderecoEventos[0].numero != null || evento.tblEnderecoEventos[0].numero != "") {
-            endereco = `${evento.tblEnderecoEventos[0].logradouro}, ${evento.tblEnderecoEventos[0].numero} - ${evento.tblEnderecoEventos[0].bairro}, ${evento.tblEnderecoEventos[0].cidade} - ${evento.tblEnderecoEventos[0].estado} - ${evento.tblEnderecoEventos[0].complemento}`
+        if (evento[0].tblEnderecoEventos[0].numero != null || evento[0].tblEnderecoEventos[0].numero != "") {
+            endereco = `${evento[0].tblEnderecoEventos[0].logradouro}, ${evento[0].tblEnderecoEventos[0].numero} - ${evento[0].tblEnderecoEventos[0].bairro}, ${evento[0].tblEnderecoEventos[0].cidade} - ${evento[0].tblEnderecoEventos[0].estado} - ${evento[0].tblEnderecoEventos[0].complemento}`
         } else {
-            endereco = `${evento.tblEnderecoEventos[0].logradouro} - ${evento.tblEnderecoEventos[0].bairro}, ${evento.tblEnderecoEventos[0].cidade} - ${evento.tblEnderecoEventos[0].estado} - ${evento.tblEnderecoEventos[0].complemento}`
+            endereco = `${evento[0].tblEnderecoEventos[0].logradouro} - ${evento[0].tblEnderecoEventos[0].bairro}, ${evento[0].tblEnderecoEventos[0].cidade} - ${evento[0].tblEnderecoEventos[0].estado} - ${evento[0].tblEnderecoEventos[0].complemento}`
         }
 
     }
 
     document.querySelector("#enderecoEvento").innerHTML = endereco
 
-    if (evento.tblLotes[0] == undefined || evento.tblLotes[0].tblVariedadeIngressoLotes[0] == undefined) {
+    if (evento[0].tblLotes[0] == undefined || evento[0].tblLotes[0].tblVariedadeIngressoLotes[0] == undefined) {
         aviso = "<p>Esse evento não possui ingressos à venda</p>"
 
         document.querySelector("#informacoesIngresso").innerHTML = aviso
         document.querySelector("#comprarIngresso").style.display = "none"
     } else {
 
-        if (evento.tblLotes[0] != undefined && evento.tblLotes[0].tblVariedadeIngressoLotes[0] != undefined) {  
+        if (evento[0].tblLotes[0] != undefined && evento[0].tblLotes[0].tblVariedadeIngressoLotes[0] != undefined) {
 
-            let primeiroValor = evento.tblLotes[0].tblVariedadeIngressoLotes[0].valor
+            let primeiroValor = evento[0].tblLotes[0].tblVariedadeIngressoLotes[0].valor
             let primeiroIngresso = parseFloat(primeiroValor)
-            let primeiroIngressoValor = primeiroIngresso.toString().replace('.',',')
+            let primeiroIngressoValor = primeiroIngresso.toString().replace('.', ',')
 
             valor = `
             <img src="../img/icon-ticket.svg" />
@@ -188,20 +214,99 @@ function mostrarDetalhes(evento) {
     }
 
     //Mostrar autor da publicação
-    autorDescricao = `DESCRIÇÃO DO EVENTO<span>by</span><a href="">${evento.tblEmpresa.tblPerfil.nickname} <img src="../img/icon-check.svg" alt="" /></a>`
+    autorDescricao = `DESCRIÇÃO DO EVENTO<span>by</span><a href="">${evento[0].tblEmpresa.tblPerfil.nickname} <img src="../img/icon-check.svg" alt="" /></a>`
 
     document.querySelector("#descricaoTitulo").innerHTML = autorDescricao
 
     //Mostrar descrição
-    descricaoEvento = `<p>${evento.descricao}</p>`
+    descricaoEvento = `<p>${evento[0].descricao}</p>`
 
     document.querySelector("#descricaoEvento").innerHTML = descricaoEvento
 
     //Mostrar capa como primeira imagem
-    let imagemCapa = `<img src="http://localhost:4000/${evento.capa}"/>`
+    let imagemCapa = `<img src="http://localhost:4000/${evento[0].capa}"/>`
 
     // console.log(imagemCapa)
 
-    document.querySelector("#capaImagem").innerHTML = imagemCapa
+    // document.querySelector("#capaImagem").innerHTML = imagemCapa
 
+}
+
+//Comentários
+
+async function getComentarios(idEvento) {
+    try {
+
+        const response = await fetch(`http://localhost:4000/comentario/listarComentarioPorIdEvento/${idEvento}`)
+
+        console.log(response)
+
+        const data = await response.json()
+
+        console.log(data)
+
+        mostrarComentarios(data)
+
+    } catch (error) {
+
+        console.error(error)
+
+    }
+
+}
+
+function mostrarComentarios(comentarios) {
+    let output = ''
+
+    for (let comentario of comentarios) {
+
+        var imgPerfil
+
+        if (comentario.tblPerfil.imagemPerfil != null) {
+            imgPerfil = `<img src="http://localhost:4000/${comentario.tblPerfil.imagemPerfil}" alt="" />`
+        } else {
+            imgPerfil = `<img src="http://localhost:4000/uploads/fundoRoxo.jpg" alt="" />`
+        }
+
+        output += `
+        <div class="view-comment-box">
+        <div class="image-user">
+            ${imgPerfil}
+        </div>
+        <div class="information-user">
+            <p>${comentario.tblPerfil.nickname}</p>
+            <p class="comment">${comentario.texto}</p>
+            <div>
+                <p>1 hora atrás</p>
+                <p>like</p>
+                <p>responder</p>
+            </div>
+        </div>
+    </div>
+    `
+    }
+
+    document.querySelector('.view-comment-area').innerHTML = output
+
+}
+
+async function enviarComentarioParaAPI(comentario, idPerfil, idEvento) {
+    try {
+
+        var raw = JSON.stringify({
+            "texto": comentario
+        });
+
+        const resposta = await fetch(`http://localhost:4000/comentario/criarComentario/${idPerfil}/${idEvento}`, {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: raw
+        })
+
+    } catch (erro) {
+        console.error(erro)
+    }
 }
