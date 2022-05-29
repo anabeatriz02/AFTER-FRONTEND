@@ -1,7 +1,23 @@
 async function getContent() {
     try {
 
-        const response = await fetch('http://localhost:4000/evento/acharEventoPorId/3')
+        var myHeaders = new Headers();
+
+        myHeaders.append("Authorization", localStorage.getItem("token"))
+
+        var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            redirect: 'follow'
+        };
+
+        //Acessando rota de listagem de informações do perfil logado
+        const responsePerfil = await fetch(`http://localhost:4000/perfil/acharPerfilLogado`, requestOptions)
+
+        const dataPerfil = await responsePerfil.json()
+
+
+        const response = await fetch(`http://localhost:4000/evento/acharEventoPorId/${dataPerfil[0].idPerfil}`)
 
         console.log(response)
 
@@ -9,7 +25,7 @@ async function getContent() {
 
         console.log(data)
 
-        if(data.length != 0){
+        if (data.length != 0) {
             mostrarEventosProprios(data)
         } else {
             mostrarAviso()
@@ -29,7 +45,7 @@ function mostrarEventosProprios(eventos) {
     let output = ''
     for (let evento of eventos) {
 
-        if(evento.tblIntermEventoCelebridades[0] == undefined || evento.tblIntermEventoCelebridades[0].tblCelebridade == null){ 
+        if (evento.tblIntermEventoCelebridades[0] == undefined || evento.tblIntermEventoCelebridades[0].tblCelebridade == null) {
             celebridade = `<label class="upper" for=""></label>`
             imgCelebridade = `<div class="box-people"></div>`
         } else {
@@ -41,7 +57,7 @@ function mostrarEventosProprios(eventos) {
         </div>`
         }
 
-        if(evento.tblEmpresa.tblPerfil.imagemPerfil != null){
+        if (evento.tblEmpresa.tblPerfil.imagemPerfil != null) {
             imgPerfilEmpresa = `<a href=""><img src="http://localhost:4000/${evento.tblEmpresa.tblPerfil.imagemPerfil}" /></a>`
         } else {
             imgPerfilEmpresa = `<a href=""><img src="http://localhost:4000/uploads/fundoRoxo.jpg" /></a>`
@@ -51,7 +67,7 @@ function mostrarEventosProprios(eventos) {
        
         <div class="event-box">
         <div class="event-box-information">
-            <img class="background-photo-event" src="http://localhost:4000/${evento.capa}" />
+            <img class="background-photo-event" onClick="redirecionarDescricao(${evento.idEvento})" src="http://localhost:4000/${evento.capa}" />
 
             <div class="user-information">
                 ${imgPerfilEmpresa}
@@ -85,10 +101,14 @@ function mostrarEventosProprios(eventos) {
     document.querySelector('.event-area').innerHTML = output
 }
 
-function mostrarAviso(){
+function mostrarAviso() {
 
     const output = "<h2 id='aviso'>Você ainda não possui eventos ativos :( </h2>"
 
     document.querySelector('.event-area').innerHTML = output
 
+}
+
+function redirecionarDescricao(idEvento) {
+    location.href = "../../pages/event-description.html?idEvento=" + idEvento
 }

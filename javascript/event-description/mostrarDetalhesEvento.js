@@ -44,12 +44,26 @@ async function getContent() {
             redirect: 'follow'
         };
 
+        //Pegando o id de evento pela url
+        var idEvento
+
+        let urlSplit = window.location.href.split(["?"]) 
+
+        if(urlSplit[1].split(["="])[1] == "" || urlSplit[1].split(["="])[1] == undefined){
+            window.location.href = "../../index.html"
+        } else {
+            idEvento = urlSplit[1].split(["="])[1]
+        }
+        
+        // console.log(idEvento)
+
         //Acessando rota de listagem de evento por Id de evento
-        const response = await fetch('http://localhost:4000/evento/listarEventoIdEvento/17', requestOptions)
+        const response = await fetch(`http://localhost:4000/evento/listarEventoIdEvento/${idEvento}`, requestOptions)
 
         console.log(response)
 
         const data = await response.json()
+
         console.log(data)
 
         //Acessando rota de listagem de informações do perfil logado

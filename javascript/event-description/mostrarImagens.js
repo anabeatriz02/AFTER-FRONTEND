@@ -1,7 +1,12 @@
+//Pegando o id de evento pela url
+
+let urlSplit = window.location.href.split(["?"]) 
+var idEvento = urlSplit[1].split(["="])[1]
+
 async function getContent() {
     try {
 
-        const response = await fetch('http://localhost:4000/imagensEvento/listarImagensIdEvento/17')
+        const response = await fetch(`http://localhost:4000/imagensEvento/listarImagensIdEvento/${idEvento}`)
 
         console.log(response)
 
@@ -46,7 +51,7 @@ async function mostrarImagens(imagens){
 
     }  
     else {
-        const response = await fetch('http://localhost:4000/evento/acharEventoIdEvento/17')
+        const response = await fetch(`http://localhost:4000/evento/acharEventoIdEvento/${idEvento}`)
 
         // console.log(response)
 

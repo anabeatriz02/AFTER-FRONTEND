@@ -47,7 +47,7 @@ function mostrarEventos(eventos) {
        
         <div class="event-box">
         <div class="event-box-information">
-            <img class="background-photo-event" src="http://localhost:4000/${evento.capa}" />
+            <img class="background-photo-event" onClick="redirecionarDescricao(${evento.idEvento})" src="http://localhost:4000/${evento.capa}" />
 
             <div class="user-information">
                 ${imgPerfil}
@@ -82,4 +82,8 @@ function mostrarAviso(){
 
     document.querySelector('.event-area').innerHTML = output
 
+}
+
+function redirecionarDescricao(idEvento){
+    location.href = "../../pages/event-description.html?idEvento=" + idEvento
 }
