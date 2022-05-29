@@ -1,61 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<link rel="stylesheet" href="../css/reset.css" />
-		<link rel="stylesheet" href="../css/header-event.css" />
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<link rel="stylesheet" href="../css/reset.css" />
+	<link rel="stylesheet" href="../css/header-event.css" />
 
-		<title>Header</title>
-	</head>
+	<title>Header</title>
+</head>
 
-	<body>
-		<header>
-			<a href="../pages/feed.html"><img class="logo" src="../img/logo-light.svg" /></a>
+<body>
+	<header>
+		<a href="../pages/feed.html"><img class="logo" src="../img/logo-light.svg" /></a>
 
-			<form action="" method="post">
-				<input type="text" name="" />
-				<button><img src="../img/header/icon-search.svg" /></button>
-			</form>
+		<form id="formPesquisarEventos">
+			<input type="text" name="" id="inputPesquisa" />
+			<!-- <a href="#eventFeed"> -->
+				<button type="submit">
 
-			<a class="icon-bag" href="../pages/notification.html"><img src="../img/icon-bag.svg" /></a>
+					<img src="../img/header/icon-search.svg" />
 
-			<!-- <a class="icon-user" href=""><img src="../img/icon-user.svg" /></a> -->
+				</button>
+			<!-- </a> -->
 
-			<div class="main">
-				<div class="dropdown_list">
-					<button class="dropdown_button" onclick="show_list()"><img src="../img/icon-user.svg" alt="" /></button>
+		</form>
 
-					<div id="courses_id" class="courses">
-						<li><a href="../pages/profile-view-user.html">Perfil</a></li>
-						<li><a href="../pages/edit-profile.html">Editar</a></li>
-						<li><a href="">Sair</a></li>
-					
-					</div>
+		<a class="icon-bag" href="../pages/notification.html"><img src="../img/icon-bag.svg" /></a>
+
+		<!-- <a class="icon-user" href=""><img src="../img/icon-user.svg" /></a> -->
+
+		<div class="main">
+			<div class="dropdown_list">
+				<button class="dropdown_button" onclick="show_list()"><img src="../img/icon-user.svg" alt="" /></button>
+
+				<div id="courses_id" class="courses">
+					<li><a href="../pages/profile-view-user.html">Perfil</a></li>
+					<li><a href="../pages/edit-profile.html">Editar</a></li>
+					<li><a href="">Sair</a></li>
+
 				</div>
 			</div>
+		</div>
 
-			<!-- <a class="icon-user" href=""><img src="../img/icon-user.svg" alt="" /> </a> -->
-		</header>
+		<!-- <a class="icon-user" href=""><img src="../img/icon-user.svg" alt="" /> </a> -->
+	</header>
 
-		<script>
-			function show_list() {
-				var courses = document.getElementById("courses_id");
+	<script>
+		function show_list() {
+			var courses = document.getElementById("courses_id");
 
-				if (courses.style.display == "block") {
-					courses.style.display = "none";
-				} else {
-					courses.style.display = "block";
-				}
+			if (courses.style.display == "block") {
+				courses.style.display = "none";
+			} else {
+				courses.style.display = "block";
 			}
-			window.onclick = function (event) {
-				if (!event.target.matches(".dropdown_button")) {
-					document.getElementById("courses_id").style.display = "none";
-				}
-			};
-		</script>
-		</header>
-	</body>
+		}
+		window.onclick = function (event) {
+			if (!event.target.matches(".dropdown_button")) {
+				document.getElementById("courses_id").style.display = "none";
+			}
+		};
+	</script>
+	<script src="../javascript/feed/pesquisarEventos.js"></script>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+	</header>
+</body>
+
 </html>
