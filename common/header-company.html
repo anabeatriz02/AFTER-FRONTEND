@@ -1,20 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="../css/header-company.css">
-        <link rel="stylesheet" href="../css/reset.css" />
-        <title>Header-company</title>
-	</head>
-	<body>
-        <header>
-			<a class="icon-chat" href="./pages/feed-user.html"><img src="../img/icon-chat.svg" alt="" /></a>
 
-			<a class="logo" href="../pages/feed.html"><img src="../img/logo-light.svg" alt="Logo" /></a>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="../css/header-company.css">
+	<link rel="stylesheet" href="../css/reset.css" />
+	<title>Header-company</title>
+</head>
 
-			<a class="icon-user" href=""><img src="../upload/profile/background.jpg" alt="" /></a>
-		</header>
-    </body>
+<body>
+	<header>
+		<a class="icon-chat" href="./pages/feed-user.html"><img src="../img/icon-chat.svg" alt="" /></a>
+
+		<a class="logo" href="../pages/feed.html"><img src="../img/logo-light.svg" alt="Logo" /></a>
+
+		<a class="icon-user" id="iconeImgPerfil" href=""><img src="../upload/profile/background.jpg" alt="" /></a>
+	</header>
+</body>
+<script>
+	async function getContent() {
+		var myHeaders = new Headers();
+
+		myHeaders.append("Authorization", localStorage.getItem("token"))
+
+		var requestOptions = {
+			method: 'GET',
+			headers: myHeaders,
+			redirect: 'follow'
+		}
+
+		const response = await fetch(`http://localhost:4000/perfil/acharPerfilLogado`, requestOptions)
+
+		// console.log(response)
+
+		const data = await response.json()
+
+		// console.log(data)
+
+		var imgPerfil = document.querySelector('#iconeImgPerfil')
+
+		if (data[0].imagemPerfil != null) {
+			imgPerfil.innerHTML = `<img src="http://localhost:4000/${data[0].imagemPerfil}" alt="" />`
+		} else {
+			imgPerfil.innerHTML = `<img src="http://localhost:4000/uploads/fundoRoxo.jpg" alt="" />`
+		}
+
+	}
+
+	getContent()
+</script>
+
 </html>

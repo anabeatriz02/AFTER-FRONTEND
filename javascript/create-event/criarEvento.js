@@ -20,30 +20,21 @@ async function getContent() {
 
 	console.log(data)
 
+	// const imgPerfil = document.querySelector('#iconeImgPerfil')
 
-	const imgPerfil = document.querySelector('.icon-user')
-
-	if(data[0].imagemPerfil != null){
-		imgPerfil.innerHTML = `<img src="http://localhost:4000/${data[0].imagemPerfil}" alt="" />`
-	} else {
-		imgPerfil.innerHTML = `<img src="http://localhost:4000/uploads/fundoRoxo.jpg" alt="" />`
-	}
+	// if(data[0].imagemPerfil != null){
+	// 	imgPerfil.innerHTML = `<img src="http://localhost:4000/${data[0].imagemPerfil}" alt="" />`
+	// } else {
+	// 	imgPerfil.innerHTML = `<img src="http://localhost:4000/uploads/fundoRoxo.jpg" alt="" />`
+	// }
 
 }
 
 getContent()
 
+const form = document.querySelector("#formCriarEvento")
 
-const form = document.querySelector("#formCriarEvento");
-
-// btn.addEventListener("click", () => {
-// 	const evento = getDadosEvento();
-
-// 	console.log(evento)
-
-// });
-
-getDadosEvento();
+getDadosEvento()
 
 function getDadosEvento() {
 	const inputTitulo = document.querySelector("#titulo");
@@ -355,10 +346,8 @@ function getDadosEvento() {
 			isHoraInicioValid = checkHoraInicio(),
 			isCapaValid = checkCapa();
 
-			isLoteDataInicio = checkLoteDataInicio(),
-			isLote
-
-
+			// isLoteDataInicio = checkLoteDataInicio(),
+			// isLote
 
 		let isFormValid = isTituloValid && isCepValid && isBairroValid && isEstadoValid && isLogradouroValid && isCidadeValid && isDataInicioValid && isHoraInicioValid && isCapaValid;
 
@@ -484,7 +473,7 @@ function getDadosEvento() {
 
 			var config = {
 				method: 'post',
-				url: 'http://localhost:4000/evento/cadastrarEventoCompleto/10',
+				url: `http://localhost:4000/evento/cadastrarEventoCompleto/${data[0].tblEmpresas[0].idEmpresa}`,
 				headers: {
 					// ...data.getHeaders()
 					"Content-Type": "multipart/form-data",
@@ -615,11 +604,26 @@ function mostrarFaixaEtaria(faixasEtaria) {
 
 async function pegarContaEmpresa() {
 	try {
-		const response = await fetch("http://localhost:4000/contaEmpresa/listarContasPorIdEmpresa/10");
+		var myHeaders = new Headers();
 
-		const data = await response.json();
+		myHeaders.append("Authorization", localStorage.getItem("token"))
+	
+		var requestOptions = {
+			method: 'GET',
+			headers: myHeaders,
+			redirect: 'follow'
+		};
+	
+		const response = await fetch(`http://localhost:4000/perfil/acharPerfilLogado`, requestOptions)  
+	
+		const data = await response.json()
 
-		mostrarContaEmpresa(data);
+		
+		const responseConta = await fetch(`http://localhost:4000/contaEmpresa/listarContasPorIdEmpresa/${data[0].tblEmpresas[0].idEmpresa}`);
+
+		const dataConta = await responseConta.json();
+
+		mostrarContaEmpresa(dataConta);
 	} catch (error) {
 		console.error(error);
 	}
