@@ -3,7 +3,24 @@ const btn = document.querySelector('#editar')
 async function getContent() {
     try {
 
-        const response = await fetch('http://localhost:4000/empresa/acharEmpresaPorId/3')
+        var myHeaders = new Headers();
+
+        myHeaders.append("Authorization", localStorage.getItem("token"))
+
+        var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            redirect: 'follow'
+        };
+
+        //Acessando rota de listagem de informações do perfil logado
+        const responsePerfil = await fetch(`http://localhost:4000/perfil/acharPerfilLogado`, requestOptions)
+
+        const dataPerfil = await responsePerfil.json()
+
+        console.log(dataPerfil)
+
+        const response = await fetch(`http://localhost:4000/empresa/acharEmpresaPorId/${dataPerfil[0].tblEmpresas[0].idEmpresa}`)
 
         console.log(response)
 

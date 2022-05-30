@@ -15,14 +15,21 @@ async function getPerfil() {
 
 	console.log(data)
 
+	var logo = document.querySelector('.logo')
+
+	var editar = document.querySelector('#btnEditar')
+
     if(data[0].tblEmpresas[0] != undefined){
-        var logo = document.querySelector('.logo')
         //Redirecionar para o feed de empresa
         logo.href = "../pages/feed.html"
+
+		editar.href = "../../pages/edit-profile-company.html"
+ 
     } else {
-        var logo = document.querySelector('.logo')
         //Redirecionar para o feed de usuário
         logo.hfer = "../pages/feed-user.html"
+
+		editar.href = "../../pages/edit-profile.html"
     }
 
 }
