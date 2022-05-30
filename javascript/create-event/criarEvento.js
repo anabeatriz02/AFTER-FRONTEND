@@ -4,35 +4,32 @@ const btn = document.querySelector("#salvar");
 async function getContent() {
 	var myHeaders = new Headers();
 
-	myHeaders.append("Authorization", localStorage.getItem("token"))
+	myHeaders.append("Authorization", localStorage.getItem("token"));
 
 	var requestOptions = {
-		method: 'GET',
+		method: "GET",
 		headers: myHeaders,
-		redirect: 'follow'
+		redirect: "follow",
 	};
 
-	const response = await fetch(`http://localhost:4000/perfil/acharPerfilLogado`, requestOptions)  
+	const response = await fetch(`http://localhost:4000/perfil/acharPerfilLogado`, requestOptions);
 
 	// console.log(response)
 
-	const data = await response.json()
+	const data = await response.json();
 
-	console.log(data)
+	console.log(data);
 
+	const imgPerfil = document.querySelector(".icon-user");
 
-	const imgPerfil = document.querySelector('.icon-user')
-
-	if(data[0].imagemPerfil != null){
-		imgPerfil.innerHTML = `<img src="http://localhost:4000/${data[0].imagemPerfil}" alt="" />`
+	if (data[0].imagemPerfil != null) {
+		imgPerfil.innerHTML = `<img src="http://localhost:4000/${data[0].imagemPerfil}" alt="" />`;
 	} else {
-		imgPerfil.innerHTML = `<img src="http://localhost:4000/uploads/fundoRoxo.jpg" alt="" />`
+		imgPerfil.innerHTML = `<img src="http://localhost:4000/uploads/fundoRoxo.jpg" alt="" />`;
 	}
-
 }
 
-getContent()
-
+getContent();
 
 const form = document.querySelector("#formCriarEvento");
 
@@ -355,10 +352,7 @@ function getDadosEvento() {
 			isHoraInicioValid = checkHoraInicio(),
 			isCapaValid = checkCapa();
 
-			isLoteDataInicio = checkLoteDataInicio(),
-			isLote
-
-
+		(isLoteDataInicio = checkLoteDataInicio()), isLote;
 
 		let isFormValid = isTituloValid && isCepValid && isBairroValid && isEstadoValid && isLogradouroValid && isCidadeValid && isDataInicioValid && isHoraInicioValid && isCapaValid;
 
@@ -483,8 +477,8 @@ function getDadosEvento() {
 			//Configurando rota para criação
 
 			var config = {
-				method: 'post',
-				url: 'http://localhost:4000/evento/cadastrarEventoCompleto/10',
+				method: "post",
+				url: "http://localhost:4000/evento/cadastrarEventoCompleto/10",
 				headers: {
 					// ...data.getHeaders()
 					"Content-Type": "multipart/form-data",
