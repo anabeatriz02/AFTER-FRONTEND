@@ -4,21 +4,21 @@ const btn = document.querySelector("#salvar");
 async function getContent() {
 	var myHeaders = new Headers();
 
-	myHeaders.append("Authorization", localStorage.getItem("token"))
+	myHeaders.append("Authorization", localStorage.getItem("token"));
 
 	var requestOptions = {
-		method: 'GET',
+		method: "GET",
 		headers: myHeaders,
-		redirect: 'follow'
+		redirect: "follow",
 	};
 
-	const response = await fetch(`http://localhost:4000/perfil/acharPerfilLogado`, requestOptions)  
+	const response = await fetch(`http://localhost:4000/perfil/acharPerfilLogado`, requestOptions);
 
 	// console.log(response)
 
-	const data = await response.json()
+	const data = await response.json();
 
-	console.log(data)
+	console.log(data);
 
 	// const imgPerfil = document.querySelector('#iconeImgPerfil')
 
@@ -618,7 +618,7 @@ async function pegarContaEmpresa() {
 	
 		const data = await response.json()
 
-		
+
 		const responseConta = await fetch(`http://localhost:4000/contaEmpresa/listarContasPorIdEmpresa/${data[0].tblEmpresas[0].idEmpresa}`);
 
 		const dataConta = await responseConta.json();

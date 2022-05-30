@@ -23,7 +23,7 @@
 			</script>
 		</header>
 
-		<h1>Criar evento</h1>
+		<h1>CRIAR EVENTO</h1>
 
 		<form enctype="multipart/form-data" method="post" id="formCriarEvento">
 			<label>
@@ -106,7 +106,7 @@
 					Horário de início
 					<input type="time" id="horaInicio" />
 				</label>
-				<label>
+				<label>	
 					Horário de término
 					<input type="time" id="horaFim" />
 				</label>
@@ -176,171 +176,19 @@
 			</div>
 
 			<div class="btn">
-				<button onclick="abre()" type="submit" id="salvar">Avançar</button>
+				<button type="submit" onclick="redirecionar()">Avançar</button>
 			</div>
+			
 		</form>
 
-		<!-- <div class="btn">
-			<button onclick="openModal()" type="submit" id="salvar">Avançar</button>
-		</div> -->
+		
 
-		<!-- ------------------------ MODAL FORM ------------------------ -->
-
-		<div class="modal-form-window" id="modal-form-window">
-			<div class="form-window">
-				<h1>LOTE</h1>
-				<form enctype="multipart/form-data" method="post" id="formCriarLoteEvento">
-					<label class="event-title">Festa Neon - lote 1</label>
-
-					<!-- ---------------------- PASSO 01  ---------------------- -->
-
-					<div class="step step-1 active" id="step-1">
-						<h2>Sobre as vendas:</h2>
-						<div class="form-group">
-							<label>
-								Data do início
-								<input id="lote-data-inicio" type="date" />
-							</label>
-							<label>
-								Hora do início
-								<input id="lote-hora-inicio" type="time" />
-							</label>
-						</div>
-						<div class="form-group">
-							<label>
-								Data do término
-								<input id="lote-data-termino" type="date" />
-							</label>
-							<label>
-								Hora do término
-								<input id="lote-hora-termino" type="time" />
-							</label>
-						</div>
-						<div class="form-group">
-							<label>
-								Quantidade de ingressos
-								<input id="lote-quantidade-ingresso" type="number" />
-							</label>
-						</div>
-						<div class="form-group">
-							<label class="checkbox-tax">
-								<input class="checkbox-input-tax" id="lote-taxa-absorcao" type="checkbox" />
-								<span class="checkmark-tax"></span>
-								Taxa da absorção
-							</label>
-							<h2>Quantidade permitida por compra</h2>
-
-							<label>
-								Maxima
-								<input id="lote-quantidade-maxima" type="number" />
-							</label>
-						</div>
-						<button type="button" id="next_btn1" onclick="next_step1()" class="next-btn">Avançar</button>
-					</div>
-
-					<!-- ---------------------- BUTTONS PAGO OU GRATUITO  ---------------------- -->
-
-					<div class="step step-2" id="step-2">
-						<h2>TIPO DE INGRESSO</h2>
-						<button type="button" class="no-pay-btn" id="next_btn2" onclick="next_step2()">INGRESSSO GRATUITO</button>
-						<button type="button" class="pay-btn" id="next_btn3" onclick="next_step3()">INGRESSO PAGO</button>
-					</div>
-
-					<!-- ---------------------- INGRESSO PAGO  ---------------------- -->
-
-					<div class="step step-3" id="step-3">
-						<h2>Ingresso Pago</h2>
-						<div class="form-group">
-							<label>
-								Título do ingresso
-								<input id="lote-ip-titulo" type="text" />
-							</label>
-						</div>
-						<div class="form-group price">
-							<label>
-								Quantidade
-								<input id="lote-ip-quantidade" type="number" />
-							</label>
-							<label>
-								Preço
-								<input id="lote-ip-preco" type="number" />
-							</label>
-						</div>
-						<div class="form-group">
-							<label>
-								Descrição do ingresso
-								<textarea id="lote-ip-descricao" cols="30" rows="10"></textarea>
-								<!-- <input type="text" /> -->
-							</label>
-						</div>
-						<div class="form-group">
-							<label class="checkbox">
-								<input id="chkCamp1" type="checkbox" class="cb" onclick="showMe('optCamp1', this)" />
-								<span class="checkmark"></span>
-								Criar meia-entrada para esse ingresso
-							</label>
-						</div>
-						<div id="optCamp1" class="form-group-checked ocult">
-							<label>
-								Título do ingresso
-								<input id="lote-ip-titulo-meia" type="text" />
-							</label>
-							<div>
-								<label>
-									Quantidade
-									<input id="lote-ip-quantidade-meia" type="text" />
-								</label>
-								<label>
-									Preço
-									<input id="lote-ip-preco-meia" type="text" />
-								</label>
-							</div>
-							<label>
-								Descrição do ingresso
-								<textarea name="" id="lote-ip-descricao-meia" cols="30" rows="10"></textarea>
-							</label>
-						</div>
-
-						<div class="send">
-							<button type="submit" id="conclude-btn" class="conclude-btn">Concluir</button>
-						</div>
-					</div>
-
-					<!-- ---------------------- INGRESSO GRATUITO  ---------------------- -->
-
-					<div class="step step-4" id="step-4">
-						<h2>Ingresso gratuito</h2>
-						<div class="form-group">
-							<label>
-								Título do ingresso
-								<input id="lote-ig-titulo" type="text" />
-							</label>
-							<div>
-								<label>
-									Quantidade
-									<input id="lote-ig-quantidade" type="text" />
-								</label>
-								<label>
-									Preço
-									<div id="lote-ig-preco" class="free">GRÁTIS</div>
-								</label>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label>
-								Descrição do ingresso
-								<textarea id="lote-ig-descricao" cols="30" rows="10"></textarea>
-							</label>
-						</div>
-
-						<div class="send">
-							<button type="submit" class="conclude-btn">Concluir</button>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
+		<script>
+			function redirecionar() {
+			   window.location.href = "./create-event-lot.html";
+			}
+		 </script>
+	
 
 		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 

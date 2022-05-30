@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="../css/scrollbar.css" />
+		<link rel="stylesheet" href="../css/reset.css" />
+		<link rel="stylesheet" href="../css/create-event-lot.css" />
+
+		<title>Criar lote</title>
+	</head>
+	<body>
+		<header class="header" id="header">
+			<script>
+				$(function () {
+					$("#header").load("../common/header-company.html  ");
+				});
+			</script>
+		</header>
+
+		<h1>CRIAR EVENTO - LOTE</h1>
+
+		<h2>Festa neon</h2>
+
+		<form action="">
+			<h3>Sobre as vendas:</h3>
+			<div>
+				<label>
+					Data de início
+					<input type="date" />
+				</label>
+				<label>
+					Hora de início
+					<input type="time" />
+				</label>
+			</div>
+			<div>
+				<label>
+					Data de termino
+					<input type="date" />
+				</label>
+				<label>
+					Hora de termino
+					<input type="time" />
+				</label>
+			</div>
+			<label>
+				Quantidade de ingressos
+				<input type="number	" />
+			</label>
+
+			<label class="checkbox-tax">
+				<input class="checkbox-input-tax" id="lote-taxa-absorcao" type="checkbox" />
+				<span class="checkmark-tax"></span>
+				Taxa da absorção
+			</label>
+
+			<h3>Quantidade permitida por compra:</h3>
+
+			<label>
+				Máxima
+				<input type="number	" />
+			</label>
+
+			<button type="submit" id="next_btn1" onclick="next_step1()">Avançar</button>
+		</form>
+
+		<section class="modal-lot">
+			<div class="lot-choice">
+				<form action="">
+					<button>Ingresso pago</button>
+					<button>Ingresso gratuito</button>
+				</form>
+			</div>
+
+			<div class="lot-pay">
+				<h2>INGRESSO PAGO</h2>
+				<form action="">
+					<label>
+						Título do ingresso
+						<input type="text" />
+					</label>
+					<div>
+						<label>
+							Quantidade
+							<input type="number" />
+						</label>
+						<label>
+							Preço
+							<input type="number" />
+						</label>
+					</div>
+					<label>
+						Descrição do ingresso
+						<input type="text" />
+					</label>
+					<button>CONCLUIR</button>
+				</form>
+			</div>
+
+			<div class="lot-free">
+				<h2>INGRESSO GRATUITO</h2>
+				<form action="">
+					<label>
+						Título
+						<input type="text" />
+					</label>
+
+					<div>
+						<label>
+							Quantidade
+							<input type="number" />
+						</label>
+						<label>
+							Preço
+							<div class="price">GRÁTIS</div>
+						</label>
+					</div>
+					<label>
+						Descrição do ingresso
+						<input type="text" />
+					</label>
+					<button>CONCLUIR</button>
+				</form>
+			</div>
+		</section>
+	</body>
+</html>

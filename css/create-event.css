@@ -73,6 +73,10 @@ select {
 	color: var(--white);
 }
 
+button {
+	padding: 20px 50px;
+}
+
 /* option {
 	height: 1100px;
 } */
@@ -355,9 +359,8 @@ form .btn,
 
 .modal-form-window .form-window {
 	width: 40vw;
+	max-width: 90vh;
 	height: fit-content;
-	/* overflow-y: auto; */
-	/* height: fit-content; */
 	background: var(--backgroundPrimary);
 	border: 2px solid var(--purpleSecondary);
 	gap: 20px;
@@ -372,7 +375,7 @@ form .btn,
 	transform: translate(-50%, -50%);
 }
 
-.modal-form-window .form-window form {
+/* .modal-form-window .form-window form {
 	width: 100%;
 	background: var(--backgroundTertiary);
 	padding: 40px;
@@ -384,7 +387,6 @@ form .btn,
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	/* margin-bottom: 0; */
 }
 
 .modal-form-window .form-window form .event-title {
@@ -395,11 +397,11 @@ form .btn,
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
-}
+} */
 
 /* ---------------------- MOSTRAR ELEMENTOS DO MODAL ---------------------- */
 
-.modal-form-window .form-window form .step-1 {
+/* .modal-form-window .form-window form .step-1 {
 }
 
 .modal-form-window .form-window form .step-2 {
@@ -414,23 +416,21 @@ form .btn,
 
 .modal-form-window .form-window form .step-4 {
 	display: none;
-}
+} */
 
 /* ------------------------------------------------------------------------- */
 
-.modal-form-window .form-window form .step-2 button {
+/* .modal-form-window .form-window form .step-2 button {
 	width: 100%;
 	margin-top: 20px;
 }
 
 .modal-form-window .form-window form .step-3 div {
-	/* margin-bottom: 20px; */
-	/* margin-top: 20px; */
+
 }
 
 .modal-form-window .form-window form .step-3 button {
-	/* margin: auto 0 0 auto; */
-	/* margin: 0 auto; */
+	
 	
 }
 
@@ -468,7 +468,7 @@ form .btn,
 }
 
 .modal-form-window .form-window form .step .conclude-btn {
-	/* margin: auto	; */
+
 	height: 60px;
 	width: 50%;
 }
@@ -501,22 +501,20 @@ form .btn,
 }
 
 .modal-form-window .form-window form .form-group-checked label {
-	/* margin-top: 20px; */
 }
 
 .modal-form-window .form-window form .form-group-checked div {
 	display: flex;
 	flex-direction: row;
 	gap: 20px;
-}
+} */
 
-textarea {
+/* textarea {
 	background: var(--backgroundSecondary);
 	border-radius: 10px;
 	padding: 10px;
 	border: 1.5px solid var(--backgroundSecondary);
 
-	/* border: none; */
 	height: 60px;
 	outline: none;
 	transition: 0.5s;
@@ -525,7 +523,7 @@ textarea {
 
 textarea:focus {
 	border: 1.5px solid var(--purpleSecondary);
-}
+} */
 
 /* ---------------- LOT BOX ---------------- */
 
@@ -534,7 +532,7 @@ textarea:focus {
 /* ---------------- LOT NEW ---------------- */
 
 /* ---------------- LOT BTN ---------------- */
-
+/* 
 .checkbox {
 	display: flex;
 	gap: 5px;
@@ -550,7 +548,6 @@ textarea:focus {
 	height: 25px;
 	background-color: var(--backgroundPrimary);
 	border-radius: 5px;
-	/* vertical-align: middle; */
 	border: 2px solid var(--purpleSecondary);
 	appearance: none;
 	-webkit-appearance: none;
@@ -571,7 +568,6 @@ textarea:focus {
 	align-items: center;
 	color: var(--white);
 	text-transform: uppercase;
-	/* margin: 1em 0	em; */
 }
 
 .checkbox-tax label:checked {
@@ -583,7 +579,6 @@ textarea:focus {
 	height: 30px;
 	background-color: var(--backgroundPrimary);
 	border-radius: 5px;
-	/* vertical-align: middle; */
 	border: 2px solid var(--purpleSecondary);
 	appearance: none;
 	-webkit-appearance: none;
@@ -594,4 +589,4 @@ textarea:focus {
 .checkbox-tax .checkbox-input-tax:checked {
 	background: var(--purpleSecondary);
 	color: var(--purpleSecondary);
-}
+} */
