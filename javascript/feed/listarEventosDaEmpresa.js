@@ -16,8 +16,11 @@ async function getContent() {
 
         const dataPerfil = await responsePerfil.json()
 
+        // console.log(dataPerfil)
 
-        const response = await fetch(`http://localhost:4000/evento/acharEventoPorId/${dataPerfil[0].idPerfil}`)
+        // console.log(dataPerfil[0].tblEmpresas[0].idEmpresa)
+
+        const response = await fetch(`http://localhost:4000/evento/acharEventoPorId/${dataPerfil[0].tblEmpresas[0].idEmpresa}`)
 
         console.log(response)
 
