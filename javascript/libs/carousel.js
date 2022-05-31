@@ -16,7 +16,7 @@ $(".owl-moment").owlCarousel({
 			items: 7,
 		},
 		1500: {
-			items: 7,
+			items: 6,
 		},
 		1600: {
 			items: 12,
