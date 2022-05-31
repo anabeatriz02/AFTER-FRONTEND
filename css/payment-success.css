@@ -1,0 +1,161 @@
+:root {
+	--gapPrimary: 100px;
+	--borderPrimary: 2px solid var(--purpleSecondary);
+}
+
+* {
+	user-select: none;
+}
+
+body {
+	padding: 2% 6%;
+	display: flex;
+	flex-direction: column;
+	gap: var(--gapPrimary);
+	overflow-x: hidden;
+}
+
+.slider-container {
+	width: 100%;
+	height: 375px;
+}
+
+.slider-container .owl-slider {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	border-radius: 10px;
+	-webkit-mask-image: linear-gradient(rgba(4, 9, 30, 0.6), rgba(4, 9, 30, 0.7));
+	border: var(--borderPrimary);
+}
+
+.slider-container .owl-slider .item-photo {
+}
+
+.slider-container .owl-slider .item-photo img {
+	width: 100%;
+}
+
+.owl-dots {
+	position: absolute;
+	bottom: 10px;
+	outline: none;
+	width: 100%;
+}
+
+.owl-dots {
+	outline: none;
+}
+
+.owl-dots span {
+	background: var(--purpleSecondary) !important;
+}
+
+.owl-dots .active span {
+	background: var(--purpleTertiary) !important;
+}
+
+/* ------------------------------------------------------------ */
+
+.information-container {
+	padding: 2% 6%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+    margin-inline-start: 35%;
+	gap: 25px;
+}
+
+.information-container > h1 {
+	text-transform: uppercase;
+	font-size: 2.75rem;
+	color: var(--white);
+}
+
+.information-container h1 > span {
+	font-size: 0.9rem;
+	margin-left: 10px;
+}
+
+.information-container h1 > a {
+	position: relative;
+	transition: 0.5s;
+	font-size: 0.9rem;
+	text-decoration: none;
+	color: var(--white);
+	margin-left: 8px;
+}
+
+.information-container h1 > a:hover {
+	color: var(--purpleSecondary);
+}
+
+.information-container h1 > a img {
+	position: absolute;
+	top: -3px;
+	right: -15px;
+	width: 10px;
+	height: 10px;
+}
+
+.information-container{
+    border-radius: 10px;
+    border: var(--purpleSecondary);
+    box-sizing: border-box;
+	display: flex;
+	gap: 15px;
+	height: 80px;
+}
+
+.information-container div > button {
+	height: 40px;
+	width: 40px;
+	display: table-column;
+	justify-content: center;
+	align-items: column;
+	cursor: pointer;
+	border-radius: 5px;
+	border: 1px solid var(--purpleSecondary);
+	background-color: var(--purpleSecondary);
+	transition: 0.5s;
+}
+
+.information-container div > button:hover {
+	border: var(--borderPrimary);
+}
+
+.information-container p {
+	color: var(--white);
+	font-weight: 200;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 1rem;
+}
+
+.information-container p:first-child {
+	height: 50%;
+}
+
+.information-container p:last-child {
+	height: 50%;
+}
+
+/* ------------------------------------------------------------ */
+
+.success{
+    width: 260px;
+    height: 260px;
+    display: flex;
+    margin-inline-start: 44%;
+}
+
+.pag-success{
+    display: flex;
+    color: white;
+    margin-inline-start: 38%;
+
+}
+
+
+

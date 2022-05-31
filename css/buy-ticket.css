@@ -1,6 +1,330 @@
+:root {
+	--gapPrimary: 100px;
+	--borderPrimary: 2px solid var(--purpleSecondary);
+}
+
+* {
+	user-select: none;
+}
+
+body {
+	padding: 2% 6%;
+	display: flex;
+	flex-direction: column;
+	gap: var(--gapPrimary);
+	overflow-x: hidden;
+}
+
+.slider-container {
+	width: 100%;
+	height: 375px;
+}
+
+.slider-container .owl-slider {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	border-radius: 10px;
+	-webkit-mask-image: linear-gradient(rgba(4, 9, 30, 0.6), rgba(4, 9, 30, 0.7));
+	border: var(--borderPrimary);
+}
+
+.slider-container .owl-slider .item-photo {
+}
+
+.slider-container .owl-slider .item-photo img {
+	width: 100%;
+}
+
+.owl-dots {
+	position: absolute;
+	bottom: 10px;
+	outline: none;
+	width: 100%;
+}
+
+.owl-dots {
+	outline: none;
+}
+
+.owl-dots span {
+	background: var(--purpleSecondary) !important;
+}
+
+.owl-dots .active span {
+	background: var(--purpleTertiary) !important;
+}
+
+/* ------------------------------------------------------------ */
+
+.information-container {
+	padding: 2% 6%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+
+.information-container > h1 {
+	text-transform: uppercase;
+	font-size: 2.75rem;
+	color: var(--white);
+}
+
+.information-container h1 > span {
+	font-size: 0.9rem;
+	margin-left: 10px;
+}
+
+.information-container h1 > a {
+	position: relative;
+	transition: 0.5s;
+	font-size: 0.9rem;
+	text-decoration: none;
+	color: var(--white);
+	margin-left: 8px;
+}
+
+.information-container h1 > a:hover {
+	color: var(--purpleSecondary);
+}
+
+.information-container h1 > a img {
+	position: absolute;
+	top: -3px;
+	right: -15px;
+	width: 10px;
+	height: 10px;
+}
+
+.information-container .mark-box .mark-box2{
+    border-radius: 10px;
+    border: var(--purpleSecondary);
+    box-sizing: border-box;
+	display: flex;
+	gap: 15px;
+	height: 80px;
+}
+
+.information-container .mark-box .mark-box2 div > button {
+	height: 40px;
+	width: 40px;
+	display: table-column;
+	justify-content: center;
+	align-items: column;
+	cursor: pointer;
+	border-radius: 5px;
+	border: 1px solid var(--purpleSecondary);
+	background-color: var(--purpleSecondary);
+	transition: 0.5s;
+}
+
+.information-container .mark-box .mark-box2 div > button:hover {
+	border: var(--borderPrimary);
+}
+
+.information-container .mark-box .mark-box2 p {
+	color: var(--white);
+	font-weight: 200;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 1rem;
+}
+
+.information-container .mark-box .mark-box2 p:first-child {
+	height: 50%;
+}
+
+.information-container .mark-box  .mark-box2 p:last-child {
+	height: 50%;
+}
+
+h2{
+    display: flex;
+    font-size: 16px;
+    color: white;
+    margin-top: 25px;
+    margin-inline-start: 2.8%;
+}
+
+.mark-box input{
+    width: 160px;
+    height: 130px;
+    border-radius: 10px;
+    background-color: var(--purpleSecondary);
+    border: 2px solid var(--purpleSecondary);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.mark-box2 input{
+    width: 28px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: var(--purpleSecondary);
+    border: 2px solid var(--purpleSecondary);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: white;
+    margin-inline-start: 20%;
+    margin-top: -160%;
+}
+
+.mark-box3 input{
+    width: 280px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: var(--purpleSecondary);
+    border: 2px solid var(--purpleSecondary);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: white;
+    margin-inline-start: 20%;
+}
 
 
+/* ------------------------------------------------------------ */
 
+.mark-box{
+	display: flex;
+	gap: 15px;
+	height: 80px;
+	margin-top: 2%;
+	margin-inline-start: 10%;
+}
+
+.mark-box div > button{
+	height: 40px;
+	width: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	border-radius: 5px;
+	border: 1px solid var(--backgroundTertiary);
+	background-color: var(--backgroundTertiary);
+	transition: 0.5s;
+	/* margin-inline-start: 15%;
+	margin-bottom: -8%; */
+}
+
+.mark-box div > button:hover{
+	border: var(--borderPrimary);
+}
+
+.mark-box p {
+	color: var(--white);
+	font-weight: 200;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 1rem;
+}
+
+.mark-box p:first-child{
+	height: 50%;
+}
+
+.mark-box p:last-child{
+	height: 50%;
+}
+
+/* ------------------------------------------------- */
+
+.date{
+	display: flex;
+	color: white;
+	margin-inline-start: 16%;
+	margin-TOP: -5%;
+	max-width: 200%;
+	font-size: 20px;
+}
+
+.selecione{
+	display: flex;
+	color: white;
+	margin-inline-start: 35%;
+	margin-bottom: 4%;
+	max-width: 200%;
+	font-size: 20px;
+}
+
+/* --------------------------------------------------- */
+
+select {
+	display: flex;
+	width: 120%;
+	height: 35px;
+	border-radius: 10px;
+	flex-direction: column;
+	border: 1.5px solid var(--purpleSecondary);
+	background-color: var(--purpleSecondary);
+	padding: 0px 25px;
+	transition: 0.5s;
+	color: var(--white);
+} 
+
+select#inteira{
+	font: center;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	/* width: 120%; */
+	margin-inline-start: 203%;
+	margin-top: -30%;
+}
+
+select#meia{
+	font: center;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	/* width: 120%; */
+	margin-inline-start: 203%;
+	margin-top: 15%;
+
+} 
+
+
+select#qntInt{
+	width: 35%;
+	height: 35px;
+	font: center;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	margin-inline-start: 345%;
+	margin-top: -43%;
+} 
+
+
+select#qntMeia{
+	width: 35%;
+	height: 35px;
+	font: center;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	/* width: 120%; */
+	margin-inline-start: 345%;
+	margin-top: 15%;
+} 
+
+
+/* ------------------------------------------------------- */
+
+button .avan{
+	display: flex;
+	margin-inline-start: 240%;
+}
 
 
 

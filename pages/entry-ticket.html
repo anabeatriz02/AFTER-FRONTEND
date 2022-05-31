@@ -10,10 +10,10 @@
 		<link rel="stylesheet" href="../css/reset.css" />
 		<link rel="stylesheet" href="../css/scrollbar.css" />
 		<link rel="stylesheet" href="../css/header-secondary.css" />
-		<link rel="stylesheet" href="../css/buy-ticket.css" />
+		<link rel="stylesheet" href="../css/entry-ticket.css" />
 
 
-		<title>Compra de ingresso</title>
+		<title>Forma de ingresso</title>
 	</head>
 	<body>
 		<header class="header" id="header">
@@ -35,81 +35,52 @@
 				CARNAVAL<span>com</span><a href="">INSNUP DOGUI<img src="../img/icon-check.svg" /></a>
 			</h1>
 		</section>
-
-		<div class="container">
-			<div class="content">
-
-				<h1 class="selecione">Selecione o tipo de ingresso</h1>
+		<span class="divider"></span>
 
 
-				<h1 class="date">Data</h1>
+		<!-- <h2>Selecione uma forma de entrega</h2> -->
 
-				<div class="mark-box">
+		<form enctype="multipart/form-data" method="post">
 
-				<form enctype="multipart/form-data" method="post">
-
-					<div class="mark-box">
-						<div>
-							<button><img src="../img/icon-calendar.svg" /></button>
-						</div>
-						<div>
-							<p id="horarioEvento">Sexta das 19h00 ás 21h30</p>
-							<p id="dataEvento">18 de Fevereiro</p>
-						</div>
-					</div>
-
-					<div class="ingressos">
-						
-						<select id="inteira" name="Inteira">
-							<option selected value="0">INTEIRA -  R$50,98</option>
-							<optgroup id="inteiraOption"></optgroup>
-						</select>
-						
-						
-						<select id="meia" name="meia">
-							<option selected value="0">MEIA - R$25,49</option>
-							<optgroup id="meiaOption"></optgroup>
-						</select>
-
-						<select id="qntInt" name="qntInteira">
-							<option selected value="0">1</option>
-							<optgroup id="qntInteiraOption"></optgroup>
-						</select>
-						
-						
-						<select id="qntMeia" name="qntMeia">
-							<option selected value="0">1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-							<option>6</option>
-							<option>7</option>
-							
-							<optgroup id="qntMeiaOption"></optgroup>
-						</select>
-
-						<!-- <button class="adc"> + </button> -->
-					
-					
-					</div>
-
-				</form>
-
-			</div>
-
-			<button class="avan">AVANÇAR</button>
 			
-		</div>
+			<div class="conteiner">
+
+				<h1 class="select"> Selecione uma forma de entrega </h1>
+				
+				<ul class="confirmacoes">
+					<li>
+						<div>
+							<input type="checkbox">
+						</div>
+						<img class="ticket" src="../img/ticket-roxo.png">
+	
+						<label>Versão digital</label>
+					</li>
+					<p>Seu ingresso estará disponível na aba de ingressos da After</p>
+					<li>
+						<div>
+							<input type="checkbox">
+						</div>
+						<img class="bilheteria" src="../img/bilheteria.png">
+						<label>Retirar na bilheteria</label>
+					</li>
+					<p>Seu ingresso poderá ser retirado na bilheteria de maneira impressa</p>
+				</ul>
+
+				<button>AVANÇAR</button>
+			</div>
+		</form>
+
+			
+
+
 
 		
-
 		<!---------------------------------------------------------------->
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 		<script src="../javascript/event-description/carousel.js"></script>
-
 		<script src="../javascript/mostrarDetalhesEvento.js"></script>
 	</body>
 </html>

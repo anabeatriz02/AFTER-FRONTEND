@@ -1,0 +1,380 @@
+:root {
+	--gapPrimary: 100px;
+	--borderPrimary: 2px solid var(--purpleSecondary);
+}
+
+* {
+	user-select: none;
+}
+
+body {
+	padding: 2% 6%;
+	display: flex;
+	flex-direction: column;
+	gap: var(--gapPrimary);
+	overflow-x: hidden;
+}
+
+.slider-container {
+	width: 100%;
+	height: 375px;
+}
+
+.slider-container .owl-slider {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	border-radius: 10px;
+	-webkit-mask-image: linear-gradient(rgba(4, 9, 30, 0.6), rgba(4, 9, 30, 0.7));
+	border: var(--borderPrimary);
+}
+
+.slider-container .owl-slider .item-photo {
+}
+
+.slider-container .owl-slider .item-photo img {
+	width: 100%;
+}
+
+.owl-dots {
+	position: absolute;
+	bottom: 10px;
+	outline: none;
+	width: 100%;
+}
+
+.owl-dots {
+	outline: none;
+}
+
+.owl-dots span {
+	background: var(--purpleSecondary) !important;
+}
+
+.owl-dots .active span {
+	background: var(--purpleTertiary) !important;
+}
+
+/* ------------------------------------------------------------ */
+
+.information-container {
+	padding: 2% 6%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+
+.information-container > h1 {
+	text-transform: uppercase;
+	font-size: 2.75rem;
+	color: var(--white);
+}
+
+.information-container h1 > span {
+	font-size: 0.9rem;
+	margin-left: 10px;
+}
+
+.information-container h1 > a {
+	position: relative;
+	transition: 0.5s;
+	font-size: 0.9rem;
+	text-decoration: none;
+	color: var(--white);
+	margin-left: 8px;
+}
+
+.information-container h1 > a:hover {
+	color: var(--purpleSecondary);
+}
+
+.information-container h1 > a img {
+	position: absolute;
+	top: -3px;
+	right: -15px;
+	width: 10px;
+	height: 10px;
+}
+
+.information-container{
+    border-radius: 10px;
+    border: var(--purpleSecondary);
+    box-sizing: border-box;
+	display: flex;
+	gap: 15px;
+	height: 80px;
+}
+
+.information-container div > button {
+	height: 40px;
+	width: 40px;
+	display: table-column;
+	justify-content: center;
+	align-items: column;
+	cursor: pointer;
+	border-radius: 5px;
+	border: 1px solid var(--purpleSecondary);
+	background-color: var(--purpleSecondary);
+	transition: 0.5s;
+}
+
+.information-container div > button:hover {
+	border: var(--borderPrimary);
+}
+
+.information-container p {
+	color: var(--white);
+	font-weight: 200;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 1rem;
+}
+
+.information-container p:first-child {
+	height: 50%;
+}
+
+.information-container p:last-child {
+	height: 50%;
+}
+
+/* ------------------------------------------------------------ */
+
+.container{
+	display: flex;
+	width: 100%;
+	height: 750px;
+	background-color: var(--backgroundTertiary);
+	/* margin-inline-start: 5%; */
+	border-radius: 19px;
+}
+
+.content{
+	width: 100%;
+	height: 600px;
+	display: flex;
+	color: white;
+	margin-inline-start: 6.2%;
+}
+
+
+/* ------------------------------------------------------ */
+
+form {
+	width: 100%;
+	padding: 0 12%;
+	display: flex;
+	flex-direction: column;
+	/* align-items: center; */
+	gap: 40px;
+	margin-inline-start: -15%;
+	margin-top: 2.5%;
+}
+
+/* form label select option {
+	display: flex;
+	outline: none;
+	flex-direction: row;
+} */
+
+form label {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	color: var(--white);
+	letter-spacing: 1px;
+	font-weight: 500;
+	font-size: 0.9rem;
+}
+
+form label:focus-within {
+	color: var(--purpleSecondary);
+}
+
+form input{
+	display: flex;
+	width: 100%;
+	height: 60px;
+	border-radius: 10px;
+	flex-direction: column;
+	border: 1.5px solid var(--backgroundTertiary);
+	background-color: var(--backgroundSecondary);
+	padding: 0px 25px;
+	transition: 0.5s;
+	color: var(--white);
+	/* margin-inline-start: 10%; */
+}
+
+/* option {
+	height: 1100px;
+} */
+
+form input:focus{
+	border: 1.5px solid var(--purpleSecondary);
+}
+
+form .cartao {
+	display: flex;
+	gap: 40px;
+}
+
+form .cartao {
+	display: flex;
+	gap: 40px;
+}
+
+form .cartao input {
+	display: flex;
+	width: 100%;
+}
+
+/* ---------------------------------------------- */
+.mark-box {
+	display: flex;
+	gap: 15px;
+	height: 80px;
+}
+
+.mark-box div > button {
+	height: 40px;
+	width: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	border-radius: 5px;
+	border: 1px solid var(--backgroundTertiary);
+	background-color: var(--backgroundTertiary);
+	transition: 0.5s;
+	margin-inline-start: 3%;
+}
+
+.mark-box div > button:hover {
+	border: var(--borderPrimary);
+}
+
+.mark-box p {
+	color: var(--white);
+	font-weight: 200;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 1rem;
+}
+
+.mark-box p:first-child {
+	height: 50%;
+}
+
+.mark-box p:last-child {
+	height: 50%;
+}
+
+/* ----------------------------------------------------- */
+
+h3{
+	display: flex;
+	margin-inline-start: 6%;
+	max-width: 10px;
+}
+
+	/* h4{
+		display: flex;
+		margin-inline-start: 8%; 
+		max-width: 20px;
+
+	} */
+
+/* ---------------------------------------------------- */
+
+.button{
+	width: 130%;
+	height: 134%;
+	float: none;
+	/* top: 90%;  */
+    position: relative;
+	margin-inline-start: 22%;
+	color: var(--white);
+	background-color: var(--backgroundTertiary);
+	border: 2px solid var(--purpleSecondary);
+	/* cursor: pointer; */
+	border-radius: 19px;
+	transition: linear 0.5s;
+	max-width: 120px;
+	text-align: center;
+
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	
+}
+
+/* ---------------------------------------------------- */
+
+.button2{
+	width: 320%;
+	height: 135%;
+	position: relative;
+	margin-inline-start: 5.5%;
+	background-color: var(--backgroundTertiary);
+	border: 2px solid var(--purpleSecondary);
+	transition: linear 0.5s;
+	max-width: 100px;
+	border-radius: 19px;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* ------------------------------------------------------- */
+
+button{
+	width: 25%;
+	height: 15%;
+	color: white;
+	font-size: 22px;
+	background-color: var(--backgroundTertiary);
+	border: 2px solid var(--purpleSecondary);
+	border-radius: 18px;
+	margin-top: 29%;
+	margin-inline-start: -57%;
+}
+
+button:hover,
+button:hover {
+	background-color: var(--purpleSecondary);
+}
+
+.description{
+	display: flex;
+	margin-inline-start: -21.5%;
+	margin-top: 34.5%;
+	max-width: 200%;
+	font-size: 12px;
+	
+}
+
+/* ----------------------------------------------------- */
+
+.divider {
+	width: 120%;
+	height: 2px;
+	background-color: var(--purpleSecondary);
+	position: relative;
+}
+
+
+.divider2 {
+	width: 91%;
+	height: 2px;
+	background-color: var(--purpleSecondary);
+	position: relative;
+	margin-inline-start: -88%;
+	margin-top: 27%;
+}
+
+

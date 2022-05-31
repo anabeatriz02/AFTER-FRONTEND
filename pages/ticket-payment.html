@@ -10,10 +10,10 @@
 		<link rel="stylesheet" href="../css/reset.css" />
 		<link rel="stylesheet" href="../css/scrollbar.css" />
 		<link rel="stylesheet" href="../css/header-secondary.css" />
-		<link rel="stylesheet" href="../css/buy-ticket.css" />
+		<link rel="stylesheet" href="../css/ticket-payment.css" />
 
 
-		<title>Compra de ingresso</title>
+		<title>Pagamento de ingresso</title>
 	</head>
 	<body>
 		<header class="header" id="header">
@@ -39,71 +39,74 @@
 		<div class="container">
 			<div class="content">
 
-				<h1 class="selecione">Selecione o tipo de ingresso</h1>
-
-
-				<h1 class="date">Data</h1>
-
-				<div class="mark-box">
+				
 
 				<form enctype="multipart/form-data" method="post">
 
+					<h1 class="pag">Pagamento</h1>
+
+					<div class="cartao">
+						<label>
+							Número do cartão
+							<input class="numberCart" type="text" id="number" />
+						</label>
+						<label>
+							Validade
+							<input class="valid" type="date" id="valid" />
+						</label>
+						<label>
+							CVV
+							<input class="cvv" type="text" id="cvv" />
+						</label>
+					</div>
+
+					<span class="divider"></span>
+					
+					<h2>Subtotal</h2>
+					
 					<div class="mark-box">
-						<div>
-							<button><img src="../img/icon-calendar.svg" /></button>
+	
+						<div class="mark-box">
+							<div>
+								<button><img src="../img/icon-calendar.svg" /></button>
+							</div>
+							<div>
+								<p id="horarioEvento">Sexta das 19h00 ás 21h30</p>
+								<p id="dataEvento">18 de Fevereiro</p>
+							</div>
 						</div>
-						<div>
-							<p id="horarioEvento">Sexta das 19h00 ás 21h30</p>
-							<p id="dataEvento">18 de Fevereiro</p>
-						</div>
-					</div>
+	
+	
+					<h3>2x inteiras</h3>
+					<!-- <h4>Versão digital</h4> -->
 
-					<div class="ingressos">
-						
-						<select id="inteira" name="Inteira">
-							<option selected value="0">INTEIRA -  R$50,98</option>
-							<optgroup id="inteiraOption"></optgroup>
-						</select>
-						
-						
-						<select id="meia" name="meia">
-							<option selected value="0">MEIA - R$25,49</option>
-							<optgroup id="meiaOption"></optgroup>
-						</select>
 
-						<select id="qntInt" name="qntInteira">
-							<option selected value="0">1</option>
-							<optgroup id="qntInteiraOption"></optgroup>
-						</select>
-						
-						
-						<select id="qntMeia" name="qntMeia">
-							<option selected value="0">1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-							<option>6</option>
-							<option>7</option>
-							
-							<optgroup id="qntMeiaOption"></optgroup>
-						</select>
+					<!-- <div>
+						<a class="button">R$50,98 R$50,98</a>
+					</div> -->
 
-						<!-- <button class="adc"> + </button> -->
-					
-					
-					</div>
+					<a class="button">R$50,98  R$50,98</a>
+					<a class="button2">TOTAL 101,96</a>	
 
 				</form>
 
 			</div>
+			<span class="divider2"></span>
 
-			<button class="avan">AVANÇAR</button>
-			
+			<button>AVANÇAR</button>
+			<h3 class="description">Não esqueça de levar um comprovante para a Meia Entrada!</h3>
 		</div>
 
 		
 
+
+			
+
+				
+
+		
+		
+		
 		<!---------------------------------------------------------------->
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
